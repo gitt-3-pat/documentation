@@ -10,6 +10,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" media="print" href="dist/print.css">
 		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
@@ -23,6 +24,9 @@
 					<p>
 						Programación de Aplicaciones Telemáticas
 					</p>
+				</section>
+				<section>
+					<h2>Tema 0: Introduccion a la asignatura</h2>
 				</section>
 				<section>
 					<h2>Agenda</h2>
@@ -89,6 +93,11 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+			Reveal.configure(
+				{ showNotes: true },
+				{ showNotes: 'separate-page' },
+				{ pdfMaxPagesPerSlide: 1 }
+			);
 		</script>
 	</body>
 </html>

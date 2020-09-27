@@ -3,6 +3,7 @@
 	<head>
 
 		<title>Tema 1</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -11,7 +12,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
@@ -19,8 +20,165 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<img src="images/comillas-logo.png" width="50%" />
+					<p>
+						Programación de Aplicaciones Telemáticas
+					</p>
+				</section>
+				<section>
+					<h2>Tema 1: Introducción a Java en la Industria</h2>
+				</section>
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li>Ciclo de vida del software</li>
+						<li>Paradigmas de programación</li>
+						<li>Sistemas distribuidos</li>
+						<li>Ecosistema Backend</li>
+						<li>Arquitecturas REST</li>
+						<li>Arquitecturas Event-driven</li>
+						<li>Arquitecturas Serverless</li>
+						<li>Ecosistema Frontend</li>
+						<li>Otros lenguajes</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Ciclo de vida del software</h2>
+					<img src="images/SDLC-stages.png" width="50%" />
+				</section>
+				<section>
+					<h2>Paradigmas de programación</h2>
+					<img src="images/paradigmas.png" />
+				</section>
+				<section>
+					<h2>Sistemas distribuidos</h2>
+					<p>
+						Un sistema distribuido es un sistema cuyos componentes están ubicados
+						en diferentes computadoras en red, que se comunican y coordinan sus acciones pasándose
+						mensajes entre sí. Los componentes interactúan entre sí para lograr un objetivo común.
+					</p>
+					<p>
+						Source: <a href="https://en.wikipedia.org/wiki/Distributed_computing" target="_blank">Wikipedia</a>
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>Ecosistema Backend</h2>
+						<h3>¿Que es el backend?</h3>
+						<p>
+							El Backend es la parte del desarrollo web que se encarga de que toda la lógica
+							de negocio de una aplicación web.
+						</p>
+					</section>
+					<section>
+						<h2>Ecosistema Backend</h2>
+						<h3>Componentes</h3>
+						<p>
+							En el desarrollo del Backend, se interacciona con los siguientes elementos:
+						</p>
+						<ul>
+							<li>Bases de datos</li>
+							<li>Caches</li>
+							<li>Brokers de mensajeria</li>
+							<li>Sistemas terceros REST/WS</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Arquitecturas REST</h2>
+					<p>
+						REST es una arquitectura de desarrollo web que puede ser utilizada en cualquier cliente HTTP.
+					</p>
+					<ul>
+						<li>Es un protocolo sin estado</li>
+						<li>Las operaciones se definen a traves de los metodos: GET, POST, PUT, PATCH y DELETE</li>
+						<li>Utiliza URIs</li>
+						<li>Emplea hipermedia (HTML, XML & JSON)</li>
+					</ul>
+					<!--
+					Comunicación síncrona
+					Client-Servidor
+					-->
+				</section>
+				<section>
+					<section>
+						<h2>Arquitectuas Event-driven</h2>
+						<!-- Comunicacion asincrona -->
+						<p>
+							La Event-Driven Architecture (EDA, por sus siglas en inglés) es una arquitectura
+							en la que el software ejecuta una acción al recibir una o más notificaciones de eventos.
+						</p>
+						<img src="images/event-driven.png" />
+					</section>
+					<section>
+						<h2>Arquitectuas Event-driven</h2>
+						<h3>Componentes:</h3>
+						<ul>
+							<li>Message broker</li>
+							<li>Publisher/Subscriber</li>
+							<li>Message</li>
+							<li>Channels</li>
+						</ul>
+						<!--
+						https://www.asyncapi.com/
+						-->
+					</section>
+				</section>
+				<section>
+					<h2>Arquitecturas Serverless</h2>
+					<p>
+						Las Arquitecturas Serverless se caracterizan por la capacidad de computación efímera
+						en infraestructura manejada por proveedores cloud tipo AWS, Azure o Google Cloud.
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>Ecosistema Frontend</h2>
+						<p>
+							En el desarrollo de software, el Frontend es la parte del software que interactúa
+							con los usuarios a través del navegador web y
+							las tecnologias web como son HTML, CSS y Javascript.
+						</p>
+						<p>
+							Interface de usuario web, recibe los datos del usuario y los enviará al Backend
+							para su procesamiento.
+						</p>
+					</section>
+					<section>
+						<h2>Ecosistema Frontend</h2>
+						<p>
+							El desarrollo en Frontend tiene que tener en cuenta los siguientes conceptos:
+						</p>
+						<ul>
+							<li>Interface de usuario</li>
+							<li>Accesibilidad</li>
+							<li>Look & Feel</li>
+							<li>Interacción</li>
+						</ul>
+						<!--
+Vanilla JS
+Angular
+React
+Vue.js
+						-->
+					</section>
+
+				</section>
+				<section>
+					<h2>Otros lenguajes</h2>
+					<p>
+						No todo el desarrollo se desarrolla en Java en el lado del Backend o
+						en Javascript en el lado del cliente.
+					</p>
+					<ul>
+						<li>Scala</li>
+						<li>Kotlin</li>
+						<li>Go</li>
+						<li>Rust</li>
+						<li>Typescript</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 
