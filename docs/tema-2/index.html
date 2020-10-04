@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+	<head>
+
+		<title>Tema 2</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="images/comillas-logo.png" width="50%" />
+					<p>
+						Programación de Aplicaciones Telemáticas
+					</p>
+				</section>
+				<section>
+					<h2>Tema 2: HTTP</h2>
+				</section>
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li>Introducción</li>
+						<li>World Wide Web</li>
+						<li>¿Que es el protocolo HTTP?</li>
+						<li>Evolucion del protocolo HTTP</li>
+						<li>HTTP Status Code</li>
+					</ul>
+				</section>
+				<section>
+					<h2>World Wide Web</h2>
+					<img src="images/www-architecture.gif" />
+				</section>
+				<section>
+					<section>
+						<h2>¿Que es el protocolo HTTP?</h2>
+						<p>
+							HTTP, de sus siglas en inglés: "Hypertext Transfer Protocol",
+							es el nombre de un protocolo el cual nos permite realizar una petición de datos y recursos,
+							como pueden ser documentos HTML.
+						</p>
+					</section>
+					<section>
+						<h2>¿Que es el protocolo HTTP?</h2>
+						<img src="images/http1.png" />
+					</section>
+					<section>
+						<h2>¿Que es el protocolo HTTP?</h2>
+						<p>
+Diseñado a principios de la década de 1990,
+HTTP es un protocolo ampliable, que ha ido evolucionando con el tiempo.
+Es lo que se conoce como un protocolo de la capa de aplicación,
+y se transmite sobre el protocolo TCP, o el protocolo encriptado TLS.
+						</p>
+						<!--
+Source: https://developer.mozilla.org/es/docs/Web/HTTP/Overview
+						-->
+					</section>
+					<section>
+						<h2>¿Que es el protocolo HTTP?</h2>
+						<img src="images/http2.png" width="50%"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Evolucion del protocolo HTTP</h2>
+						<ul>
+							<li>HTTP/0.9 – The one-line protocol</li>
+							<li>HTTP/1.0 – Building extensibility</li>
+							<li>HTTP/1.1 – The standardized protocol</li>
+							<li>HTTP/2 – A protocol for greater performance</li>
+							<li>HTTP/3 - HTTP over QUIC</li>
+						</ul>
+					</section>
+					<!--
+					https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP
+					-->
+				</section>
+				<section>
+					<section>
+						<h2>HTTP Status codes</h2>
+						<p>
+							Status codes are issued by a server in response to a client's request made to the server.
+						</p>
+					</section>
+					<section>
+						<h2>HTTP Status codes</h2>
+						<ul>
+							<li>1xx informational response – the request was received, continuing process
+							<li>2xx successful – the request was successfully received, understood, and accepted
+							<li>3xx redirection – further action needs to be taken in order to complete the request
+							<li>4xx client error – the request contains bad syntax or cannot be fulfilled
+							<li>5xx server error – the server failed to fulfil an apparently valid request
+						</ul>
+					</section>
+					<!--
+					https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+					-->
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+			Reveal.configure(
+				{ showNotes: true },
+				{ showNotes: 'separate-page' },
+				{ pdfMaxPagesPerSlide: 1 }
+			);
+		</script>
+	</body>
+</html>
