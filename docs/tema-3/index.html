@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+	<head>
+
+		<title>Tema 2</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="images/comillas-logo.png" width="50%" />
+					<p>
+						Programación de Aplicaciones Telemáticas
+					</p>
+				</section>
+				<section>
+					<h2>Tema 3: HTML/CSS</h2>
+				</section>
+				<section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>Introducción</li>
+							<li>¿Que es un documento web?</li>
+							<li>HTML</li>
+							<li>Estructura de un documento web</li>
+							<li>Header</li>
+							<li>Body</li>
+							<li>Content</li>
+							<!--
+							<li>Tablas</li>
+							<li>Parrafos</li>
+							<li>Tipografia</li>
+							<li>Imágenes</li>
+
+							<li>Formularios web</li>
+							-->
+							<li>Layout</li>
+							<!--
+							<li>Modelo de Caja</li>
+							<li>Responsive Web Design</li>
+							-->
+							<!-- <li>Web semantica</li> -->
+						</ul>
+					</section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>CSS</li>
+							<li>Clases y selectores CSS</li>
+							<li>Pseudoclases</li>
+							<li>Unidades de medida CSS</li>
+							<li>Contenido</li>
+							<!--
+							<li>Estilos de fuentes</li>
+							<li>Texto y párrafos en CSS</li>
+							<li>CSS background (fondo)</li>
+							<li>Bordes CSS</li>
+							<li>Margin CSS y padding CSS</li>
+							-->
+							<li>Layout</li>
+							<!--
+							<li>Float CSS y clear CSS</li>
+							<li>Position, left y top</li>
+							<li>Width CSS y height CSS</li>
+							<li>Diseño por capas: z-index CSS</li>
+							<li>Visibility y display CSS</li>
+							<li>Overflow CSS</li>
+							-->
+						</ul>
+					</section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<!--<li>Frameworks</li> -->
+							<li>Preprocesadores</li>
+							<li>Static site generators</li>
+							<li>Accesibilidad</li>
+							<li>Depuración en el navegador</li>
+							<li>SEO</li>
+							<li>Analiticas web</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>Frameworks</li>
+							<li>Responsive Web Design</li>
+							<li>Accesibilidad</li>
+							<li>Web semantica</li>
+							<li>URLs semanticas</li>
+							<li>Seguridad</li>
+						</ul>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+			Reveal.configure(
+				{ showNotes: true },
+				{ showNotes: 'separate-page' },
+				{ pdfMaxPagesPerSlide: 1 }
+			);
+		</script>
+	</body>
+</html>
