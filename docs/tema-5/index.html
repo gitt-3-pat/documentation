@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+	<head>
+
+		<title>Tema 5</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="images/comillas-logo.png" width="50%" />
+					<p>
+						Programación de Aplicaciones Telemáticas
+					</p>
+				</section>
+				<section>
+					<h2>Tema 5: Modelo Servlet implementado con Spring Boot</h2>
+				</section>
+				<section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>Introducción</li>
+							<li>¿Que es Java EE?</li>
+							<li>¿Que es un Java Servlet?</li>
+							<li>Ciclo de vida de un Java Servlet</li>
+							<li>Contenedores de applicaciones</li>
+							<li>Escenarios de uso de Java en servidor</li>
+							<li>Ecosistema moderno</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Introducción</h2>
+						<img src="./images/httpServer.png" width="70%"/>
+					</section>
+					<section>
+						<h2>Introducción</h2>
+						<img src="./images/httpServer2.png" width="70%"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>¿Que es Java EE?</h2>
+						<img src="images/java-ee-landscape.jpg" />
+					</section>
+					<section>
+						<h2>¿Que es Microprofile?</h2>
+						<img src="images/microprofile-landscape.png" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>¿Que es un Java Servlet?</h2>
+						<p>
+							A Jakarta Servlet (formerly Java Servlet) is a Java software component that extends the capabilities of a server.
+							Although servlets can respond to many types of requests, they most commonly implement web containers
+							for hosting web applications on web servers and thus qualify as a server-side servlet web API.
+						</p>
+					</section>
+					<section>
+						<h2>Introducción</h2>
+						<img src="./images/servletLifeCycle.jpg" width="70%"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Contenedores de applicaciones</h2>
+						<img src="./images/java-ee-server-container.gif" width="75%" />
+					</section>
+					<section>
+						<h2>Contenedores de applicaciones</h2>
+						<p>
+							.war files
+						</p>
+					</section>
+				</section>
+				<section>
+					<pre><code data-trim data-noescape>
+public class HelloWorld extends HttpServlet {
+
+	public void init() throws ServletException {}
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("Hello World");
+	}
+	public void destroy() {}
+}
+
+					</code></pre>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+			Reveal.configure(
+				{ showNotes: true },
+				{ showNotes: 'separate-page' },
+				{ pdfMaxPagesPerSlide: 1 }
+			);
+		</script>
+	</body>
+</html>
