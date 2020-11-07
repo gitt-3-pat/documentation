@@ -30,32 +30,25 @@
 				<section>
 					<section>
 						<h2>Agenda</h2>
+						<h3>SESSIÓN 1: HTML</h3>
 						<ul>
 							<li>Introducción</li>
 							<li>¿Que es un documento web?</li>
 							<li>HTML</li>
 							<li>Estructura de un documento web</li>
-							<li>Header</li>
+							<li>Head</li>
 							<li>Body</li>
-							<li>Content</li>
-							<!--
-							<li>Tablas</li>
-							<li>Parrafos</li>
-							<li>Tipografia</li>
-							<li>Imágenes</li>
-
-							<li>Formularios web</li>
-							-->
+							<li>Contenido</li>
 							<li>Layout</li>
 							<!--
 							<li>Modelo de Caja</li>
 							<li>Responsive Web Design</li>
 							-->
-							<!-- <li>Web semantica</li> -->
 						</ul>
 					</section>
 					<section>
 						<h2>Agenda</h2>
+						<h3>SESSIÓN 1: CSS</h3>
 						<ul>
 							<li>CSS</li>
 							<li>Clases y selectores CSS</li>
@@ -78,6 +71,7 @@
 							<li>Visibility y display CSS</li>
 							<li>Overflow CSS</li>
 							-->
+							<li>Interacción</li>
 						</ul>
 					</section>
 					<section>
@@ -101,6 +95,168 @@
 							<li>Web semantica</li>
 							<li>URLs semanticas</li>
 							<li>Seguridad</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>Referencias</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Introduction</h2>
+						<p>
+							La web permite interaccionar con Humanos y Maquinas a través del protocolo HTTP.
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>¿Que es un documento web?</h2>
+						<p>
+							Los documentos web componen la unidad minima de informacion que permite intercambiar
+							un Servidor Web con un Cliente Web a traves de una peticion Http.
+						</p>
+						<p>
+							Un documento web se compone de:
+						</p>
+						<ul>
+							<li>HTML</li>
+							<li>CSS</li>
+							<li>Javascript</li>
+						</ul>
+					</section>
+					<section>
+						<h2>¿Que es un documento web?</h2>
+						<p>
+							Un documento tambien puede incluir:
+						</p>
+						<ul>
+							<li>Imagenes</li>
+							<li>Video</li>
+							<li>Objetos hipermedia incluidos (PDF, otros...)</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>HTML</h2>
+						<p>
+							Hypertext Markup Language (HTML) is the standard markup language for documents
+							designed to be displayed in a web browser.
+							It can be assisted by technologies such as Cascading Style Sheets (CSS)
+							and scripting languages such as JavaScript.
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Estructura de un documento web</h2>
+						<ul>
+							<li>Head</li>
+							<li>Body</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Head</h2>
+						<p>
+							The HTML < head > element contains machine-readable information (metadata) about the document,
+							like its title, scripts, and style sheets.
+						</p>
+					</section>
+					<section>
+						<h2>Head</h2>
+						<p>
+							Example: view-source:https://as.com/
+						</p>
+
+					</section>
+					<section>
+						<pre><code data-trim>
+<head class="WPO-PORTADA">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>AS.com - Diario online deportivo. Fútbol, motor y mucho más</title>
+<meta http-equiv="Refresh" content="900; url=//as.com/?omnaut=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="Description" content="Últimas noticias de deportes en el principal diario deportivo en español.  Noticias y vídeos de fútbol, baloncesto, fórmula 1, retransmisiones en directo, crónicas y estadísticas con AS.com" />
+<meta property="og:title" content="AS.com - Diario online deportivo. Fútbol, motor y mucho más" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Últimas noticias de deportes en el principal diario deportivo en español.  Noticias y vídeos de fútbol, baloncesto, fórmula 1, retransmisiones en directo, crónicas y estadísticas con AS.com" />
+<link href="https://as.com/" rel="canonical" />
+<link rel="dns-prefetch" href="https://as01.epimg.net">
+						</code></pre>
+					</section>
+					<section>
+						<pre><code data-trim>
+<style type="text/css"></style>
+<script language="javaScript" type="text/javascript"></script>
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Body</h2>
+						<p>
+							The HTML < body > Element represents the content of an HTML document.
+							There can be only one < body > element in a document.
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Contenido</h2>
+						<p>
+							En un documento web se pueden añadir:
+						</p>
+						<ul>
+							<li>Titulos</li>
+							<li>Parrafos</li>
+							<li>Tablas</li>
+							<li>Imagenes/Videos</li>
+							<li>Formularios Web</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Layout</h2>
+						<ul>
+							<li>< header > - Defines a header for a document or a section</li>
+							<li>< nav > - Defines a set of navigation links</li>
+							<li>< section > - Defines a section in a document</li>
+							<li>< article > - Defines an independent, self-contained content</li>
+							<li>< aside > - Defines content aside from the content (like a sidebar)</li>
+							<li>< footer > - Defines a footer for a document or a section</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Layout</h2>
+						<img src="images/html-layout-elements.png" />
+					</section>
+					<section>
+						<h2>Layout techniques</h2>
+						<ul>
+							<li>CSS framework</li>
+							<li>CSS float property</li>
+							<li>CSS flexbox</li>
+							<li>CSS grid</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Referencias</h2>
+						<h3>Sesión 1:</h3>
+						<ul>
+							<li>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head</li>
+							<li>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body</li>
+							<li>https://www.w3schools.com/html/html_layout.asp</li>
 						</ul>
 					</section>
 				</section>
