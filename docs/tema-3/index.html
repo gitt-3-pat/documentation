@@ -41,10 +41,6 @@
 							<li>Contenido</li>
 							<li>Layout</li>
 							<li>Interacción</li>
-							<!--
-							<li>Modelo de Caja</li>
-							<li>Responsive Web Design</li>
-							-->
 						</ul>
 					</section>
 					<section>
@@ -74,11 +70,11 @@
 						<h2>Agenda</h2>
 						<h3>Sesión 3: Mejorando tus sites</h3>
 						<ul>
-							<li>Frameworks</li>
 							<li>Responsive Web Design</li>
+							<li>Frameworks CSS</li>
 							<li>Preprocesadores CSS</li>
-							<li>Web semantica</li>
-							<li>URLs semanticas</li>
+							<!-- <li>Web semantica</li> -->
+							<!-- <li>URLs semanticas</li> -->
 							<li>Seguridad</li>
 						</ul>
 					</section>
@@ -171,14 +167,12 @@
 <meta name="robots" content="index, follow" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>AS.com - Diario online deportivo. Fútbol, motor y mucho más</title>
-<meta http-equiv="Refresh" content="900; url=//as.com/?omnaut=1" />
+<meta http-equiv="Refresh" content="900000; url=//as.com/?omnaut=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="Description" content="Últimas noticias de deportes en el principal diario deportivo en español.  Noticias y vídeos de fútbol, baloncesto, fórmula 1, retransmisiones en directo, crónicas y estadísticas con AS.com" />
 <meta property="og:title" content="AS.com - Diario online deportivo. Fútbol, motor y mucho más" />
 <meta property="og:type" content="website" />
 <meta property="og:description" content="Últimas noticias de deportes en el principal diario deportivo en español.  Noticias y vídeos de fútbol, baloncesto, fórmula 1, retransmisiones en directo, crónicas y estadísticas con AS.com" />
-<link href="https://as.com/" rel="canonical" />
-<link rel="dns-prefetch" href="https://as01.epimg.net">
 						</code></pre>
 					</section>
 					<section>
@@ -756,22 +750,171 @@ a[class~="logo"] {
 				<section>
 					<h2>Sesión 3: Mejorando tus sites</h2>
 				</section>
+				<!--
+				https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/
+				-->
 				<section>
-					<h2>Frameworks</h2>
-				</section>
-				<section>
-					<h2>Responsive Web Design</h2>
-				</section>
-				<section>
-					<h2>Web semantica</h2>
-				</section>
-				<section>
-					<h2>URLs semanticas</h2>
-				</section>
-				<section>
-					<h2>Seguridad</h2>
+					<section>
+						<h2>Responsive Web Design</h2>
+						<p>
+							Responsive web design (RWD) is an approach to web design that makes web pages render well
+							on a variety of devices and window or screen sizes.
+						</p>
+						<img src="images/rwd.png" />
+					</section>
+					<section>
+						<h2>Responsive Web Design</h2>
+						<h3>Viewport</h3>
+						<pre><code data-trim>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+						</code></pre>
+					</section>
+					<section>
+						<h2>Responsive Web Design</h2>
+						<h3>Responsive Images</h3>
+					</section>
+					<section>
+						<h2>Responsive Web Design</h2>
+						<h3>Responsive Text Size</h3>
+					</section>
+					<section>
+						<h2>Responsive Web Design</h2>
+						<h3>Media Queries</h3>
+						<p>
+							A Media query is a CSS3 feature that makes a webpage adapt its layout
+							to different screen sizes and media types.
+						</p>
+					</section>
+					<section>
+						<h2>Responsive Web Design</h2>
+						<h3>Media Queries</h3>
+						<ul>
+							<li>320px — 480px: Mobile devices</li>
+							<li>481px — 768px: iPads, Tablets</li>
+							<li>769px — 1024px: Small screens, laptops</li>
+							<li>1025px — 1200px: Desktops, large screens</li>
+							<li>1201px and more —  Extra large screens, TV</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Responsive Web Design</h2>
+						<h3>Media Queries</h3>
+						<pre><code data-trim>
+.left, .right {
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+.main {
+  float: left;
+  width: 60%; /* The width is 60%, by default */
+}
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+						</code></pre>
+					</section>
+
 				</section>
 
+				<!--
+				https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background
+				-->
+				<section>
+					<section>
+						<h2>Frameworks CSS</h2>
+						<p>¿Por que?</p>
+					</section>
+					<section>
+						<h2>Frameworks CSS</h2>
+						<h3>Bootstrap</h3>
+						<p>
+							Bootstrap is the a popular CSS Framework for developing responsive and mobile-first websites.
+						</p>
+						<img src="images/bootstrap.png" width="25%" />
+						<p>
+							https://getbootstrap.com/
+						</p>
+					</section>
+					<section>
+						<h2>Frameworks CSS</h2>
+						<h3>Bootstrap</h3>
+						<ul>
+							<li>Layout</li>
+							<li>Content</li>
+							<li>Components</li>
+							<li>Utilities</li>
+						</ul>
+					</section>
+				</section>
+				<!--
+				https://sass-lang.com/documentation
+				-->
+				<section>
+					<section>
+						<h2>Preprocesadores CSS</h2>
+						<img src="images/sass-concept.jpg" />
+					</section>
+					<section>
+						<h2>Preprocesadores CSS</h2>
+						<h3>SASS</h3>
+						<p>
+							Sass is a stylesheet language that’s compiled to CSS.
+							It allows you to use variables, nested rules, mixins, functions, and more, all with
+							a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized
+							and makes it easy to share design within and across projects.
+						</p>
+						<img src="images/sass.png" />
+						<p>
+							https://sass-lang.com/
+						</p>
+					</section>
+					<section>
+						<h2>Preprocesadores CSS</h2>
+						<h3>SASS</h3>
+						<p>
+							Caracteristicas:
+						</p>
+						<ul>
+							<li>variables</li>
+							<li>nested rules</li>
+							<li>mixins</li>
+							<li>functions</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Seguridad</h2>
+						<ul>
+							<li>HTML</li>
+							<li>CSS</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Seguridad</h2>
+						<h3>HTML</h3>
+						<ul>
+							<li>XSS</li>
+							<li>Self-executing</li>
+							<li>JavaScript execution</li>
+							<li>Passive JavaScript execution</li>
+							<li>HTML comment parsing issues</li>
+							<li>Iframes</li>
+							<li>Link hijacking</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Seguridad</h2>
+						<h3>CSS</h3>
+						<ul>
+							<li>Sensitive data hidden with CSS</li>
+							<li>Don´t prevent senstive actions only with CSS</li>
+						</ul>
+					</section>
+				</section>
 				<section>
 					<section>
 						<h2>Referencias</h2>
