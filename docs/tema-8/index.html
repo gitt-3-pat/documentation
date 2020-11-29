@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+
+		<title>Tema 6</title>
+		<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="images/comillas-logo.png" width="50%" />
+					<p>
+						Programación de Aplicaciones Telemáticas
+					</p>
+				</section>
+				<section>
+					<h2>Tema 8: Testing en una aplicación</h2>
+				</section>
+				<section>
+					<section>
+						<h2>Agenda</h2>
+						<h3>Sessión 1</h3>
+						<ul>
+							<li>Introducción</li>
+							<li>Piramide de testing</li>
+							<li>Test funcionales</li>
+							<li>Test no funcionales</li>
+							<li>Naming de tests</li>
+							<li>Tests unitarios</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Agenda</h2>
+						<h3>Sessión 2</h3>
+						<ul>
+							<li>Test de Integración</li>
+							<li>TDD</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Agenda</h2>
+						<h3>Sessión 3</h3>
+						<ul>
+							<li>TestContainers</li>
+							<li>JMH</li>
+							<li>JMC</li>
+							<li>JMeter</li>
+							<li>Seguridad</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Sessión 1</h2>
+				</section>
+				<section>
+					<h2>Sessión 2</h2>
+				</section>
+				<section>
+					<h2>Sessión 3</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+			Reveal.configure(
+				{ showNotes: true },
+				{ showNotes: 'separate-page' },
+				{ pdfMaxPagesPerSlide: 1 }
+			);
+		</script>
+	</body>
+</html>
