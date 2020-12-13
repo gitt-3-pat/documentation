@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-		<title>Tema 5</title>
+		<title>Tema 6</title>
 		<link rel="shortcut icon" href="images/favicon.ico" />
 
 		<meta charset="utf-8">
@@ -25,21 +25,185 @@
 					</p>
 				</section>
 				<section>
-					<h2>Tema 6: Especificacion Servlet</h2>
+					<h2>Tema 6: Estandares <br/>Jakarta EE</h2>
 				</section>
 				<section>
 					<h2>Agenda</h2>
-					<h3>Sessión 1</h3>
 					<ul>
-						<li>Introducción</li>
-						<li>¿Que es Java EE?</li>
-						<li>¿Que es un Java Servlet?</li>
-						<li>Ciclo de vida de un Java Servlet</li>
-						<li>Contenedores de applicaciones</li>
-						<li>Escenarios de uso de Java en servidor</li>
+						<li>Jakarta EE</li>
+						<li>Jakarta Contexts and Dependency Injection</li>
+						<li>Bean Validation</li>
+						<li>Jakarta Servlet</li>
+						<li>Jakarta RESTful Web Services</li>
+						<li>Jakarta Persistence</li>
+						<li>Jakarta Messaging</li>
+						<li>Referencias</li>
 					</ul>
 				</section>
+				<!--
 				<section>
+					<h2>Escenarios de uso de Java en servidor</h2>
+					<ul>
+						<li>Desarrollo de aplicaciones Web</li>
+						<li>Desarrollo de API</li>
+						<li>Desarrollo de sistemas Event-Driven</li>
+						<li>Desarrollo de sistemas Reactivos</li>
+					</ul>
+				</section>
+				-->
+				<section>
+					<section>
+						<h2>Jakarta EE</h2>
+						<img src="images/jakarta_ee_logo.png" />
+					</section>
+					<section>
+						<h2>Jakarta EE</h2>
+						<p>
+							Jakarta EE, formerly Java Platform, Enterprise Edition (Java EE)
+							and Java 2 Platform, Enterprise Edition (J2EE) is a set of specifications,
+							for enterprise features such as distributed computing and web services.
+							Jakarta EE applications are run on reference runtimes, that can be microservices or
+							application servers, which handle transactions, security, scalability,
+							concurrency and management of the components it is deploying.
+						</p>
+					</section>
+					<section>
+						<h2>Jakarta EE</h2>
+						<h3>Specifications</h3>
+						<ul>
+							<li>Web specifications</li>
+							<li>Web service specifications</li>
+							<li>Enterprise specifications</li>
+							<li>Other specifications</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Jakarta EE</h2>
+						<h3>Specifications</h3>
+						<p>
+							Web specifications:
+						</p>
+						<ul>
+							<li><strong>Jakarta Servlet:</strong> defines how to manage HTTP requests, in a synchronous or asynchronous way. It is low level and other Jakarta EE specifications rely on it;
+							</li>
+							<li><strong>Jakarta WebSocket:</strong> API specification that defines a set of APIs to service WebSocket connections;
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Jakarta EE</h2>
+						<h3>Specifications</h3>
+						<p>
+							Web specifications:
+						</p>
+						<ul>
+							<li><strong>Jakarta Server Faces:</strong> a technology for constructing user interfaces out of components;
+							</li>
+							<li><strong>Jakarta Expression Language (EL)</strong> is a simple language originally designed to satisfy the specific needs of web application developers.
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Jakarta EE</h2>
+						<h3>Web service specifications</h3>
+						<ul>
+							<li><strong>Jakarta RESTful Web</strong> Services provides support in creating web services according to the Representational State Transfer (REST) architectural pattern;
+							</li>
+							<li><strong>Jakarta JSON Processing</strong> is a set of specifications to manage information encoded in JSON format;
+							</li>
+							<li><strong>Jakarta JSON Binding</strong> provides specifications to convert JSON information into or from Java classes;
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Jakarta EE</h2>
+						<h3>Web service specifications</h3>
+						<ul>
+							<li><strong>Jakarta XML Binding</strong> allows mapping XML into Java objects;
+							</li>
+							<li><strong>Jakarta XML Web Services</strong> can be used to create SOAP web services.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Jakarta EE</h2>
+						<h3>Enterprise specifications</h3>
+						<ul>
+							<li><strong>Jakarta Contexts and Dependency Injection (CDI)</strong> is a specification to provide a dependency injection container;
+							</li>
+							<li><strong>Jakarta Enterprise Beans (EJB)</strong> specification defines a set of lightweight APIs that an object container (the EJB container) will support in order to provide transactions (using JTA), remote procedure calls (using RMI or RMI-IIOP), concurrency control, dependency injection and access control for business objects.
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Jakarta EE</h2>
+						<h3>Enterprise specifications</h3>
+						<ul>
+							<li><strong>Jakarta Persistence (JPA)</strong> are specifications about object-relational mapping between relation database tables and Java classes.
+							</li>
+							<li><strong>Jakarta Transactions (JTA)</strong> contains the interfaces and annotations to interact with the transaction support offered by Jakarta EE.
+							</li>
+							<li><strong>Jakarta Messaging (JMS)</strong> provides a common way for Java programs to create, send, receive and read an enterprise messaging system's messages.
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Jakarta EE</h2>
+						<h3>Other specifications</h3>
+						<ul>
+							<li><strong>Validation:</strong> This package contains the annotations and interfaces for
+								the declarative validation support offered by the Bean Validation API.
+							</li>
+							<li><strong>Jakarta Batch</strong> provides the means for batch processing in applications to run long running background tasks that possibly involve a large volume of data and which may need to be periodically executed.
+							</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>CDI, Jakarta Contexts and Dependency Injection</h2>
+					<p>
+						CDI (Contexts and Dependency Injection) is a standard dependency injection framework included in Java EE 6 and higher.
+
+						It allows us to manage the lifecycle of stateful components via domain-specific lifecycle contexts and inject components (services) into client objects in a type-safe way.
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>Bean Validation (JSR 303)</h2>
+						<p>
+							JSR-303 standardizes validation constraint declaration and metadata for the Java platform.
+							Using this API, you annotate domain model properties with declarative
+							validation constraints and the runtime enforces them.
+						</p>
+					</section>
+					<section>
+						<h2>Bean Validation (JSR 303)</h2>
+						<pre><code data-trim>
+public class Car {
+
+	@NotNull
+	private String manufacturer;
+
+	@NotNull
+	@Size(min = 2, max = 14)
+	private String licensePlate;
+
+	@Min(2)
+	private int seatCount;
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Jakarta Servlet</h2>
+						<p>
+							A Jakarta Servlet (formerly Java Servlet) is a Java software component that extends the capabilities of a server.
+							Although servlets can respond to many types of requests, they most commonly implement web containers
+							for hosting web applications on web servers and thus qualify as a server-side servlet web API.
+						</p>
+					</section>
 					<section>
 						<h2>Introducción</h2>
 						<img src="./images/httpServer.png" width="70%"/>
@@ -47,27 +211,6 @@
 					<section>
 						<h2>Introducción</h2>
 						<img src="./images/httpServer2.png" width="70%"/>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>¿Que es Java EE?</h2>
-						<img src="images/java-ee-landscape.jpg" />
-					</section>
-					<section>
-						<h2>¿Que es Microprofile?</h2>
-						<img src="images/microprofile-landscape.png" />
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>¿Que es un Java Servlet?</h2>
-						<p>
-							A Jakarta Servlet (formerly Java Servlet) is a Java software component that extends the capabilities of a server.
-							Although servlets can respond to many types of requests, they most commonly implement web containers
-							for hosting web applications on web servers and thus qualify as a server-side servlet web API.
-						</p>
 					</section>
 					<section>
 						<h2>Introducción</h2>
@@ -90,8 +233,6 @@ public class HelloWorld extends HttpServlet {
 
 					</code></pre>
 					</section>
-				</section>
-				<section>
 					<section>
 						<h2>Contenedores de applicaciones</h2>
 						<img src="./images/java-ee-server-container.gif" width="75%" />
@@ -102,15 +243,112 @@ public class HelloWorld extends HttpServlet {
 							.war files
 						</p>
 					</section>
-
 				</section>
 				<section>
-					<h2>Escenarios de uso de Java en servidor</h2>
+					<section>
+						<h2>JAX-RS, Jakarta RESTful Web Services (JSR-370)</h2>
+						<p>
+							Jakarta RESTful Web Services, (JAX-RS; formerly Java API for RESTful Web Services)
+							is a Jakarta EE API specification that provides support in creating web services
+							according to the Representational State Transfer (REST) architectural pattern.
+						</p>
+					</section>
+					<section>
+						<h2>JAX-RS, Jakarta RESTful Web Services (JSR-370)</h2>
+						<p>
+							JAX-RS provides some annotations to aid in mapping a resource class (a POJO) as a web resource.
+						</p>
+						<ul>
+							<li>@Path specifies the relative path for a resource class or method.</li>
+							<li>@GET, @PUT, @POST, @DELETE and @HEAD specify the HTTP request type of a resource.</li>
+							<li>@Produces specifies the response MIME type.</li>
+							<li>@Consumes specifies the accepted request Internet media types.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>JAX-RS, Jakarta RESTful Web Services (JSR-370)</h2>
+						<ul>
+							<li>@PathParam binds the method parameter to a path segment.</li>
+							<li>@QueryParam binds the method parameter to the value of an HTTP query parameter.</li>
+							<li>@HeaderParam binds the method parameter to an HTTP header value.</li>
+							<li>@CookieParam binds the method parameter to a cookie value.</li>
+							<li>@FormParam binds the method parameter to a form value.</li>
+							<li></li>
+						</ul>
+					</section>
+					<section>
+						<h2>JAX-RS, Jakarta RESTful Web Services (JSR-370)</h2>
+						<pre><code data-trim>
+@Path("/employees")
+public class EmployeeResource {
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    @GET
+    @Path("/{id}")
+    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    public Employee getEmployee(@PathParam("id") int id) {
+        return employeeRepository.getEmployee(id);
+    }
+}
+						</code></pre>
+					</section>
+					<!--
+					¿Quien implementa Jersey?
+					-->
+				</section>
+
+				<section>
+					<section>
+						<h2>JPA, Jakarta Persistence</h2>
+						<p>
+							Jakarta Persistence (JPA; formerly Java Persistence API) is a Jakarta EE application programming interface specification that describes the management of relational data in enterprise Java applications.
+						</p>
+					</section>
+					<section>
+						<h2>JPA, Jakarta Persistence</h2>
+						<pre><code data-trim>
+public interface SimpleUserRepository extends CrudRepository< User, Long> {
+
+	User findByTheUsersName(String username);
+
+	Optional<User> findByUsername(Optional<String> username);
+
+	List<User> findByLastname(String lastname);
+
+	@Query("select u from User u where u.firstname = :firstname")
+	List<User> findByFirstname(String firstname);
+}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>JMS, Jakarta Messaging (JSR-343)</h2>
+						<p>
+							The Java Message Service (JMS) API is a Java Message Oriented Middleware API for sending messages between two or more clients. It is a programming model to handle the producer-consumer messaging problem.
+						</p>
+					</section>
+					<section>
+						<h2>JMS, Jakarta Messaging (JSR-343)</h2>
+						<img src="images/java-jms.png" />
+					</section>
+				</section>
+
+				<section>
+					<h2>Referencias</h2>
 					<ul>
-						<li>Desarrollo de aplicaciones Web</li>
-						<li>Desarrollo de API</li>
-						<li>Desarrollo de sistemas Event-Driven</li>
-						<li>Desarrollo de sistemas Reactivos</li>
+						<li>https://en.wikipedia.org/wiki/Jakarta_EE</li>
+						<li>https://jakarta.ee/specifications/</li>
+						<li>https://jakarta.ee/specifications/restful-ws/3.0/jakarta-restful-ws-spec-3.0.html</li>
+						<li>https://eclipse-ee4j.github.io/jersey/</li>
+						<li>https://jakarta.ee/specifications/persistence/3.0/</li>
+						<li>https://hibernate.org/orm/</li>
+						<li>https://jakarta.ee/specifications/messaging/3.0/</li>
+						<li>https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html</li>
+						<li>https://beanvalidation.org/</li>
+						<li>https://hibernate.org/validator/</li>
 					</ul>
 				</section>
 			</div>
