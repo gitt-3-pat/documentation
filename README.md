@@ -10,7 +10,7 @@
 - Tema 3: HTML
 - Tema 4: CSS
 - Tema 5: Javascript
-- Tema 6: Especificación Servlet
+- Tema 6: Estándares Jakarta EE
 - Tema 7: Spring Boot
 - Tema 8: Testing
 
