@@ -19,6 +19,6 @@
 ## ¿Como probar en local?
 
 ````
-cd tema-xx
+cd docs
 python -m SimpleHTTPServer
 ````

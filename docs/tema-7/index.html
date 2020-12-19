@@ -85,6 +85,164 @@
 					<h2>Sessión 1</h2>
 				</section>
 				<section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Introduccion</h3>
+						<img src="images/spring-logo.png" width="50%" />
+						<p>
+							The Spring Framework provides a comprehensive programming and configuration model for
+							modern Java-based enterprise applications on any kind of deployment platform.
+						</p>
+					</section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Introduccion</h3>
+						<p>Why Spring?</p>
+						<p>
+							Spring came into being in 2003 as a response to
+							the complexity of the early J2EE specifications.
+						</p>
+					</section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Introduccion</h3>
+						<ul>
+							<li>Servlet API (JSR 340)</li>
+							<li>WebSocket API (JSR 356)</li>
+							<li>Concurrency Utilities (JSR 236)</li>
+							<li>JSON Binding API (JSR 367)</li>
+							<li>Bean Validation (JSR 303)</li>
+							<li>JPA (JSR 338)</li>
+							<li>JMS (JSR 914)</li>
+							<li>Dependency Injection (JSR 330)</li>
+							<li>Common Annotations (JSR 250)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Introduccion</h3>
+						<img src="images/spring-framework.png" />
+					</section>
+				</section>
+				<section>
+					<h2>Spring Boot</h2>
+					<h3>Ecosistema Spring</h3>
+					<p>
+						https://spring.io/projects
+					</p>
+				</section>
+				<section>
+					<h2>Spring Boot</h2>
+					<h3>Spring Initializr</h3>
+					<p>
+						https://start.spring.io/
+					</p>
+				</section>
+				<section>
+					<h2>Spring Boot</h2>
+					<h3>Spring Boot Starters</h3>
+					<p>
+						Starters are a set of convenient dependency descriptors that you can include in your application.
+						You get a one-stop shop for all the Spring and related technologies that you need without
+						having to hunt through sample code and copy-paste loads of dependency descriptors.
+					</p>
+					<p>
+						https://docs.spring.io/spring-boot/docs/2.3.3.RELEASE/reference/htmlsingle/#using-boot-starter
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Mi primera aplicacion Spring</h3>
+						<pre><code data-trim>
+curl https://start.spring.io/starter.zip \
+    -d dependencies=web,actuator,devtools \
+    -d bootVersion=2.4.1 \
+    -o my-project.zip
+						</code></pre>
+						<ul>
+							<li>https://start.spring.io/</li>
+							<li>https://docs.spring.io/initializr/docs/current/reference/html/#command-line </li>
+						</ul>
+					</section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Mi primera aplicacion Spring</h3>
+						<pre><code data-trim>
+@SpringBootApplication
+public class DemoApplication {
+
+	private static ApplicationContext applicationContext;
+
+	public static void main(String[] args) {
+		applicationContext = SpringApplication.run(DemoApplication.class, args);
+		displayAllBeans();
+	}
+
+	public static void displayAllBeans() {
+		String[] allBeanNames = applicationContext.getBeanDefinitionNames();
+		AtomicInteger counter = new AtomicInteger();
+		Arrays.asList(allBeanNames).stream()
+			.map(bean -> counter.incrementAndGet() + " " + bean)
+			.forEach(System.out::println);
+	}
+}
+					</code></pre>
+					</section>
+				</section>
+				<!--
+				spring.jackson.serialization.indent_output=true
+				management.endpoints.web.exposure.include=*
+				http://localhost:8080/actuator/beans
+				-->
+				<section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Scaffolding de un proyecto</h3>
+						<img src="images/onion-architecture.png" width="40%"/>
+					</section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Scaffolding de un proyecto</h3>
+						<pre><code data-trim>
+onionArchitecture()
+        .domainModels("com.myapp.domain.model..")
+        .domainServices("com.myapp.domain.service..")
+        .applicationServices("com.myapp.application..")
+        .adapter("cli", "com.myapp.adapter.cli..")
+        .adapter("persistence", "com.myapp.adapter.persistence..")
+        .adapter("rest", "com.myapp.adapter.rest..");
+						</code></pre>
+					</section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Scaffolding de un proyecto</h3>
+						<ul>
+							<li>The domainModels packages contain the domain entities.</li>
+							<li>The packages in domainServices contains services that use the entities in the domainModel packages.</li>
+							<li>The applicationServices packages contain services and configuration to run the application and use cases.</li>
+							<li>The adapter package contains logic to connect to external systems and/or infrastructure.
+						</ul>
+					</section>
+				</section>
+
+				<!--
+				https://www.archunit.org/userguide/html/000_Index.html
+				-->
+				<section>
+					<h2>Referencies</h2>
+					<ul>
+						<li>https://docs.spring.io/spring-framework/docs/current/reference/html/</li>
+						<li>https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#spring-core</li>
+						<li>https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/</li>
+						<li>https://docs.spring.io/spring-framework/docs/current/reference/html/web.html</li>
+						<li>https://docs.spring.io/spring-boot/docs/2.3.3.RELEASE/reference/htmlsingle/#using-boot-starter</li>
+						<li>https://docs.spring.io/initializr/docs/current/reference/html/#command-line</li>
+						<li>https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/</li>
+					</ul>
+
+				</section>
+				<section>
 					<h2>Sessión 2</h2>
 				</section>
 				<section>
