@@ -32,11 +32,9 @@
 						<h2>Agenda</h2>
 						<h3>Sessión 1</h3>
 						<ul>
-							<li>Introducción</li>
-							<li>Ecosistema Spring</li>
-							<li>Spring Initializr</li>
-							<li>Spring Boot Starters</li>
-							<li>Mi primera aplicacion Spring</li>
+							<li>Spring Framework</li>
+							<li>Spring Boot</li>
+							<li>Mi primera aplicación Spring</li>
 							<li>Scaffolding de un proyecto</li>
 							<li>References</li>
 						</ul>
@@ -45,7 +43,7 @@
 						<h2>Agenda</h2>
 						<h3>Sessión 2</h3>
 						<ul>
-							<li>Patrones de Diseño</li>
+							<li>Especificaciones Jakarta EE</li>
 							<li>Modelos de Concurrencia</li>
 							<li>Spring Core</li>
 							<li>Spring Web</li>
@@ -86,8 +84,7 @@
 				</section>
 				<section>
 					<section>
-						<h2>Spring Boot</h2>
-						<h3>Introduccion</h3>
+						<h2>Spring Framework</h2>
 						<img src="images/spring-logo.png" width="50%" />
 						<p>
 							The Spring Framework provides a comprehensive programming and configuration model for
@@ -95,8 +92,7 @@
 						</p>
 					</section>
 					<section>
-						<h2>Spring Boot</h2>
-						<h3>Introduccion</h3>
+						<h2>Spring Framework</h2>
 						<p>Why Spring?</p>
 						<p>
 							Spring came into being in 2003 as a response to
@@ -104,11 +100,16 @@
 						</p>
 					</section>
 					<section>
-						<h2>Spring Boot</h2>
-						<h3>Introduccion</h3>
+						<h2>Spring Framework</h2>
+						<p>
+							The Spring programming model does not embrace the Java EE platform specification;
+							rather, it integrates with carefully selected individual specifications from the EE umbrella
+						</p>
+					</section>
+					<section>
+						<h2>Spring Framework</h2>
 						<ul>
 							<li>Servlet API (JSR 340)</li>
-							<li>WebSocket API (JSR 356)</li>
 							<li>Concurrency Utilities (JSR 236)</li>
 							<li>JSON Binding API (JSR 367)</li>
 							<li>Bean Validation (JSR 303)</li>
@@ -119,41 +120,57 @@
 						</ul>
 					</section>
 					<section>
-						<h2>Spring Boot</h2>
-						<h3>Introduccion</h3>
+						<h2>Spring Framework</h2>
 						<img src="images/spring-framework.png" />
 					</section>
-				</section>
-				<section>
-					<h2>Spring Boot</h2>
-					<h3>Ecosistema Spring</h3>
-					<p>
-						https://spring.io/projects
-					</p>
-				</section>
-				<section>
-					<h2>Spring Boot</h2>
-					<h3>Spring Initializr</h3>
-					<p>
-						https://start.spring.io/
-					</p>
-				</section>
-				<section>
-					<h2>Spring Boot</h2>
-					<h3>Spring Boot Starters</h3>
-					<p>
-						Starters are a set of convenient dependency descriptors that you can include in your application.
-						You get a one-stop shop for all the Spring and related technologies that you need without
-						having to hunt through sample code and copy-paste loads of dependency descriptors.
-					</p>
-					<p>
-						https://docs.spring.io/spring-boot/docs/2.3.3.RELEASE/reference/htmlsingle/#using-boot-starter
-					</p>
+					<section>
+						<h2>Spring Framework</h2>
+						<p>
+							¿Cual es el patrón de diseño detras de Spring Framework?
+						</p>
+						<img src="images/spring-container.png" />
+					</section>
 				</section>
 				<section>
 					<section>
 						<h2>Spring Boot</h2>
-						<h3>Mi primera aplicacion Spring</h3>
+						<p>
+							Spring Boot helps you to create stand-alone, production-grade Spring-based Applications that
+							you can run. We take an opinionated view of the Spring platform and third-party
+							libraries, so that you can get started with minimum fuss.
+						</p>
+					</section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Ecosistema Spring</h3>
+						<p>
+							https://spring.io/projects
+						</p>
+					</section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Spring Initializr</h3>
+						<p>
+							https://start.spring.io/
+						</p>
+					</section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Spring Boot Starters</h3>
+						<p>
+							Starters are a set of convenient dependency descriptors that you can include in your application.
+							You get a one-stop shop for all the Spring and related technologies that you need without
+							having to hunt through sample code and copy-paste loads of dependency descriptors.
+						</p>
+						<p>
+							https://docs.spring.io/spring-boot/docs/2.3.3.RELEASE/reference/htmlsingle/#using-boot-starter
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Spring Boot</h2>
+						<h3>Mi primera aplicación Spring</h3>
 						<pre><code data-trim>
 curl https://start.spring.io/starter.zip \
     -d dependencies=web,actuator,devtools \
@@ -172,7 +189,7 @@ curl https://start.spring.io/starter.zip \
 @SpringBootApplication
 public class DemoApplication {
 
-	private static ApplicationContext applicationContext;
+	private static ConfigurableApplicationContext applicationContext;
 
 	public static void main(String[] args) {
 		applicationContext = SpringApplication.run(DemoApplication.class, args);
@@ -194,6 +211,20 @@ public class DemoApplication {
 				spring.jackson.serialization.indent_output=true
 				management.endpoints.web.exposure.include=*
 				http://localhost:8080/actuator/beans
+
+				spring.main.lazy-initialization=true
+				spring.config.location=file://./src/main/resources/application.properties
+				spring.jmx.enabled=false
+
+				<dependency>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-context-indexer</artifactId>
+				</dependency>
+
+				applicationContext.close();
+
+				mvn clean spring-boot:run -Drun.jvmArguments="-noverify -XX:TieredStopAtLevel=1 -XX:-UseParallelGC"
+				time for i in {1..10}; do mvn clean spring-boot:run -Drun.jvmArguments="-noverify -XX:TieredStopAtLevel=1 -XX:-UseParallelGC -Djava.security.egd=file:/dev/./urandom -XX:+AlwaysPreTouch"; done
 				-->
 				<section>
 					<section>
@@ -238,12 +269,221 @@ onionArchitecture()
 						<li>https://docs.spring.io/spring-framework/docs/current/reference/html/web.html</li>
 						<li>https://docs.spring.io/spring-boot/docs/2.3.3.RELEASE/reference/htmlsingle/#using-boot-starter</li>
 						<li>https://docs.spring.io/initializr/docs/current/reference/html/#command-line</li>
+						<li>https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html</li>
 						<li>https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/</li>
 					</ul>
-
 				</section>
 				<section>
 					<h2>Sessión 2</h2>
+				</section>
+				<section>
+					<section>
+						<h2>Especificaciones Jakarta EE</h2>
+						<ul>
+							<li>Dependency Injection (JSR 330)</li>
+							<li>Common Annotations (JSR 250)</li>
+							<li>Servlet API (JSR 340)</li>
+							<li>Concurrency Utilities (JSR 236)</li>
+							<li>JSON Binding API (JSR 367)</li>
+							<li>Bean Validation (JSR 303)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Especificaciones Jakarta EE</h2>
+						<img src="images/spring-framework.png" />
+					</section>
+					<section>
+						<h2>Especificaciones Jakarta EE</h2>
+						<p>
+							Core:
+						</p>
+						<ul>
+							<li>Dependency Injection (JSR 330)</li>
+							<li>Common Annotations (JSR 250)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Especificaciones Jakarta EE</h2>
+						<p>
+							Web:
+						</p>
+						<ul>
+							<li>Servlet API (JSR 340)</li>
+							<li>Concurrency Utilities (JSR 236)</li>
+							<li>JSON Binding API (JSR 367)</li>
+							<li>Bean Validation (JSR 303)</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Spring Core</h2>
+					</section>
+					<section>
+						<h2>Spring Core</h2>
+						<h3>Especificaciones Jakarta EE</h3>
+						<ul>
+							<li>Dependency Injection (JSR 330)</li>
+							<li>Common Annotations (JSR 250)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Spring Core</h2>
+						<h3>Spring Container</h3>
+						<img src="images/spring-container.png" />
+					</section>
+					<section>
+						<h2>Spring Core</h2>
+						<h3>Spring Container</h3>
+						<img src="images/ioc-container.png" />
+					</section>
+					<section>
+						<h2>Spring Core</h2>
+						<h3>Spring Container</h3>
+						<p>
+							In Spring, the objects that form the backbone of your application and that are managed
+							by the Spring IoC container are called beans.
+							A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container.
+						</p>
+					</section>
+					<section>
+						<h2>Spring Core</h2>
+						<h3>Spring Container</h3>
+						<img src="images/spring-bean-life-cycle.png" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Especificaciones Jakarta EE</h3>
+						<ul>
+							<li>Servlet API (JSR 340)</li>
+							<li>Concurrency Utilities (JSR 236)</li>
+							<li>JSON Binding API (JSR 367)</li>
+							<li>Bean Validation (JSR 303)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Servlet API (JSR 340)</h3>
+						<p>
+							A Jakarta Servlet (formerly Java Servlet) is a Java software component that
+							extends the capabilities of a server. Although servlets can respond to many types
+							of requests, they most commonly implement web containers for hosting web applications
+							on web servers and thus qualify as a server-side servlet web API.
+						</p>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Servlet API (JSR 340)</h3>
+						<img src="images/servlet-phases.gif" width="50%"/>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<p>
+							https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#spring-web
+						</p>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Package org.springframework.web.servlet</h3>
+						<p>
+							https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/package-summary.html
+						</p>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>DispatcherServlet</h3>
+						<p>
+							Spring MVC, as many other web frameworks, is designed around the front controller pattern
+							where a central Servlet, the DispatcherServlet, provides a shared algorithm for
+							request processing, while actual work is performed by configurable delegate components.
+						</p>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>DispatcherServlet</h3>
+						<img src="images/mvc-context-hierarchy.png" width="50%" />
+					</section>
+					<!--
+					https://www.baeldung.com/java-front-controller-pattern
+					https://martinfowler.com/books/eaa.html
+					https://martinfowler.com/eaaCatalog/frontController.html
+					-->
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Servlet API (JSR 340)</h3>
+						<p>
+							Front Controller is defined as “a controller that handles all requests for a Web site”.
+						</p>
+						<img src="images/frontController-sketch.gif" />
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>JAX-RS Example</h3>
+						<pre><code data-trim>
+@GET
+@Path("/{id}")
+@Produces("application/json")
+public Response getUserById(@PathParam("id") int id) throws URISyntaxException
+{
+	User user = DB.get(id);
+	if(user == null) {
+		return Response.status(404).build();
+	}
+	return Response
+			.status(200)
+			.entity(user)
+			.contentLocation(new URI("/user-management/"+id)).build();
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Spring Web Example</h3>
+						<pre><code data-trim>
+@GetMapping("/{id}")
+public Stormtrooper getTrooper(@PathVariable("id") String id) throws NotFoundException {
+
+	Stormtrooper stormtrooper = trooperDao.getStormtrooper(id);
+	if (stormtrooper == null) {
+		throw new NotFoundException();
+	}
+	return stormtrooper;
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Spring Web Example</h3>
+						<p>
+							https://github.com/spring-guides/gs-rest-service
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Modelos de Concurrencia</h2>
+						<h3>Thread-per-request model</h3>
+						<img src="images/thread-per-request-model.jpg" />
+					</section>
+					<section>
+						<h2>Modelos de Concurrencia</h2>
+						<h3>Event model</h3>
+						<img src="images/event-loop.jpg" />
+					</section>
+					</section>
+				</section>
+
+				<section>
+					<h2>Referencies</h2>
+					<ul>
+						<li>https://spring.io/blog/2018/12/12/how-fast-is-spring</li>
+						<li>http://tomcat.apache.org/tomcat-10.0-doc/architecture/requestProcess.html</li>
+						<li>https://medium.com/javarevisited/spring-beans-in-depth-a6d8b31db8a1</li>
+						<li>https://medium.com/javarevisited/top-spring-annotations-4f691babe458</li>
+						<li>https://martinfowler.com/eaaCatalog/frontController.html</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Sessión 3</h2>
