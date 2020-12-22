@@ -44,9 +44,9 @@
 						<h3>Sessión 2</h3>
 						<ul>
 							<li>Especificaciones Jakarta EE</li>
-							<li>Modelos de Concurrencia</li>
 							<li>Spring Core</li>
 							<li>Spring Web</li>
+							<li>Modelos de Concurrencia</li>
 						</ul>
 					</section>
 					<section>
@@ -464,6 +464,10 @@ public Stormtrooper getTrooper(@PathVariable("id") String id) throws NotFoundExc
 				<section>
 					<section>
 						<h2>Modelos de Concurrencia</h2>
+						<img src="images/summary.png" />
+					</section>
+					<section>
+						<h2>Modelos de Concurrencia</h2>
 						<h3>Thread-per-request model</h3>
 						<img src="images/thread-per-request-model.jpg" />
 					</section>
@@ -487,6 +491,188 @@ public Stormtrooper getTrooper(@PathVariable("id") String id) throws NotFoundExc
 				</section>
 				<section>
 					<h2>Sessión 3</h2>
+				</section>
+				<!--
+				https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc
+				https://www.baeldung.com/exception-handling-for-rest-with-spring
+				-->
+				<section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Error Handling</h3>
+						<ul>
+							<li>ExceptionHandler</li>
+							<li>HandlerExceptionResolver</li>
+							<li>ControllerAdvice</li>
+							<li>ResponseStatusException</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Error Handling</h3>
+						<p>
+							Define a method to handle exceptions and annotate that with @ExceptionHandler at @Controller level
+						</p>
+						<pre><code data-trim>
+@ResponseStatus(value=HttpStatus.CONFLICT,
+	reason="Data integrity violation")  // 409
+@ExceptionHandler(DataIntegrityViolationException.class)
+public void conflict() {
+	// Nothing to do
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Error Handling</h3>
+						<p>
+							Spring brings support for a global @ExceptionHandler with the @ControllerAdvice annotation
+						</p>
+						<pre><code data-trim>
+@ControllerAdvice
+public class RestResponseEntityExceptionHandler
+  extends ResponseEntityExceptionHandler {
+
+    @ExceptionHandler(value= { IllegalArgumentException.class})
+    protected ResponseEntity< Object > handleConflict(
+      RuntimeException ex, WebRequest request) {
+        String bodyOfResponse = "This should be application specific";
+        return handleExceptionInternal(ex, bodyOfResponse,
+          new HttpHeaders(), HttpStatus.CONFLICT, request);
+    }
+}
+						</code></pre>
+					</section>
+				</section>
+				<!--
+				https://www.baeldung.com/rest-template
+				-->
+				<section>
+					<h2>Spring Web</h2>
+					<h3>Consumiendo HTTP Endpoints</h3>
+					<pre><code data-trim>
+RestTemplate restTemplate = new RestTemplate();
+String fooResourceUrl = "http://localhost:8080/api/foos";
+ResponseEntity< String > response = restTemplate
+	.getForEntity(fooResourceUrl + "/1", String.class);
+					</code></pre>
+					<p>
+						https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-resttemplate
+						<br />
+						https://docs.spring.io/spring-framework/docs/current/javadoc-api/index.html?org/springframework/web/client/RestTemplate.html
+					</p>
+				</section>
+				<!--
+				https://spring.io/guides/gs/validating-form-input/
+				-->
+				<section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Validación de Bean</h3>
+					</section>
+					<section>
+						<pre><code data-trim>
+public class PersonForm {
+
+	@NotNull
+	@Size(min=2, max=30)
+	private String name;
+
+	@NotNull
+	@Min(18)
+	private Integer age;
+}
+						</code></pre>
+						<p>
+							https://hibernate.org/validator/
+							<br/>
+							https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-defineconstraints-spec
+						</p>
+					</section>
+					<section>
+						<pre><code data-trim>
+@Controller
+public class WebController {
+
+	@PostMapping("/")
+	public String checkPersonInfo(@Valid PersonForm personForm,
+		BindingResult bindingResult) {
+
+		if (bindingResult.hasErrors()) {
+			return "KO";
+		}
+		return "OK";
+	}
+}
+						</code></pre>
+						<p>
+							https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/validation/BindingResult.html
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Configuracion</h3>
+						<p>
+							Cual es el valor?
+						</p>
+						<ul>
+							<li>Externalizar configuracion</li>
+							<li>Soporte de múltiples entornos</li>
+							<li>Evitar tener configuración en Código</li>
+							<li>Facilitar el testing</li>
+						</ul>
+						<p>
+							https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
+						</p>
+					</section>
+					<!--
+					https://github.com/eugeniogarcia/HttpConnections/blob/master/heroes_passthrough/src/main/java/com/swisscom/heroes/Configure.java
+					-->
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Configuracion</h3>
+						<pre><code data-trim>
+@Configuration
+public class WebConfig {
+
+	@Bean
+	public RestTemplateBuilder restTemplateBuilder() {
+		return new RestTemplateBuilder()
+				.setConnectTimeout(1000)
+				.setReadTimeout(1000)
+				.customizers(rtc);
+	}
+	@Bean
+	public RestTemplate restTemplate(final RestTemplateBuilder restTemplateBuilder) {
+		return restTemplateBuilder.build();
+	}
+}
+
+						</code></pre>
+					</section>
+					<section>
+						<h2>Spring Web</h2>
+						<h3>Configuracion</h3>
+						<pre><code data-trim>
+@RestController
+@RequestMapping(value = "/api")
+public class heroesController {
+
+	@Autowired
+	RestTemplate restTemplate;
+
+	@GetMapping(value = "/service1", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Model1[]> getHeroes() {
+		final String url = http://localhost:8080/service1";
+		final ResponseEntity<Model1[]> response = restTemplate.getForEntity(url, Model1[].class);
+		return response;
+	}
+}
+
+						</code></pre>
+					</section>
 				</section>
 				<section>
 					<h2>Sessión 4</h2>
