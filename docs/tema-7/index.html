@@ -675,10 +675,253 @@ public class heroesController {
 					</section>
 				</section>
 				<section>
+					<h2>Referencies</h2>
+					<ul>
+						<li>https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc</li>
+						<li>https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-resttemplate</li>
+						<li>https://hibernate.org/validator/</li>
+					</ul>
+				</section>
+				<section>
 					<h2>Sessión 4</h2>
+					<ul>
+						<li>Logging</li>
+						<li>Scheduling</li>
+						<li>Actuator</li>
+						<li>Spring Security</li>
+					</ul>
+				</section>
+				<!--
+				https://www.baeldung.com/spring-boot-logging
+				-->
+				<section>
+					<section>
+						<h2>Logging</h2>
+						<h3>Why</h3>
+						<p>
+							Logging is the process of writing log messages during the execution of a program to a central place. This logging allows you to report and persist error and warning messages as well as info messages
+						</p>
+					</section>
+					<section>
+						<h2>Logging</h2>
+						<pre><code data-trim>
+2019-03-05 10:57:51.112  INFO 45469 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.52
+2019-03-05 10:57:51.253  INFO 45469 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-05 10:57:51.253  INFO 45469 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1358 ms
+2019-03-05 10:57:51.698  INFO 45469 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2019-03-05 10:57:51.702  INFO 45469 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+						</code></pre>
+					</section>
+					<section>
+						<h2>Logging</h2>
+						<h3>Log Format</h3>
+						<ul>
+							<li>Date and Time: Millisecond precision and easily sortable.</li>
+							<li>Log Level: ERROR, WARN, INFO, DEBUG, or TRACE.</li>
+							<li>Process ID.</li>
+							<li>A --- separator to distinguish the start of actual log messages.</li>
+							<li>Thread name: Enclosed in square brackets</li>
+							<li>Logger name: This is usually the source class name</li>
+							<li>The log message.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Logging</h2>
+						<h3>Log Levels</h3>
+						<ul>
+							<li>ERROR	Other runtime errors or unexpected conditions. Expect these to be immediately visible on a status console.</li>
+							<li>WARNING	Use of deprecated APIs, poor use of API, 'almost' errors, other runtime situations that are undesirable or unexpected, but not necessarily "wrong".</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Logging</h2>
+						<h3>Log Levels</h3>
+						<ul>
+							<li>INFO	Interesting runtime events (startup/shutdown). Expect these to be immediately visible on a console, so be conservative and keep to a minimum.</li>
+							<li>DEBUG	detailed information on the flow through the system. Expect these to be written to logs only.</li>
+							<li>TRACE	more detailed information. Expect these to be written to logs only.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Logging</h2>
+						<pre><code data-trim>
+logging.level.root=warn
+logging.level.org.springframework.web=debug
+logging.level.org.hibernate=error
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Scheduling</h2>
+					</section>
+					<section>
+						<h2>Scheduling</h2>
+						<pre><code data-trim>
+@Sl4j
+@Component
+public class ScheduledTasks {
+
+	private static final SimpleDateFormat dateFormat =
+		new SimpleDateFormat("HH:mm:ss");
+
+	@Scheduled(fixedRate = 5000)
+	public void reportCurrentTime() {
+		log.info("The time is now {}", dateFormat.format(new Date()));
+	}
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Scheduling</h2>
+						<pre><code data-trim>
+@Sl4j
+@Component
+public class ScheduledTasks {
+
+	private static final SimpleDateFormat dateFormat =
+		new SimpleDateFormat("HH:mm:ss");
+
+	@Scheduled(cron = "0 15 10 15 * ?")
+	public void scheduleTaskUsingCronExpression() {
+
+		long now = System.currentTimeMillis() / 1000;
+		log.info("schedule tasks using cron jobs - {}", now);
+	}
+}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Actuator</h2>
+						<h3>Definition</h3>
+						<p>
+							An actuator is a manufacturing term that refers to a mechanical device
+							for moving or controlling something.
+							Actuators can generate a large amount of motion from a small change.
+						</p>
+					</section>
+					<section>
+						<h2>Actuator</h2>
+						<h3>Why</h3>
+						<p>
+							Actuator endpoints let you monitor and interact with your application.
+							Spring Boot includes a number of built-in endpoints and lets you add your own.
+							For example, the health endpoint provides basic application health information.
+						</p>
+					</section>
+					<section>
+						<h2>Actuator</h2>
+						<h3>Endpoints</h3>
+						<p>
+							auditevents,
+							beans,
+							caches,
+							conditions,
+							configprops,
+							env,
+							flyway,
+							health,
+							httptrace,
+							info,
+							integrationgraph,
+							loggers,
+							liquibase,
+							metrics,
+							mappings,
+							scheduledtasks,
+							sessions,
+							shutdown,
+							startup,
+							threaddump
+						</p>
+					</section>
+					<section>
+						<h2>Actuator</h2>
+						<img src="images/spring-boot-actuator-k8s.png" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Spring Security</h2>
+						<img src="images/spring-security-logo.png" />
+					</section>
+					<section>
+						<h2>Spring Security</h2>
+						<h3>Features</h3>
+						<ul>
+							<li>Authentication</li>
+							<li>Cross Site Request Forgery (CSRF)</li>
+							<li>Security HTTP Response Headers</li>
+							<li>HTTP</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Spring Security</h2>
+						<h3>Authentication</h3>
+						<img src="images/spring-security-securityfilterchain.png" width="70%" />
+					</section>
+					<section>
+						<h2>Spring Security</h2>
+						<h3>Authentication</h3>
+						<img src="images/spring-security-basicauthenticationfilter.png" width="60%" />
+					</section>
+					<section>
+						<h2>Spring Security</h2>
+						<h3>Authentication</h3>
+						<img src="images/spring-security-filtersecurityinterceptor.png" width="70%" />
+					</section>
+					<section>
+						<h2>Spring Security</h2>
+						<h3>Security HTTP Response Headers</h3>
+						<p>
+							Default Security Headers,
+							Cache Control,
+							Content Type Options,
+							HTTP Strict Transport Security (HSTS),
+							HTTP Public Key Pinning (HPKP),
+							X-Frame-Options,
+							X-XSS-Protection,
+							Content Security Policy (CSP),
+							Referrer Policy,
+							Feature Policy,
+							Clear Site Data,
+							Custom Headers
+						</p>
+					</section>
+					<section>
+						<h2>Spring Security</h2>
+						<h3>HTTP</h3>
+						<p>
+							Redirect to HTTPS,
+							Strict Transport Security,
+							Proxy Server Configuration
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Referencias:</h2>
+					<ul>
+						<li>https://en.wikipedia.org/wiki/Java_logging_framework</li>
+						<li>https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-logging</li>
+						<li>https://spring.io/guides/gs/scheduling-tasks/</li>
+						<li>https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#scheduling</li>
+						<li>https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#scheduling-annotation-support-scheduled</li>
+						<li>https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html</li>
+						<li>https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-security</li>
+						<li>https://docs.spring.io/spring-security/site/docs/current/reference/html5/</li>
+						<li>https://oauth.net/2/</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Sessión 5</h2>
+					<ul>
+						<li>Arquitectura Neflix</li>
+						<li>Arquitectura K8S</li>
+						<li>Servicios auxiliares</li>
+					</ul>
 				</section>
 			</div>
 		</div>
