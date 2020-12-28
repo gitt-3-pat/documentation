@@ -754,6 +754,14 @@ logging.level.org.hibernate=error
 				<section>
 					<section>
 						<h2>Scheduling</h2>
+						<p>
+							Con Spring Boot, es possible planificar la ejecucion de Beans
+							para un proposito concreto.
+						</p>
+						<p>
+							Es posible planificarlo en 3 maneras diferentes:
+							cron(), fixedDelay(), or fixedRate()
+						</p>
 					</section>
 					<section>
 						<h2>Scheduling</h2>
@@ -917,10 +925,120 @@ public class ScheduledTasks {
 				</section>
 				<section>
 					<h2>Sessión 5</h2>
+				</section>
+				<section>
+					<h2>Ecosistema de Microservicios</h2>
+                    <img src="images/microservice-concerns.png" />
+					<p>
+						https://12factor.net
+					</p>
+				</section>
+				<section>
+					<section>
+						<h2>Arquitectura Cloud Netflix</h2>
+						<img src="images/spring-cloud-netflix.svg" />
+					</section>
+					<section>
+						<h2>Arquitectura Cloud Netflix</h2>
+						<h3>Componentes</h3>
+						<ul>
+							<li>Gateway: Zuul</li>
+							<li>Service Discovery: Eureka</li>
+							<li>External Configuration: Spring Cloud Config</li>
+							<li>Circuit Breaker: Hystrix</li>
+							<li>Load Balancing: Ribbon</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Arquitectura Cloud Kubernetes</h2>
+						<img src="images/spring-cloud-k8s.png" />
+					</section>
+					<section>
+						<h2>Arquitectura Cloud Kubernetes</h2>
+						<h3>Componentes</h3>
+						<ul>
+							<li>Gateway: Spring Cloud Gateway / Ingress</li>
+							<li>Service Discovery: K8S</li>
+							<li>External Configuration: Config Maps</li>
+							<li>Circuit Breaker: Resilience4j / Istio</li>
+							<li>Load Balancing: K8S</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Servicios Auxiliares</h2>
+						<ul>
+							<li>Central Logging</li>
+							<li>Monitoring & Alerting</li>
+							<li>Distributed Tracing</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Servicios Auxiliares</h2>
+						<h3>Central Logging</h3>
+						<p>EFK</p>
+						<img src="images/efk.jpg" width="70%" />
+					</section>
+					<section>
+						<h2>Servicios Auxiliares</h2>
+						<h3>Central Logging</h3>
+						<p>EFK</p>
+						<ul>
+							<li>Fluentd</li>
+							<li>Elastic Search</li>
+							<li>Kibana</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Servicios Auxiliares</h2>
+						<h3>Monitoring & Alerting</h3>
+						<img src="images/spring-monitoring.png" width="100%" />
+					</section>
+					<section>
+						<h2>Servicios Auxiliares</h2>
+						<h3>Monitoring & Alerting</h3>
+						<img src="images/spring-monitoring-grafana.png" width="70%" />
+					</section>
+					<section>
+						<h2>Servicios Auxiliares</h2>
+						<h3>Monitoring & Alerting</h3>
+						<ul>
+							<li>Micrometer</li>
+							<li>Prometheus</li>
+							<li>Grafana</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Servicios Auxiliares</h2>
+						<h3>Distributed Tracing</h3>
+						<img src="images/microservice-network.png" width="70%" />
+					</section>
+					<section>
+						<h2>Servicios Auxiliares</h2>
+						<h3>Distributed Tracing</h3>
+						<img src="images/distributed-tracing-jaeger.png" width="70%" />
+					</section>
+					<section>
+						<h2>Servicios Auxiliares</h2>
+						<h3>Distributed Tracing</h3>
+						<ul>
+							<li>Opentracing</li>
+							<li>Jaeger</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Referencias</h2>
 					<ul>
-						<li>Arquitectura Neflix</li>
-						<li>Arquitectura K8S</li>
-						<li>Servicios auxiliares</li>
+						<li>https://12factor.net</li>
+						<li>https://spring.io/cloud</li>
+						<li>https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/</li>
+						<li>https://landscape.cncf.io</li>
+						<li>https://github.com/cncf/landscape/blob/master/README.md#trail-map</li>
 					</ul>
 				</section>
 			</div>
