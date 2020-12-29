@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-		<title>Tema 6</title>
+		<title>Tema 8</title>
 		<link rel="shortcut icon" href="images/favicon.ico" />
 
 		<meta charset="utf-8">
@@ -33,11 +33,13 @@
 						<h3>Sessión 1</h3>
 						<ul>
 							<li>Introducción</li>
-							<li>Piramide de testing</li>
 							<li>Test funcionales</li>
 							<li>Test no funcionales</li>
-							<li>Naming de tests</li>
+							<li>Piramide de testing</li>
 							<li>Tests unitarios</li>
+							<li>Principios FIRST</li>
+							<li>The Right BICEP</li>
+							<li>Mockito</li>
 						</ul>
 					</section>
 					<section>
@@ -45,23 +47,190 @@
 						<h3>Sessión 2</h3>
 						<ul>
 							<li>Test de Integración</li>
-							<li>TDD</li>
+							<li>Wiremock</li>
+							<li>TestContainers</li>
 						</ul>
 					</section>
 					<section>
 						<h2>Agenda</h2>
 						<h3>Sessión 3</h3>
 						<ul>
-							<li>TestContainers</li>
 							<li>JMH</li>
-							<li>JMC</li>
 							<li>JMeter</li>
-							<li>Seguridad</li>
+							<li>TDD</li>
+							<li>Naming de tests</li>
 						</ul>
 					</section>
 				</section>
 				<section>
 					<h2>Sessión 1</h2>
+				</section>
+				<section>
+					<section>
+						<h2>Introdución</h2>
+						<h3>¿Por que necesitas tests?</h3>
+						<p>
+							Es necesario verificar que el software cumple con las expectativas / requerimientos.
+						</p>
+					</section>
+					<section>
+						<h2>Introdución</h2>
+						<h3>¿Por que necesitas tests?</h3>
+						<img src="images/software-development-cycle.jpg" width="50%"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Test funcionales</h2>
+						<p>
+							Una prueba funcional es una prueba de tipo caja negra basada en la ejecución,
+							revisión y retroalimentación de las funcionalidades previamente diseñadas para
+							el software.
+						</p>
+					</section>
+					<section>
+						<h2>Test funcionales</h2>
+						<ul>
+							<li>Configuracion del Build System</li>
+							<li>Unit Tests</li>
+							<li>Integration Tests</li>
+							<li>Code Coverage</li>
+							<li>Mutation Tests Coverage</li>
+							<li>Reglas de Arquitectura</li>
+							<li>Documentación</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Test no funcionales</h2>
+						<p>
+							Una prueba funcional es una prueba de tipo caja negra basada en la ejecución,
+							revisión y retroalimentación de las funcionalidades previamente diseñadas para
+							el software.
+						</p>
+					</section>
+					<section>
+						<h2>Test no funcionales</h2>
+						<ul>
+							<li>Performance Testing</li>
+							<li>Monitoring Testing</li>
+							<li>Profiling Testing</li>
+							<li>Security Testing</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Pirámide de Testing</h2>
+						<p>
+							The test pyramid is a way of thinking about how different kinds of
+							automated tests should be used to create a balanced portfolio.
+						</p>
+						<img src="images/test-pyramid.png" />
+					</section>
+					<section>
+						<h2>Pirámide de Testing</h2>
+						<ul>
+							<li>Unit Tests</li>
+							<li>Integration Tests</li>
+							<li>E2E Tests</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Tests unitarios</h2>
+						<p>
+							Your unit tests make sure that a certain unit (your subject under test)
+							of your codebase works as intended.
+						</p>
+						<img src="images/unit-tests.png" width="50%" />
+					</section>
+					<section>
+						<h2>Tests unitarios</h2>
+						<img src="images/unit-tests2.png" />
+					</section>
+				</section>
+				<section>
+					<h2>Principios FIRST</h2>
+					<ul>
+						<li>Fast</li>
+						<li>Independent</li>
+						<li>Repeatable</li>
+						<li>Self-validating</li>
+						<li>Timely</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>The Right BICEP</h2>
+						<ul>
+							<li>Right – are the results right?</li>
+							<li>B – are all the boundary conditions CORRECT?</li>
+							<li>I – can you check inverse relationships?</li>
+							<li>C – can you cross-check results using other means?</li>
+							<li>E – can you force error conditions to happen?</li>
+							<li>P – are performance characteristics within bounds?</li>
+						</ul>
+					</section>
+					<section>
+						<h2>The Right BICEP</h2>
+						<h3>Tests for boundary conditions</h3>
+						<ul>
+							<li>Conformance – Does the value conform to an expected format?</li>
+							<li>Ordering – is the set of values ordered or unordered as appropriate?</li>
+							<li>Range – is the value within reasonable minimum and maximum values?</li>
+							<li>Reference – does the code reference anything external that isn’t under direct control of the code itself?Existence – Does the value exist?</li>
+							<li>Cardinality – are there exactly enough values?</li>
+							<li>Time – is everything happening in order? At the right time? In time?</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Mockito</h2>
+						<p>
+							Mockito is a mocking framework
+						</p>
+						<img src="images/mockito-logo.png" />
+					</section>
+					<section>
+						<h2>Mockito</h2>
+						<pre><code data-trim>
+public class ScoreServiceTest {
+
+private StudentRepository studentRepository = mock(StudentRepository.class);
+private ScoreService objectUnderTest = new ScoreService(studentRepository);
+
+@Test
+public void shouldCalculateAndReturnScore() throws Exception {
+	//given
+	Student student = new Student("Johnny", 10);
+	given(studentRepository.getStudent(givenName)).willReturn(student);
+	//when
+	String actualScore = objectUnderTest.calculateStudentScore(givenName);
+	//then
+	assertEquals(givenScore, actualScore);
+}
+}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>Referencias</h2>
+					<ul>
+						<li>https://es.wikipedia.org/wiki/Pruebas_de_software</li>
+						<li>https://es.wikipedia.org/wiki/Pruebas_funcionales</li>
+						<li>https://martinfowler.com/bliki/TestPyramid.html</li>
+						<li>https://martinfowler.com/bliki/UnitTest.html</li>
+						<li>https://martinfowler.com/testing/</li>
+						<li>https://martinfowler.com/articles/practical-test-pyramid.html</li>
+						<li>https://xp123.com/articles/3a-arrange-act-assert/</li>
+						<li>https://martinfowler.com/bliki/GivenWhenThen.html</li>
+						<li>https://martinfowler.com/bliki/TestDouble.html</li>
+						<li>https://site.mockito.org/</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Sessión 2</h2>
