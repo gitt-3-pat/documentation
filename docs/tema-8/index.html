@@ -37,9 +37,11 @@
 							<li>Test no funcionales</li>
 							<li>Piramide de testing</li>
 							<li>Tests unitarios</li>
-							<li>Principios FIRST</li>
-							<li>The Right BICEP</li>
+							<li>Test Doubles</li>
+							<li>Consideracion de diseño de Tests</li>
+							<li>JUnit</li>
 							<li>Mockito</li>
+							<li>TDD</li>
 						</ul>
 					</section>
 					<section>
@@ -55,10 +57,8 @@
 						<h2>Agenda</h2>
 						<h3>Sessión 3</h3>
 						<ul>
-							<li>JMH</li>
+							<li>Java Microbenchmark Harness</li>
 							<li>JMeter</li>
-							<li>TDD</li>
-							<li>Naming de tests</li>
 						</ul>
 					</section>
 				</section>
@@ -153,18 +153,41 @@
 					</section>
 				</section>
 				<section>
-					<h2>Principios FIRST</h2>
-					<ul>
-						<li>Fast</li>
-						<li>Independent</li>
-						<li>Repeatable</li>
-						<li>Self-validating</li>
-						<li>Timely</li>
-					</ul>
+					<section>
+						<h2>Test Doubles</h2>
+						<p>
+							The term Test Double as the generic term for any kind of pretend object used
+							in place of a real object for testing purposes.
+						</p>
+					</section>
+					<section>
+						<h2>Test Doubles</h2>
+						<ul>
+							<li>Mocks are what we are talking about here: objects pre-programmed with expectations which form a specification of the calls they are expected to receive.</li>
+							<li>Stubs provide canned answers to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.</li>
+							<li>Spies are stubs that also record some information based on how they were called.</li>
+							<li>Fake objects actually have working implementations, but usually take some shortcut.
+								(an in memory database is a good example).</li>
+							<li>Dummy objects are passed around but never actually used. </li>
+						</ul>
+					</section>
 				</section>
+
 				<section>
 					<section>
-						<h2>The Right BICEP</h2>
+						<h2>Consideracion de diseño de Tests</h2>
+						<h3>Principios FIRST</h3>
+						<ul>
+							<li>Fast</li>
+							<li>Independent</li>
+							<li>Repeatable</li>
+							<li>Self-validating</li>
+							<li>Timely</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Consideracion de diseño de Tests</h2>
+						<h3>The Right BICEP</h3>
 						<ul>
 							<li>Right – are the results right?</li>
 							<li>B – are all the boundary conditions CORRECT?</li>
@@ -175,8 +198,9 @@
 						</ul>
 					</section>
 					<section>
-						<h2>The Right BICEP</h2>
-						<h3>Tests for boundary conditions</h3>
+						<h2>Consideracion de diseño de Tests</h2>
+						<h3>The Right BICEP</h3>
+						<h4>Tests for boundary conditions</h4>
 						<ul>
 							<li>Conformance – Does the value conform to an expected format?</li>
 							<li>Ordering – is the set of values ordered or unordered as appropriate?</li>
@@ -189,33 +213,140 @@
 				</section>
 				<section>
 					<section>
-						<h2>Mockito</h2>
+						<h2>JUnit</h2>
+						<img src="images/junit-logo.png" />
 						<p>
-							Mockito is a mocking framework
+							JUnit is a unit testing framework for Java programming language.
+							It plays a crucial role test-driven development, and is a family of unit testing
+							frameworks collectively known as xUnit
 						</p>
-						<img src="images/mockito-logo.png" />
 					</section>
 					<section>
-						<h2>Mockito</h2>
+						<h2>JUnit</h2>
+						<p>
+							JUnit promotes the idea of "first testing then coding",
+							which emphasizes on setting up the test data for a piece of code that
+							can be tested first and then implemented.
+							This approach is like "test a little, code a little, test a little, code a little."
+						</p>
+					</section>
+					<section>
+						<h2>JUnit</h2>
+						<h3>Features</h3>
+						<ul>
+							<li>Provides annotations to identify test methods</li>
+							<li>Provides assertions for testing expected results</li>
+							<li>Provides test runners for running tests</li>
+							<li>Allow coding faster, which increases quality</li>
+							<li>Elegantly simple</li>
+							<li>Can be run automatically and they check their own results and provide immediate feedback</li>
+							<li>Tests can be organized into test suites</li>
+						</ul>
+					</section>
+					<section>
+						<h2>JUnit</h2>
+						<h3>Example</h3>
 						<pre><code data-trim>
-public class ScoreServiceTest {
+public class MyUnit {
 
-private StudentRepository studentRepository = mock(StudentRepository.class);
-private ScoreService objectUnderTest = new ScoreService(studentRepository);
-
-@Test
-public void shouldCalculateAndReturnScore() throws Exception {
-	//given
-	Student student = new Student("Johnny", 10);
-	given(studentRepository.getStudent(givenName)).willReturn(student);
-	//when
-	String actualScore = objectUnderTest.calculateStudentScore(givenName);
-	//then
-	assertEquals(givenScore, actualScore);
-}
+    public String concatenate(String one, String two){
+        return one + two;
+    }
 }
 						</code></pre>
 					</section>
+					<section>
+						<h2>JUnit</h2>
+						<h3>Example</h3>
+						<pre><code data-trim>
+public class MyUnitTest {
+
+    @Test
+    public void given_MyUnit_when_concatenate_then_Ok() {
+        MyUnit myUnit = new MyUnit();
+
+        String result = myUnit.concatenate("one", "two");
+
+        assertEquals("onetwo", result);
+
+    }
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Mockito</h2>
+						<img src="images/mockito-logo.png" />
+						<p>
+							Mockito is a mocking framework, JAVA-based library that is used for
+							effective unit testing of JAVA applications.
+							Mockito is used to mock interfaces so that a dummy functionality
+							can be added to a mock interface that can be used in unit testing.
+						</p>
+					</section>
+					<section>
+						<h2>Mockito</h2>
+						<h3>Features</h3>
+						<ul>
+							<li>Mockito allows to write test methods compatible with "arrange/act/assert" approach.</li>
+							<li>Mockito can be used to write Behavior Driven Development (BDD)-style.</li>
+							<li>Mockito provides a nice, easily readable syntax. </li>
+							<li>It is easy to read Mockito's error messages. </li>
+						</ul>
+					</section>
+					<section>
+						<h2>Mockito</h2>
+						<h3>Example</h3>
+						<pre><code data-trim>
+public class WeatherForecast {
+    private WeatherService globalWeather; [1]
+    private WeatherService localService; [1]
+
+    public WeatherForecast(WeatherService globalWeather, WeatherService localService) {
+        this.localService = localService;
+        this.globalWeather = globalWeather;
+    }
+
+    public Weather getForecast(String city) { [2]
+        if (localService.hasForecastFor(city)) {
+            return localService.getWeather(city);
+        }
+        return globalWeather.getWeather(city);
+    }
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Mockito</h2>
+						<h3>Example</h3>
+						<pre><code data-trim>
+@Test
+public void shouldFetchWeatherForecastFromGlobalServiceIfNotAvailableLocally() {
+	//Given
+	WeatherService localWeatherService = Mockito.mock(WeatherService.class);
+	WeatherService globalWeatherService = Mockito.mock(WeatherService.class);
+
+	//When
+	WeatherForecast forecast = new WeatherForecast(globalWeatherService, localWeatherService);
+	Mockito.when(localWeatherService.hasForecastFor(anyString()))
+	.thenReturn(false);
+	Weather forecastedWeather = new Weather();
+	Mockito.when(globalWeatherService.getWeather(anyString()))
+	.thenReturn(forecastedWeather);
+
+	//Then
+	Weather weather = forecast.getForecast("myCity");
+	assertThat(weather).isNotNull();
+	assertThat(weather).isSameAs(forecastedWeather);
+}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>TDD</h2>
+					<img src="images/tdd.png" />
 				</section>
 				<section>
 					<h2>Referencias</h2>
@@ -236,7 +367,157 @@ public void shouldCalculateAndReturnScore() throws Exception {
 					<h2>Sessión 2</h2>
 				</section>
 				<section>
+					<section>
+						<h2>Test de integración</h2>
+						<p>
+							Integration testing (sometimes called integration and testing, abbreviated I&T)
+							is the phase in software testing in which individual software modules are combined
+							and tested as a group.
+						</p>
+					</section>
+					<section>
+						<h2>Test de integración</h2>
+						<img src="images/scc1.png" />
+					</section>
+					<section>
+						<h2>Test de integración</h2>
+						<img src="images/scc2.png" />
+					</section>
+					<section>
+						<h2>Test de integración</h2>
+						<img src="images/scc3.png" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Wiremock</h2>
+						<p>
+							WireMock is a simulator for HTTP-based APIs.
+							Some might consider it a service virtualization tool or a mock server.
+						</p>
+					</section>
+					<section>
+						<h2>Wiremock</h2>
+						<h3>Example</h3>
+						<pre><code data-trim>
+@Test
+public void exampleTest() {
+    stubFor(get(urlEqualTo("/my/resource"))
+            .withHeader("Accept", equalTo("text/xml"))
+            .willReturn(aResponse()
+                .withStatus(200)
+                .withHeader("Content-Type", "text/xml")
+                .withBody("<response>Some content</response>")));
+
+    Result result = myHttpServiceCallingObject.doSomething();
+
+    assertTrue(result.wasSuccessful());
+
+    verify(postRequestedFor(urlMatching("/my/resource/[a-z0-9]+"))
+            .withRequestBody(matching(".*<message>1234</message>.*"))
+            .withHeader("Content-Type", notMatching("application/json")));
+}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Testcontainers</h2>
+						<p>
+							Testcontainers is a Java library that supports JUnit tests, providing lightweight,
+							throwaway instances of that can run in a Docker container.
+						</p>
+					</section>
+					<section>
+						<h2>Testcontainers</h2>
+						<h3>Example</h3>
+						<pre><code data-trim>
+@Testcontainers
+class MixedLifecycleTests {
+	@Container
+	private static final MySQLContainer MY_SQL_CONTAINER = new MySQLContainer();
+	@Container
+	private PostgreSQLContainer postgresqlContainer = new PostgreSQLContainer()
+		.withDatabaseName("foo")
+		.withUsername("foo")
+		.withPassword("secret");
+	@Test
+	void test() {
+		assertTrue(MY_SQL_CONTAINER.isRunning());
+		assertTrue(postgresqlContainer.isRunning());
+	}
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Referencias</h2>
+					<ul>
+						<li>https://martinfowler.com/bliki/IntegrationTest.html</li>
+						<li>https://martinfowler.com/articles/mocksArentStubs.html</li>
+						<li>https://martinfowler.com/bliki/TestDouble.html</li>
+						<li>http://wiremock.org/</li>
+						<li>https://www.testcontainers.org/</li>
+					</ul>
+				</section>
+				<section>
 					<h2>Sessión 3</h2>
+				</section>
+				<section>
+					<section>
+						<h2>Java Microbenchmark Harness</h2>
+						<p>
+							JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks
+							written in Java and other languages targeting the JVM.
+						</p>
+					</section>
+					<section>
+						<h2>Java Microbenchmark Harness</h2>
+						<h3>Example</h3>
+						<pre><code data-trim>
+public class JMHSample_01_HelloWorld {
+    @Benchmark
+    public void wellHelloThere() {
+        // this method was intentionally left blank.
+    }
+    public static void main(String[] args) throws RunnerException {
+        Options opt = new OptionsBuilder()
+                .include(JMHSample_01_HelloWorld.class.getSimpleName())
+                .forks(1)
+                .build();
+
+        new Runner(opt).run();
+    }
+}
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>JMeter</h2>
+						<img src="images/jmeter-logo.png" />
+						<p>
+							The Apache JMeter application is open source software,
+							a 100% pure Java application designed to load test functional behavior
+							and measure performance.
+						</p>
+					</section>
+					<section>
+						<h2>JMeter</h2>
+						<img src="images/jmeter-screen.png" />
+					</section>
+				</section>
+
+				<section>
+					<h2>Referencias</h2>
+					<ul>
+						<li>https://openjdk.java.net/projects/code-tools/jmh/</li>
+						<li>https://github.com/openjdk/jmh</li>
+						<li>https://github.com/openjdk/jmh/tree/master/jmh-samples/src/main/java/org/openjdk/jmh/samples</li>
+						<li>https://jmh.morethan.io/</li>
+						<li>https://jmeter.apache.org/</li>
+					</ul>
 				</section>
 			</div>
 		</div>
