@@ -38,8 +38,104 @@
 					</ul>
 				</section>
 				<section>
-					<h2>World Wide Web</h2>
-					<img src="images/www-architecture.gif" />
+					<section>
+						<h2>Introducción</h2>
+						<ul>
+							<li>Modelo OSI (7 capas)</li>
+							<li>Securización del protocolo HTTP (HTTPS)</li>
+							<li>Vulnerabilidades HTTP</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Modelo OSI</h2>
+						<img src="images/OSI-model.png" width="50%"/>
+					</section>
+					<section>
+						<h2>Modelo OSI (Protocolos)</h2>
+						<img src="images/protocolos_OSI.png" width="150%"/>
+					</section>
+					<section>
+						<h2>Securización HTTP (HTTPS)</h2>
+						<p>
+							Consiste en aplicar una securización a la capa de Transporte para establecer un canal cifrado (TLS),
+							permitiendo securizar la comunicación entre el servidor remoto y el navegador web del cliente.
+						</p>
+					</section>
+					<section>
+						<h2>Securización HTTP (HTTPS)</h2>
+						<p>
+							De este modo se consigue que la información sensible no pueda ser usada por un atacante que haya conseguido interceptar la transferencia de datos de la conexión, ya que lo único que obtendrá será un flujo de datos cifrados que le resultará imposible de descifrar.
+						</p>
+					</section>
+					<section>
+						<h2>Securización HTTP (HTTPS)</h2>
+						<p>
+							El puerto por defecto utilizado para la comunicación HTTPS es 443
+						</p>
+					</section>
+					<section>
+						<h2>Vulnerabilidades HTTP</h2>
+						<ul>
+							<li>Es un protocolo inseguro</li>
+							<li>Ataque "man in the middle"</li>
+							<li>Campos ocultos en formularios ("hidden")</li>
+							<li>URL mágicas</li>
+							<li>Cookies con nombres predecibles</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>World Wide Web</h2>
+						<ul>
+							<li>Funcionamiento de la Web</li>
+							<li>Arquitectura</li>
+							<li>Estándares</li>
+							<li>Problemas de la Web</li>	
+						</ul>
+					</section>
+					<section>
+						<h2>World Wide Web</h2>
+						<p>
+							Es el sistema de distribución de documentos (recursos) accesibles a través de Internet, utilizando un navegador Web para visualizar la información y gestionar la interacción con el usuario.
+						</p>
+					</section>
+					<section>
+						<h2>Arquitectura</h2>
+						<img src="images/www-architecture.gif" />
+					</section>
+					<section>
+						<h2>Arquitectura</h2>
+						<ul>
+							<li>Traducir la parte nombre del servidor del URL en una dirección IP para poder enviarle paquetes de datos</li>
+							<li>Crear una conexión para solicitar un recurso (Página HTML)</li>
+							<li>Recibir los ficheros solicitados desde el servidor web, el navegador del cliente representa (renderiza) la página tal y como se describe en el código HTML, el CSS y otros lenguajes web</li>
+							<li>Se incorporan las imágenes y otros recursos para producir la página que ve el usuario en su pantalla</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Estándares</h2>
+						<ul>
+							<li>Los recursos de una pagina HTML se definen mediante una URI</li>
+							<li>La transferencia de información se realiza bajo el protocolo HTTP/HTTPS</li>
+							<li>La estructura de los recursos y contenidos se basa en HTML</li>
+							<li>La gestión de los estandarés son gobernados por el consorcio W3C</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Problemas de la Web</h2>
+						<ul>
+							<li>La velocidad es crítica</li>
+							<li>Todo lo que se envía y recibe utilizando los canales tradicionales de transporte y mensajería de la arquitectura web, se hace de forma pública (Confidencialidad)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Problemas de la Web</h2>
+						<ul>
+							<li>La WWW inicial no contemplaba una granularidad de roles. Todos los usuarios de WWW tenían los mismos permisos, y por tanto, no era necesario «conectarse» (Autenticación)</li>
+							<li>WWW está diseñado para la recuperación de documentos, y protocolos de mensajería que permiten la invocación de comandos en el servidor (Seguridad de la Red)</li>
+						</ul>
+					</section>
 				</section>
 				<section>
 					<section>
@@ -75,36 +171,80 @@ Source: https://developer.mozilla.org/es/docs/Web/HTTP/Overview
 					<section>
 						<h2>Evolucion del protocolo HTTP</h2>
 						<ul>
-							<li>HTTP/0.9 – The one-line protocol</li>
-							<li>HTTP/1.0 – Building extensibility</li>
-							<li>HTTP/1.1 – The standardized protocol</li>
-							<li>HTTP/2 – A protocol for greater performance</li>
-							<li>HTTP/3 - HTTP over QUIC</li>
+							<li>HTTP/0.9 – El protocolo de una sola línea</li>
+							<li>HTTP/1.0 – Desarrollando expansibilidad</li>
+							<li>HTTP/1.1 – El protocolo estándar</li>
+							<li>HTTP/2 – Un protocolo de alto rendimiento</li>
+							<li>HTTP/3 - HTTP -> QUIC</li>
 						</ul>
 					</section>
+					<section>
+						<h2>Evolucion del protocolo HTTP (HTTP/0.9)</h2>
+						<ul>
+							<li>La versión inicial de HTTP, no tenía número de versión</li>
+							<li>Protocolo extremadamente sencillo: una petición consiste simplemente en una única linea (GET + Recurso)</li>
+							<li>La respuesta también es muy sencilla: solamente consiste el archivo pedido</li>
+							<li>No usa cabeceras HTTP, con lo cual únicamente es posible transmitir archivos HTML, y ningún otro tipo de archivos</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Evolucion del protocolo HTTP (HTTP/1.0)</h2>
+						<ul>
+							<li>En las peticiones HTTP se incluye la versión</li>
+							<li>Se envia un código de estado al inicio de la respuesta para tratar la petición (HTTP-Codes)</li>
+							<li>Se incluyen cabeceras HTTP en la petición y la respuesta</li>
+							<li>Permite enviar diferentes tipos de archivos/recursos en base a la cabecera "Content-Type"</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Evolucion del protocolo HTTP (HTTP/1.1)</h2>
+						<ul>
+							<li>Reutilización de conexiones, permitiendo resolver el problema de velocidad</li>
+							<li>Permite recibir las peticiones en "partes"</li>
+							<li>Gestión de la cache para recursos estáticos</li>
+							<li>La cabecera "Host" permite gestionar diferentes dominios en una misma dirección IP</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Evolucion del protocolo HTTP (HTTP/2)</h2>
+						<ul>
+							<li>Evolución del protocolo de comandos de texto a binario</li>
+							<li>Peticiones paralelas pueden hacerse sobre la misma connexión, no está sujeto pues a mantener el orden de los mensajes</li>
+							<li>Compresión de cabeceras</li>
+							<li>Almacenar datos en la caché del cliente mediante un mecanismo denominado 'server push'</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Evolucion del protocolo HTTP (HTTP/3)</h2>
+						<ul>
+							<li>Protocolo de transporte experimental de Google publicado en 2013</li>
+							<li>Permite el envío de paquetes sencillos de datos a través del UDP (User Datagram Protocol), que no necesita conexión (TCP)</li>
+							<li>Rendimiento superior de QUIC frente a TCP es su rapidez en establecer conexión</li>
+							<li>Los paquetes QUIC siempre se autentifican y en general suelen estar cifrados (incluso la carga útil o payload)</li>
+						</ul>
+					</section>
+
 					<!--
 					https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP
+					-->
+					<!--
+						https://www.ionos.es/digitalguide/hosting/cuestiones-tecnicas/quic-protocolo-de-transporte-de-internet-basado-en-udp/
 					-->
 				</section>
 				<section>
 					<section>
 						<h2>HTTP Status codes</h2>
 						<p>
-							Status codes are issued by a server in response to a client's request made to the server.
+							Los códigos de estado son enviados por el servidor en el inicio de la respuesta y permite al navegador gestionar
+							la respuesta en el navegador del cliente.
 						</p>
 					</section>
 					<section>
 						<h2>HTTP Status codes</h2>
-						<ul>
-							<li>1xx informational response – the request was received, continuing process
-							<li>2xx successful – the request was successfully received, understood, and accepted
-							<li>3xx redirection – further action needs to be taken in order to complete the request
-							<li>4xx client error – the request contains bad syntax or cannot be fulfilled
-							<li>5xx server error – the server failed to fulfil an apparently valid request
-						</ul>
+						<img src="images/http-codes.png" width="50%"/>
 					</section>
 					<!--
-					https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+					https://www.youtube.com/watch?v=LtNSd_4txVc
 					-->
 				</section>
 
