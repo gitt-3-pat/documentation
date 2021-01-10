@@ -2,7 +2,7 @@
 <html>
 	<head>
 
-		<title>Tema 4</title>
+		<title>Tema 5</title>
 		<link rel="shortcut icon" href="images/favicon.ico" />
 
 		<meta charset="utf-8">
@@ -49,32 +49,27 @@
 				<section>
 					<section>
 						<h2>Introducción</h2>
-						<p>
-							JavaScript ("JS" for short) is a full-fledged dynamic programming language
-							that can add interactivity to a website.
-							It was invented by Brendan Eich (co-founder of the Mozilla project,
-							the Mozilla Foundation, and the Mozilla Corporation).
-						</p>
+						<ul>
+							<li>Creado por Brendan Einch (co-founder of the Mozilla Project)</li>
+							<li>JavaScript (JS) es un lenguaje de programación ligero, interpretado, o compilado justo-a-tiempo (just-in-time)</li>
+							<li>Es más conocido como un lenguaje de scripting</li>
+							<li>JavaScript es un lenguaje de programación basada en prototipos</li>
+							<li>Utilizado no solo en Navegadores Web (Por ejemplo NodeJS)</li>
+						</ul>
 					</section>
 					<!--
 					https://www.educba.com/uses-of-javascript/
 					-->
+					<!--
+						https://developer.mozilla.org/es/docs/Web/JavaScript
+					-->
 					<section>
 						<h2>Introducción</h2>
-						<p>
-							¿Para que se usa?
-						</p>
 						<ul>
-							<li>Web Development</li>
-							<li>Web Applications</li>
-							<li>Presentations</li>
-							<li>Server Applications</li>
-							<li>Web Servers</li>
-							<li>Games</li>
-							<li>Art</li>
-							<li>Smartwatch Applications</li>
-							<li>Mobile Applications</li>
-							<li>Robots</li>
+							<li>No confundir JavaScript con el lenguaje de programación Java</li>
+							<li>Ambos lenguajes de programación tienen sintaxis, semántica y usos muy diferentes</li>
+							<li>Multiparadigma, de un solo hilo, dinámico, con soporte para programación orientada a objetos, imperativa y declarativa (por ejemplo programación funcional)</li>
+
 						</ul>
 					</section>
 				</section>
@@ -82,48 +77,29 @@
 					<section>
 						<h2>Core Language</h2>
 						<ul>
-							<li>Values, Types and Variables</li>
-							<li>Expressions and Operators</li>
-							<li>Statements and declarations</li>
-							<li>Control flow and error handling</li>
-							<li>Loops and iteration</li>
-							<li>Functions</li>
-							<li>Data Structures</li>
-							<li>Classes and Modules</li>
-							<li>Pattern Matching with Regular Expressions</li>
+							<li>Objetos, Tipos y Variables</li>
+							<li>Expresiones y Operadores</li>
+							<li>Sentencias y Declaraciones</li>
+							<li>Funciones</li>
+							<li>Expresiones Regulares (Match Data)</li>
 						</ul>
 					</section>
 					<!--
 					Value: Cualquier elemento que llamas en Javascript
 					-->
 					<section>
-						<h2>Values, Types and Variables</h2>
-						<ul>
-							<li>Value</li>
-							<li>Types</li>
-							<li>Variables</li>
-						</ul>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Objetos</h3>
+						<img src="images/objetosJS.png" width="100%" />
 					</section>
 					<!--
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 					-->
 					<section>
-						<h2>Values, Types and Variables</h2>
-						<h3>Types</h3>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos</h3>
 						<p>
-							JavaScript is a loosely typed and dynamic language
-						</p>
-						<ul>
-							<li>Data Types</li>
-							<li>Structural Types</li>
-							<li>Structural Root Primitive</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Values, Types and Variables</h2>
-						<h3>Types</h3>
-						<p>
-							Data Types:
+							Tipos de Datos:
 						</p>
 						<ul>
 							<li>undefined : typeof instance === "undefined"</li>
@@ -135,27 +111,178 @@
 						</ul>
 					</section>
 					<section>
-						<h2>Values, Types and Variables</h2>
-						<h3>Types</h3>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos</h3>
 						<p>
-							Data Types:
+							Tipos de Datos:
 						</p>
 						<ul>
-							<li>Object : typeof instance === "object"</li>
-							<li>Function : a non-data structure, though it also answers for typeof operator</li>
+							<li>Objectos : typeof instance === "object"</li>
+							<li>Funciones : No es una estructura, devuelve un Tipo de Datos</li>
 						</ul>
 						<p>
-							Data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakSet, new Date
+							Estructuras de Datos: new Object, new Array, new Map, new Set, new WeakMap, new WeakSet, new Date
 						</p>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Objetos)</h3>
+						<img src="images/objetos2JS.png" width="50%" />
+						<img src="images/objetos3JS.png" width="40%" />
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Funciones)</h3>
+						<img src="images/funcionesJS.png" width="100%" />
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Propiedades de Valor)</h3>
+						<ul>
+							<li>Infinity</li>
+							<li>NaN</li>
+							<li>undefined</li>
+							<li>null</li>
+							<li>globalThis</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Propiedades de Funciones)</h3>
+						<ul>
+							<li>eval()</li>
+							<li>uneval()</li>
+							<li>isFinite()</li>
+							<li>isNaN()</li>
+							<li>parseFloat()</li>
+							<li>parseInt()</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Propiedades de Funciones)</h3>
+						<ul>
+							<li>decodeURI()</li>
+							<li>decodeURIComponent()</li>
+							<li>encodeURI()</li>
+							<li>encodeURIComponent()</li>
+							<li>escape()</li>
+							<li>unescape()</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Objetos Fundamentales)</h3>
+						<ul>
+							<li>Object</li>
+							<li>Function</li>
+							<li>Boolean</li>
+							<li>Symbol</li>
+							<li>Error</li>
+							<li>EvalError</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Objetos Fundamentales)</h3>
+						<ul>
+							<li>InternalError</li>
+							<li>RangeError</li>
+							<li>ReferenceError</li>
+							<li>SyntaxError</li>
+							<li>TypeError</li>
+							<li>URIError</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Números y Fechas)</h3>
+						<ul>
+							<li>Number</li>
+							<li>BigInt</li>
+							<li>Math</li>
+							<li>Date</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Texto)</h3>
+						<ul>
+							<li>String</li>
+							<li>RegExp</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Colecciones Indexadas)</h3>
+						<ul>
+							<li>Array</li>
+							<li>Int8Array</li>
+							<li>Uint8Array</li>
+							<li>Uint8ClampedArray</li>
+							<li>Int16Array</li>
+							<li>Uint16Array</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Colecciones Indexadas)</h3>
+						<ul>
+							<li>Int32Array</li>
+							<li>Uint32Array</li>
+							<li>Float32Array</li>
+							<li>Float64Array</li>
+							<li>BigInt64Array</li>
+							<li>BigUint64Array</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Colecciones con Clave)</h3>
+						<ul>
+							<li>Map</li>
+							<li>Set</li>
+							<li>WeakMap</li>
+							<li>WeakSet</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Datos Estructurados)</h3>
+						<ul>
+							<li>ArrayBuffer</li>
+							<li>SharedArrayBuffer</li>
+							<li>Atomics</li>
+							<li>DataView</li>
+							<li>JSON</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Abstracción de Control)</h3>
+						<ul>
+							<li>Promise</li>
+							<li>Generator</li>
+							<li>GeneratorFunction</li>
+							<li>AsyncFunction</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Tipos (Reflexion)</h3>
+						<ul>
+							<li>Reflect</li>
+							<li>Proxy</li>
+						</ul>
 					</section>
 					<!--
 					https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#The_difference_between_var_and_let
 					-->
 					<section>
-						<h2>Values, Types, Variables & Constants</h2>
-						<h3>Variables & Constants</h3>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Variables y Constantes</h3>
 						<p>
-							Variables are containers that store values.
+							Variables son contenedores que almacenan valores (Objetos)
 						</p>
 						<ul>
 							<li>var</li>
@@ -163,79 +290,233 @@
 							<li>const</li>
 						</ul>
 					</section>
+					<section>
+						<h2>Objetos, Tipos y Variables</h2>
+						<h3>Variables y Constantes</h3>
+						<img src="images/VariablesJS.png" width="100%" />
+					</section>
 					<!--
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
 					-->
 					<section>
-						<h2>Expressions and Operators</h2>
+						<h2>Expresiones y Operadores</h2>
 						<ul>
-							<li>Assignment operators</li>
-							<li>Comparison operators</li>
-							<li>Arithmetic operators</li>
-							<li>Bitwise operators</li>
-							<li>Logical operators</li>
-							<li>String operators</li>
-							<li>Conditional (ternary) operator</li>
-							<li>Comma operator</li>
-							<li>Unary operators</li>
-							<li>Relational operators</li>
+							<li>Operadores de asignación</li>
+							<li>Operadores de comparación</li>
+							<li>Operadores aritmeticos</li>
+							<li>Operadores bit a bit</li>
+							<li>Operadores lógicos</li>
+							<li>Operadores de cadenas de texto</li>
+							<li>Operador condicional</li>
+							<li>Operador coma</li>
+							<li>Operadores unarios</li>
+							<li>Operadores relacionales</li>
 						</ul>
+					</section>
+					<section>
+						<h2>Expresiones y Operadores</h2>
+						<h3>Operadores de asignación</h3>
+						<p>
+							Un operador de asignación asigna un valor a su operando izquierdo basándose en el valor de su operando derecho. El operador de asignación simple es igual (=), que asigna el valor de su operando derecho a su operando izquierdo. Es decir, x = y asigna el valor de y a x
+						</p>
+					</section>
+					<section>
+						<h2>Expresiones y Operadores</h2>
+						<h3>Operadores de comparación</h3>
+						<p>
+							Un operador de comparación compara sus operandos y devuelve un valor lógico en función de si la comparación es verdadera (true) o falsa (false). Los operandos pueden ser valores numéricos, de cadena, lógicos u objetos.
+						</p>
+					</section>
+					<section>
+						<h2>Expresiones y Operadores</h2>
+						<h3>Operadores aritmeticos</h3>
+						<p>
+							Un operador aritmético toma valores numéricos (ya sean literales o variables) como sus operandos y devuelve un solo valor numérico. Los operadores aritméticos estándar son suma (+), resta (-), multiplicación (*) y división (/). Estos operadores funcionan como lo hacen en la mayoría de los otros lenguajes de programación cuando se usan con números de punto flotante (en particular, ten en cuenta que la división entre cero produce Infinity). 
+						</p>
+					</section>
+					<section>
+						<h2>Expresiones y Operadores</h2>
+						<h3>Operadores bit a bit</h3>
+						<p>
+							Un operador bit a bit trata a sus operandos como un conjunto de 32 bits (ceros y unos), en lugar de números decimales, hexadecimales u octales.
+						</p>
+					</section>
+					<section>
+						<h2>Expresiones y Operadores</h2>
+						<h3>Operadores lógicos</h3>
+						<p>
+							Los operadores lógicos se utilizan normalmente con valores booleanos (lógicos); cuando lo son, devuelven un valor booleano. Sin embargo, los operadores && y || en realidad devuelven el valor de uno de los operandos especificados, por lo que si estos operadores se utilizan con valores no booleanos, pueden devolver un valor no booleano.
+						</p>
+					</section>
+					<section>
+						<h2>Expresiones y Operadores</h2>
+						<h3>Operadores de cadenas de texto</h3>
+						<p>
+							Además de los operadores de comparación, que se pueden usar en valores de cadena, el operador de concatenación (+) concatena dos valores de cadena, devolviendo otra cadena que es la unión de los dos operandos de cadena.
+						</p>
+					</section>
+					<section>
+						<h2>Expresiones y Operadores</h2>
+						<h3>Operador condicional</h3>
+						<p>
+							El operador condicional es el único operador de JavaScript que toma tres operandos. El operador puede tener uno de dos valores según una condición. La sintaxis es:
+						</p>
+						<p>
+							condition ? val1 : val2
+						</p>
+					</section>
+					<section>
+						<h2>Expresiones y Operadores</h2>
+						<h3>Operador coma</h3>
+						<p>
+							El operador coma (,) simplemente evalúa ambos operandos y devuelve el valor del último operando. Este operador se utiliza principalmente dentro de un bucle for, para permitir que se actualicen múltiples variables cada vez a través del bucle. 
+						</p>
+					</section>
+					<section>
+						<h2>Expresiones y Operadores</h2>
+						<h3>Operadores unarios</h3>
+						<p>
+							Una operación unaria es una operación con un solo operando.
+						</p>
+					</section>
+					<section>
+						<h2>Expresiones y Operadores</h2>
+						<h3>Operadores relacionales</h3>
+						<p>
+							Un operador relacional compara sus operandos y devuelve un valor Boolean basado en si la comparación es verdadera.
+						</p>
 					</section>
 					<!--
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements
 					-->
 					<section>
-						<h2>Statements and declarations</h2>
+						<h2>Sentencias y Declaraciones</h2>
 						<ul>
-							<li>Control flow</li>
-							<li>Declarations</li>
-							<li>Functions and classes</li>
-							<li>Iterations</li>
-							<li>Others</li>
-						</ul>
-
-					</section>
-					<!--
-					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
-					-->
-					<section>
-						<h2>Control flow and error handling</h2>
-						<ul>
-							<li>Block statement</li>
-							<li>Conditional statements</li>
-							<li>Exception handling statements</li>
+							<li>Control de flujo</li>
+							<li>Declaraciones</li>
+							<li>Funciones</li>
+							<li>Iteraciones</li>
 						</ul>
 					</section>
-					<!--
-					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
-					-->
 					<section>
-						<h2>Loops and iteration</h2>
+						<h2>Sentencias y Declaraciones</h2>
+						<h3>Control de flujo</h3>
 						<ul>
-							<li>for statement</li>
-							<li>do...while statement</li>
-							<li>while statement</li>
-							<li>break statement</li>
-							<li>continue statement</li>
-							<li>for...in statement</li>
-							<li>for...of statement</li>
+							<li><b>Block: </b>Un bloque de sentencias se utiliza para agrupar cero o mas sentencias. El bloque se delimita por un par de llaves</li>
+							<li><b>break: </b>Finaliza la sentencia actual loop, switch, o label y transfiere el control del programa a la siguiente sentencia de la sentencia finalizada</li>
+							<li><b>continue: </b>Finaliza la ejecucion de las sentencias dentro de la iteracion actual del actual bucle,  y continua la ejecucion del bucle con la siguiente iteracion
+							</li>
+						</ul>
+						
+					</section>
+					<section>
+						<h2>Sentencias y Declaraciones</h2>
+						<h3>Control de flujo</h3>
+						<ul>
+							<li><b>Empty: </b>Una sentencia vacía se utiliza para proveer una "no sentencia", aunque la sintaxis de JavaScript esperaba una</li>
+							<li><b>if...else: </b>Ejecuta una sentencia si una condición especificada es true. Si la condición es false, otra sentencia puede ser ejecutada</li>
+							<li><b>switch: </b>Evalua una expresión, igualando el valor de la expresión a una clausula case y ejecuta las sentencias asociadas con dicho case</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sentencias y Declaraciones</h2>
+						<h3>Control de flujo</h3>
+						<ul>
+							<li><b>throw: </b>Lanza una excepción definida por el usuario</li>
+							<li><b>try...catch: </b>Marca un bloque de sentencias para ser probadas (try) y especifica una respuesta, en caso de que se lance una excepción</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sentencias y Declaraciones</h2>
+						<h3>Declaraciones</h3>
+						<ul>
+							<li><b>var: </b>Declara una variable, opcionalmente inicializándola a un valor</li>
+							<li><b>let: </b>Declara una variable local de ambito de bloque, opcionalmente inicializándola a un valor</li>
+							<li><b>const: </b>Declara una constante de solo lectura</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sentencias y Declaraciones</h2>
+						<h3>Funciones</h3>
+						<ul>
+							<li><b>function: </b>Declara una función con los parámetros especificados</li>
+							<li><b>function*: </b>Los generadores de funciones permiten escribir iteradores con mas facilidad</li>
+							<li><b>async function: </b>Declara una función asíncrona con los parámetros especificados</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sentencias y Declaraciones</h2>
+						<h3>Funciones</h3>
+						<ul>
+							<li><b>return: </b>Especifica el valor a ser retornado por una función</li>
+							<li><b>class: </b>Declara una clase</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sentencias y Declaraciones</h2>
+						<h3>Iteraciones</h3>
+						<ul>
+							<li><b>do...while: </b>Crea un bucle que ejecuta una instrucción especificada hasta que la condición de prueba se evalúa como falsa. La instrucción especificada se ejecute al menos una vez</li>
+							<li><b>for: </b> Crea un bucle que consiste en 3 parametros opciones, seguido del bloque a ejecutar en cada iteración</li>
+							<li><b>for each...in: </b>Itera una variable especificada sobre todos los valores de las propiedades del objeto</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sentencias y Declaraciones</h2>
+						<h3>Iteraciones</h3>
+						<ul>
+							<li><b>for...in: </b>Itera sobre las propiedades enumerables de un objeto, en orden albitrario. Para cada propiedad distinta, las instrucciones pueden ser ejecutadas</li>
+							<li><b>for...of: </b>Ejecuta un bloque de código para cada elemento de un objeto iterable, como lo son: String, Array</li>
+							<li><b>while: </b>Crea un bucle que ejecuta la instrucción especificada siempre que la condición de prueba se evalúe como verdadera. La condición se evalúa antes de ejecutar la instrucción</li>
 						</ul>
 					</section>
 					<!--
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
 					-->
 					<section>
-						<h2>Functions</h2>
+						<h2>Funciones</h2>
 						<ul>
-							<li>Function declarations</li>
-							<li>Function expressions</li>
-							<li>Calling functions</li>
-							<li>Function scope</li>
-							<li>Function parameters</li>
-							<li>Rest parameters</li>
-							<li>Predefined functions</li>
+							<li>Declaración</li>
+							<li>Expresiones</li>
+							<li>Alcance</li>
+							<li>Parametros</li>
 						</ul>
 					</section>
+					<section>
+						<h2>Funciones</h2>
+						<h3>Declaración</h3>
+						<ul>
+							Una función esta compuesta de los siguientes elementos: 
+							<li>Nombre de la función</li>
+							<li>Listado de parametros separados entre "comas"</li>
+							<li>Instrucciones de la función separado por "{....}"</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Funciones</h2>
+						<h3>Expresiones</h3>
+						<p>
+							Las funciones se pueden declarar como expresiones:
+							<img src="images/functionexpre.png" width="100%" />
+						</p>
+					</section>
+					<section>
+						<h2>Funciones</h2>
+						<h3>Alcance</h3>
+						<p>
+							Variables definidas dentro de una funcion no son visibles fuera, pero una función puede acceder a todas las variables y funciones definidas en el mismo "scope"
+						</p>
+					</section>
+					<section>
+						<h2>Funciones</h2>
+						<h3>Parámetros</h3>
+						<ul>
+							<li>Los valores de los parámetros por defecto son "undefined"</li>
+							<li>El número de parámetros puede ser dinámico</li>
+							<li>Los parámetros no tienen que ser variables, pueden ser también objetos</li>
+						</ul>
+					</section>
+					
 					<!--
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 					https://developer.mozilla.org/en-US/docs/Glossary/Object
@@ -244,35 +525,22 @@
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 					-->
-					<section>
-						<h2>Data Structures</h2>
-						<ul>
-							<li>Object</li>
-							<li>Array</li>
-							<li>Map</li>
-							<li>Set</li>
-							<li>Date</li>
-						</ul>
-					</section>
 					<!--
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 					-->
-					<section>
-						<h2>Objects, Classes and Modules</h2>
-						<ul>
-							<li>Objects</li>
-							<li>Classes</li>
-							<li>Modules</li>
-						</ul>
-					</section>
 					<!--
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 					-->
 					<section>
 						<h2>Pattern Matching with Regular Expressions</h2>
+						<p>
+							Las expresiones regulares son patrones que se utilizan para hacer coincidir combinaciones de caracteres en cadenas. En JavaScript, las expresiones regulares también son objetos.
+						</p>
+						<p>Estos patrones se utilizan con los métodos exec() y test() de RegExp, y con match(), matchAll(), replace(), replaceAll(), search() y split() métodos de String. 
+						</p>
 					</section>
 				</section>
 				<section>
