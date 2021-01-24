@@ -16,14 +16,15 @@
 
 ### Segunda parte:
 
-- Tema 9: Marketing Digital
+- Tema 9: Introducción a la persistencia de datos
 - Tema 10: Acceso a base de datos relacionales (JDBC)
 - Tema 11: Acceso a base de datos no relacionales (NOSQL)
-- Tema 12: Programación funcional en Java
-- Tema 13: Event Driven Architectures
-- Tema 14: Diseño de Aplicaciones empresariales con Java
-- Tema 15: React
-- Tema 16: Seguridad
+- Tema 12: Marketing Digital
+- Tema 13: Programación funcional en Java
+- Tema 14: Event Driven Architectures
+- Tema 15: Diseño de Aplicaciones empresariales con Java
+- Tema 16: React
+- Tema 17: Seguridad
 
 ## ¿Como probar en local?
 
