@@ -27,7 +27,7 @@
 					</p>
 				</section>
 				<section>
-					<h2>Tema 1: Introducción a Java en la Industria</h2>
+					<h2>Tema 1: La web en la industria</h2>
 				</section>
 				<section>
 					<h2>Agenda</h2>
@@ -97,19 +97,6 @@ return sum;
 					</section>
 					<section>
 						<h2>Paradigmas de programación</h2>
-						<pre><code data-trim>
-BiPredicate<Integer, Integer> isMultiple = (l, i) -> l % i == 0;
-Predicate<Integer> isMultiple3 = number -> isMultiple.test(number, THREE);
-Predicate<Integer> isMultiple5 = number -> isMultiple.test(number, FIVE);
-
-return IntStream.range(1, limit).boxed()
-		.filter(isMultiple3.or(isMultiple5))
-		.reduce(0, Integer::sum);
-
-						</code></pre>
-					</section>
-					<section>
-						<h2>Paradigmas de programación</h2>
 						<p>
 							<strong>La Programación Orientada a Objetos</strong> (POO, en español; OOP, según sus siglas en inglés) es un paradigma de programación que viene a innovar la forma de obtener resultados. Los objetos se utilizan como metáfora para emular las entidades reales del negocio a modelar.
 						</p>
@@ -123,10 +110,14 @@ return IntStream.range(1, limit).boxed()
 					<section>
 						<h2>Paradigmas de programación</h2>
 						<pre><code data-trim>
-problem_1 = sumStep 3 999 + sumStep 5 999 - sumStep 15 999
-  where
-    sumStep s n = s * sumOnetoN (n `div` s)
-    sumOnetoN n = n * (n+1) `div` 2
+BiPredicate<Integer, Integer> isMultiple = (l, i) -> l % i == 0;
+Predicate<Integer> isMultiple3 = number -> isMultiple.test(number, THREE);
+Predicate<Integer> isMultiple5 = number -> isMultiple.test(number, FIVE);
+
+return IntStream.range(1, limit).boxed()
+		.filter(isMultiple3.or(isMultiple5))
+		.reduce(0, Integer::sum);
+
 						</code></pre>
 					</section>
 					<section>
@@ -137,13 +128,13 @@ problem_1 = sumStep 3 999 + sumStep 5 999 - sumStep 15 999
 					<section>
 						<h2>Paradigmas de programación</h2>
 						<pre><code data-trim>
-Observable<Integer> threes = Observable.range(1, 999)
+Observable< Integer> threes = Observable.range(1, 999)
 	.map(e -> e * 3).takeWhile(e -> e < 1000);
-Observable<Integer> fives = Observable.range(1, 999)
+Observable< Integer> fives = Observable.range(1, 999)
 	.map(e -> e * 5).takeWhile(e -> e < 1000);
-Observable<Integer> threesAndFives = Observable
+Observable< Integer> threesAndFives = Observable
 	.merge(threes, fives).distinct();
-Single<Integer> summer = threesAndFives
+Single< Integer> summer = threesAndFives
 	.reduce(0, (a, b) -> a + b);
 summer.subscribe(System.out::print);
 
@@ -199,12 +190,13 @@ Vue.js
 						<h2>Ecosistema Backend</h2>
 						<p>
 							El Backend se encarga de recibir la información del usuario y procesarla.
-							El backend puede tener los siguientes comportamientos:
+							Pueden existir los siguientes modelos de interacción:
 						</p>
 						<ul>
-							<li>Síncrono</li>
-							<li>Asíncrono</li>
-							<li>Reactivo</li>
+							<li>request/response</li>
+							<li>fire-and-forget</li>
+							<li>request/stream</li>
+							<li>channel</li>
 						</ul>
 					</section>
 					<section>
@@ -301,6 +293,7 @@ Vue.js
 				https://www.infoq.com/search.action?queryString=trends&page=1&searchOrder=
 				https://www.infoq.com/articles/javascript-web-development-trends-2020/
 				https://www.infoq.com/articles/java-jvm-trends-2020/
+				https://www.infoq.com/articles/architecture-trends-2020/
 				-->
 				<section>
 					<section>
