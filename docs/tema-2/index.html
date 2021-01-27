@@ -171,6 +171,39 @@ Source: https://developer.mozilla.org/es/docs/Web/HTTP/Overview
 						<h2>¿Que es el protocolo HTTP?</h2>
 						<img src="images/http2.png" width="50%"/>
 					</section>
+					<section>
+						<h2>¿Que es el protocolo HTTP?</h2>
+						<h3>Request</h3>
+						<pre><code data-trim>
+GET / HTTP/1.1
+Host: developer.mozilla.org
+Accept-Language: es
+						</code></pre>
+					</section>
+					<section>
+						<h2>¿Que es el protocolo HTTP?</h2>
+						<h3>Response</h3>
+						<pre><code data-trim>
+HTTP/1.1 200 OK
+Date: Sat, 09 Oct 2010 14:28:02 GMT
+Server: Apache
+Last-Modified: Tue, 01 Dec 2009 20:18:22 GMT
+ETag: "51142bc1-7449-479b075b2891b"
+Accept-Ranges: bytes
+Content-Length: 29769
+Content-Type: text/html
+
+< !DOCTYPE html... (here comes the 29769 bytes of the requested web page)
+						</code></pre>
+					</section>
+					<section>
+						<h2>¿Que es el protocolo HTTP?</h2>
+						<img src="images/connection.jpg" width="50%"/>
+					</section>
+					<section>
+						<h2>¿Que es el protocolo HTTP?</h2>
+						<img src="images/techniques.jpg" width="80%"/>
+					</section>
 				</section>
 				<section>
 					<section>
@@ -220,6 +253,10 @@ Source: https://developer.mozilla.org/es/docs/Web/HTTP/Overview
 						</ul>
 					</section>
 					<section>
+						<h2>Evolucion del protocolo HTTP (HTTP/2)</h2>
+						<img src="images/http-2.jpg" width="50%"/>
+					</section>
+					<section>
 						<h2>Evolucion del protocolo HTTP (HTTP/3)</h2>
 						<ul>
 							<li>Protocolo de transporte experimental de Google publicado en 2013</li>
@@ -227,6 +264,10 @@ Source: https://developer.mozilla.org/es/docs/Web/HTTP/Overview
 							<li>Rendimiento superior de QUIC frente a TCP es su rapidez en establecer conexión</li>
 							<li>Los paquetes QUIC siempre se autentifican y en general suelen estar cifrados <!-- (incluso la carga útil o payload) --></li>
 						</ul>
+					</section>
+					<section>
+						<h2>Evolucion del protocolo HTTP (HTTP/3)</h2>
+						<img src="images/quic.jpg" width="75%"/>
 					</section>
 
 					<!--
