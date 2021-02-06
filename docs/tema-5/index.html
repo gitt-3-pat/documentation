@@ -331,7 +331,7 @@
 						<h2>Expresiones y Operadores</h2>
 						<h3>Operadores aritmeticos</h3>
 						<p>
-							Un operador aritmético toma valores numéricos (ya sean literales o variables) como sus operandos y devuelve un solo valor numérico. Los operadores aritméticos estándar son suma (+), resta (-), multiplicación (*) y división (/). Estos operadores funcionan como lo hacen en la mayoría de los otros lenguajes de programación cuando se usan con números de punto flotante (en particular, ten en cuenta que la división entre cero produce Infinity). 
+							Un operador aritmético toma valores numéricos (ya sean literales o variables) como sus operandos y devuelve un solo valor numérico. Los operadores aritméticos estándar son suma (+), resta (-), multiplicación (*) y división (/). Estos operadores funcionan como lo hacen en la mayoría de los otros lenguajes de programación cuando se usan con números de punto flotante (en particular, ten en cuenta que la división entre cero produce Infinity).
 						</p>
 					</section>
 					<section>
@@ -369,7 +369,7 @@
 						<h2>Expresiones y Operadores</h2>
 						<h3>Operador coma</h3>
 						<p>
-							El operador coma (,) simplemente evalúa ambos operandos y devuelve el valor del último operando. Este operador se utiliza principalmente dentro de un bucle for, para permitir que se actualicen múltiples variables cada vez a través del bucle. 
+							El operador coma (,) simplemente evalúa ambos operandos y devuelve el valor del último operando. Este operador se utiliza principalmente dentro de un bucle for, para permitir que se actualicen múltiples variables cada vez a través del bucle.
 						</p>
 					</section>
 					<section>
@@ -407,7 +407,7 @@
 							<li><b>continue: </b>Finaliza la ejecucion de las sentencias dentro de la iteracion actual del actual bucle,  y continua la ejecucion del bucle con la siguiente iteracion
 							</li>
 						</ul>
-						
+
 					</section>
 					<section>
 						<h2>Sentencias y Declaraciones</h2>
@@ -486,7 +486,7 @@
 						<h2>Funciones</h2>
 						<h3>Declaración</h3>
 						<ul>
-							Una función esta compuesta de los siguientes elementos: 
+							Una función esta compuesta de los siguientes elementos:
 							<li>Nombre de la función</li>
 							<li>Listado de parametros separados entre "comas"</li>
 							<li>Instrucciones de la función separado por "{....}"</li>
@@ -516,7 +516,7 @@
 							<li>Los parámetros no tienen que ser variables, pueden ser también objetos</li>
 						</ul>
 					</section>
-					
+
 					<!--
 					https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 					https://developer.mozilla.org/en-US/docs/Glossary/Object
@@ -539,7 +539,7 @@
 						<p>
 							Las expresiones regulares son patrones que se utilizan para hacer coincidir combinaciones de caracteres en cadenas. En JavaScript, las expresiones regulares también son objetos.
 						</p>
-						<p>Estos patrones se utilizan con los métodos exec() y test() de RegExp, y con match(), matchAll(), replace(), replaceAll(), search() y split() métodos de String. 
+						<p>Estos patrones se utilizan con los métodos exec() y test() de RegExp, y con match(), matchAll(), replace(), replaceAll(), search() y split() métodos de String.
 						</p>
 					</section>
 				</section>
@@ -586,20 +586,145 @@
 						<ul>
 							<li>Estructura de un formulario web</li>
 							<li>Ajax</li>
-							<li>Asynchronous JavaScript</li>
 						</ul>
 					</section>
 					<section>
-						<h2>Formularios Web</h2>
 						<h2>Estructura de un formulario web</h2>
+						<ul>
+							<li><code>&lt;form&gt;</code>: es el bloque que define y agrega todos los elementos del formulario</li>
+							<li><code>&lt;fieldset&gt;</code> bloque que agrupa elementos del formulario con el mismo propósito</li>
+							<li><code>&lt;legend&gt;</code> da un siginificado a una agrupación &lt;fieldset&gt;</li>
+						</li>
+						</ul>
 					</section>
 					<section>
-						<h2>Formularios Web</h2>
-						<h2>Ajax</h2>
+						<h2>Estructura de un formulario web</h2>
+						<ul>
+							<li><code>&lt;label&gt;</code> define una etiqueta para un control del formulario. Relación a través del atributo <code>for</code></li>
+							<li><code>&lt;input&gt;</code> controles del Formulario (inputs): text, password, email, date, checkbox, hidden...
+						</ul>
 					</section>
 					<section>
-						<h2>Formularios Web</h2>
-						<h2>Asynchronous JavaScript</h2>
+						<h2>Ejemplo de formulario web básico</h2>
+						<img src="images/formulario-basico.png" width="100%" />
+					</section>
+					<section>
+						<h2>Validación de formularios</h2>
+						<ul>
+							<li>Validación client-side: formato correcto</li>
+							<li>Protección ante uso malicioso (en cierta medida)</li>
+							<li>UX</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tipos de validación de formularios</h2>
+						<ul>
+							<li>Validación HTML incorporada: mejor rendimiento, menos personalización.</li>
+							<li>Validación JavaScrpit: peor rendimiento, mayor personalización</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Validación HTML</h2>
+						<p>Atributos de validación</p>
+						<ul>
+							<li><code>required</code></li>
+							<li><code>minlength</code>, <code>maxlength</code></li>
+							<li><code>min</code>, <code>max</code></li>
+							<li><code>type</code></li>
+							<li><code>pattern</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ejemplo de validación HTML</h2>
+						<img src="images/form-validation-html.png" width="100%" />
+						<img src="images/form-validation-html-error.png" width="100%" />
+					</section>
+					<section>
+						<h2>Validación JavaScript</h2>
+						<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation">API de validación de restricciones</a></p>
+						<ul>
+							<li>Disponible para elementos: input, select, textarea, output, fieldset</li>
+							<li>Se utilizan los mismos atributos de validación: required, type, pattern...</li>
+							<li>Estos elementos obtienen los atributos <code>validity (ValidityState), validationMessage, willValidate</code></li>
+							<li>Permite utilizar los métodos <code>checkValidity()</code> y <code>setCustomValidity(string)</code></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ejemplo validación JavaScript</h2>
+						<img src="images/form-validation-js.png" width="100%" />
+					</section>
+					<section>
+						<h2>Envío de formularios</h2>
+						<ul>
+							<li>Destino del formulario (URL): atributo <code>action</code></li>
+							<li>Tipo de envío (método HTTP): atributo <code>method</code> con valor <code>GET / POST</code></li>
+							<li>Atributo <code>enctype</code> para enviar el contenido con diferente codificación, por ejemplo <code>multipart/form-data</code> para imágenes</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ejemplo de formulario de login</h3>
+						<img src="images/form-action.png" width="100%" />
+					</section>
+					<section>
+						<h3>Ejemplo de formulario con imagen</h3>
+						<img src="images/form-multipart.png" width="100%" />
+					</section>
+					<section>
+						<h2>Envío de formulario con JavaScript</h2>
+						<p>Es posible enviar un formulario con JavaScript. Tan solo debemos hacer uso de la función JavaScript nativa <code>submit()</code> sobre el formulario</p>
+						<img src="images/submit-form-js.png" width="100%" />
+					</section>
+					<section>
+						<h2>Asynchronous JavaScript (AJAX)</h2>
+						<p>AJAX nos permite realizar llamadas HTTP con JavaScript de manera asíncrona (no bloqueante) en segundo plano, aunque también se puede usar de manera síncrona.</p>
+						<p>Se suele usar para recargar elementos del DOM que contienen datos de servidores externos, mandar y actualizar datos... </p>
+					</section>
+					<section>
+						<ul>
+							<li>Se basa en el uso de objetos <code>XMLHttpRequest</code></li>
+							<li>Se puede usar cualquier tipo de método HTTP: GET, POST, PUT, DELETE</li>
+							<li>La respuesta se procesa en una función del callback, la cual es ejecutada por el navegador en cuanto se recibe respuesta del servidor</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Plain AJAX (Vanilla)</h3>
+						<ul style="font-size:0.8em">
+							<li>Uso del objeto <code>XMLHttpRequest</code> con propiedades: <code>onreadystatechange</code>,<code>readyState</code>,<code>status</code>,<code>statusText, responseText</code></li>
+							<li><code>readyState</code> contiene el estado en el que se encuentra la petición, va del 0 al 4, siendo este último el estado en el que se ha completado y podemos leer la respuesta</li>
+							<li>Podemos asignar al atributo <code>onreadystatechange</code> una función de callback para saber cuando cambiar el estado de la petición</li>
+							<li>En el <code>status</code> podemos leer el código de la respuesta HTTP</li>
+							<li><code>statusText,responseText</code> contienen el texto asociado al código de respuesta y a la propia respuesta respectivamente, por ejemplo statusText="Not Found" responseText={"data":"json"}</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ejemplo AJAX (Vanilla)</h3>
+						<img src="images/plain-ajax.png" width="100%" />
+					</section>
+					<section>
+						<h3>API Fetch</h3>
+						<p>API mucho mas intuitiva y fácil de usar</p>
+						<p>Se hace uso de la función nativa <code>fetch()</code></p>
+						<p>Basado en <code>Promises</code>: objetos <code>Request, Response</code></p>
+					</section>
+					<section>
+						<h3>Función Fetch</h3>
+						<ul>
+							<li>Acepta dos parámetros: la URL del recurso y un objeto <code><a href="https://developer.mozilla.org/es/docs/Web/API/Request">Request</a></code> donde se indican: método HTTP, cabeceras HTTP, body...</li>
+							<li>Devuelve una <code>Promise</code> a la que podemos suscribirnos con <code>.then()</code> para procesar la respuesta en forma de objeto <code><a href="https://developer.mozilla.org/es/docs/Web/API/Response">Response</a></code></li>
+							<li>La respuesta se puede resolver para extraer el contenido utilizando el <code>mixin</code> del objeto <code><a href="https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch#body">Body</a></code> de la respuesta</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ejemplo Fetch GET</h3>
+						<img src="images/fetch-api.png" width="100%" />
+					</section>
+					<section>
+						<h3>Ejemplo Fetch POST</h3>
+						<img src="images/fetch-api-post.png" width="100%" />
+					</section>
+					<section>
+						<h3>Ejemplo Fetch POST formulario multipart</h3>
+						<img src="images/fetch-api-multipart.png" width="100%" />
 					</section>
 				</section>
 				<section>
@@ -612,6 +737,16 @@
 							<li>https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/</li>
 							<li>https://eloquentjavascript.net/</li>
 							<li>https://js.do/</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Referencias</h2>
+						<h3>Sesión 2:</h3>
+						<ul>
+							<li>https://jsfiddle.net/</li>
+							<li>https://developer.mozilla.org/es/docs/Learn/HTML</li>
+							<li>https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started</li>
+							<li>https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch</li>
 						</ul>
 					</section>
 				</section>
