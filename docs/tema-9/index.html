@@ -25,204 +25,213 @@
 					</p>
 				</section>
 				<section>
-					<h2>Tema 9: Marketing Digital</h2>
+					<h2>Tema 9: Introducción a la persistencia de datos</h2>
 				</section>
 				<section>
 					<section>
 						<h2>Agenda</h2>
 						<h3>Sessión 1</h3>
 						<ul>
-							<li>SEO</li>
-							<li>Analitica web</li>
-							<li>Accesibilidad</li>
-							<li>Herramientas</li>
+							<li>Introducción</li>
+							<li>Tipos de base de datos</li>
+							<li>Bases de datos relacionales</li>
+							<li>Bases de datos no relacionales</li>
+							<li>SQL</li>
 							<li>Referencias</li>
 						</ul>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>SEO</h2>
+						<h2>Introducción</h2>
 						<p>
-							El posicionamiento SEO (por sus siglas en inglés Search Engine Optimization)
-							son un conjunto de técnicas que se aplican en una página web con el objetivo
-							de mejorar su posición y su visibilidad en las páginas de resultados de
-							los principales navegadores.
+							A database is an organized collection of structured information, or data, typically
+							stored electronically in a computer system. A database is usually controlled by
+							a database management system (DBMS).
 						</p>
+						<img src="images/database.jpg" width="25%"/>
 					</section>
+				</section>
+				<section>
 					<section>
-						<h2>SEO</h2>
+						<h2>Tipos de bases de datos</h2>
 						<ul>
-							<li>SEO on-page</li>
-							<li>SEO off-page</li>
-						</ul>
-					</section>
-					<section>
-						<h2>SEO</h2>
-						<h3>SEO on-page</h3>
-						<p>
-							El SEO on-page hace referencia al conjunto de técnicas que se aplican en
-							la propia página web que queremos posicionar.
-						</p>
-						<ul>
-							<li>Mejora de la velocidad y optimización de tu web</li>
-							<li>Optimización de imágenes</li>
-							<li>El Sitemap.xml</li>
-							<li>Creación de contenido de calidad</li>
-							<li>Buena experiencia de usuario web</li>
-							<li>Buena estructura de las etiquetas HTML (H1, H2, H3…)</li>
-						</ul>
-					</section>
-					<section>
-						<h2>SEO</h2>
-						<h3>SEO off-page</h3>
-						<p>
-							En este caso podemos definir el SEO off-page como el conjunto de técnicas
-							que llevamos a cabo fuera de nuestra web pero que también ayudan a mejorar
-							la posición de tu página en buscadores.
-						</p>
-						<ul>
-							<li>Uso de redes sociales</li>
-							<li>Estrategias de Link Building</li>
-							<li>Guest blogging</li>
-							<li>Registro en directorios (Ej: Google My Business)</li>
+							<li>Bases de datos relacionales</li>
+							<li>Bases de datos clave-valor</li>
+							<li>Bases de datos documentales</li>
+							<li>Bases de datos orientadas a Time Series</li>
+							<li>Bases de datos en Memoria</li>
+							<li>Bases de datos de Búsqueda</li>
+							<li>Base de datos orientada a grafos</li>
 						</ul>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Analitica Web</h2>
+						<h2>Bases de datos relacionales</h2>
+						<h3>Introducción</h3>
 						<p>
-							La analítica web consiste en extraer y analizar la información mediante herramientas
-							de analítica para de este modo extraer conclusiones y tomar decisiones.
+							Una base de datos relacional es un tipo de base de datos que almacena y
+							proporciona acceso a puntos de datos relacionados entre sí.
+							Las bases de datos relacionales se basan en el modelo relacional,
+							una forma intuitiva y directa de representar datos en tablas.
 						</p>
 					</section>
 					<section>
-						<h2>Analitica Web</h2>
-						<img src="images/ga.png" />
-					</section>
-					<section>
-						<h2>Analitica Web</h2>
-						<img src="images/ga-tour.png" />
-					</section>
-					<section>
-						<h2>Analitica Web</h2>
+						<h2>Bases de datos relacionales</h2>
+						<h3>Introducción</h3>
 						<p>
-							Funcionalidades:
+							En una base de datos relacional, cada fila en una tabla es un registro con una ID única,
+							llamada clave. Las columnas de la tabla contienen los atributos de los datos y
+							cada registro suele tener un valor para cada atributo, lo que simplifica la creación
+							de relaciones entre los puntos de datos.
 						</p>
-						<ul>
-							<li>Filters</li>
-							<li>Real-time data</li>
-							<li>Goals</li>
-							<li>Annotations</li>
-							<li>Dimensions</li>
-							<li>Events</li>
-							<li>Google Tag Manager</li>
-							<li>Search Console Integration</li>
-						</ul>
+					</section>
+					<section>
+						<h2>Bases de datos relacionales</h2>
+						<h3>Estructura de las bases de datos relacionales</h3>
+						<p>
+							El modelo relacional implica que las estructuras lógicas de los datos
+							(las tablas, las vistas y los índices) estén separadas de las estructuras de
+							almacenamiento físico. Gracias a esta separación, los administradores de bases de
+							datos pueden gestionar el almacenamiento físico de datos sin que eso influya
+							en el acceso a esos datos como estructura lógica.
+						</p>
+					</section>
+					<section>
+						<h2>Bases de datos relacionales</h2>
+						<h3>Estructura de las bases de datos relacionales</h3>
+						<p>Tables:</p>
+						<img src="images/tables.png" width="60%"/>
+					</section>
+					<section>
+						<h2>Bases de datos relacionales</h2>
+						<h3>Estructura de las bases de datos relacionales</h3>
+						<p>Views:</p>
+						<img src="images/views.gif" width="60%"/>
+					</section>
+					<section>
+						<h2>Bases de datos relacionales</h2>
+						<h3>Estructura de las bases de datos relacionales</h3>
+						<p>Views:</p>
+						<img src="images/index.gif" width="50%"/>
+					</section>
+					<section>
+						<h2>Bases de datos relacionales</h2>
+						<h3>Modelo Entidad-Relación</h3>
+						<p>
+							Un modelo entidad-relación es una herramienta para el modelo de datos,
+							la cual facilita la representación de entidades de una base de datos.
+							Fue definido por Peter Chen en 1976.
+						</p>
+						<img src="images/er-diagram.png" />
+					</section>
+					<section>
+						<h2>Bases de datos relacionales</h2>
+						<p>
+							Alternativas:
+						</p>
+						<table>
+							<tr>
+								<td><img src="images/oracle-database-logo.png" width="100%"></td>
+								<td><img src="images/sql-server-logo.png" width="25%"/></td>
+							</tr>
+							<tr>
+								<td><img src="images/postgresql-logo.png" width="75%"></td>
+								<td><img src="images/mysql-logo.png" width="35%"></td>
+							</tr>
+						</table>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Accesibilidad</h2>
+						<h2>Bases de datos documentales</h2>
+						<h3>Introduccion</h3>
 						<p>
-							La accesibilidad Web significa que personas con algún tipo de discapacidad
-							van a poder hacer uso de la Web. En concreto, al hablar de accesibilidad Web se está
-							haciendo referencia a un diseño Web que va a permitir que estas personas puedan percibir,
-							entender, navegar e interactuar con la Web, aportando a su vez contenidos.
-							La accesibilidad Web también beneficia a otras personas, incluyendo personas de edad avanzada
-							que han visto mermadas sus habilidad a consecuencia de la edad.
+							Una base de datos documental está constituida por un conjunto de programas
+							que almacenan, recuperan y gestionan datos de documentos o datos de algún
+							modo estructurados. Este tipo de bases de datos constituyen una de las
+							principales subcategorías dentro de las denominadas bases de datos NoSQL.
 						</p>
 					</section>
 					<section>
-						<h2>Accesibilidad</h2>
+						<h2>Bases de datos documentales</h2>
 						<p>
-							Discapacidades:
+							Alternativas:
 						</p>
-						<img src="images/disabilities.png" />
-					</section>
-					<section>
-						<h2>Accesibilidad</h2>
-						<p>
-							Discapacidades:
-						</p>
-						<img src="images/wcag-focus.png" />
-					</section>
-					<section>
-						<h2>Accesibilidad</h2>
-						<h3>WCAG 2.1</h3>
-						<img src="images/POUR2.png" />
-					</section>
-					<!--
-					https://www.w3.org/WAI/ER/tools/
-					https://www.w3.org/WAI/standards-guidelines/wcag/
-					https://www.w3.org/TR/WCAG21/
-					https://www.slideshare.net/BillTyler1/putting-wcag-21-into-practice-107792446
-					https://slideplayer.com/slide/14450947/
-					-->
-					<section>
-						<h2>Accesibilidad</h2>
-						<h3>WCAG 2.1</h3>
-						<ul>
-							<li>1. Perceivable:
-								Information and user interface components must be presentable to users in ways they can perceive.</li>
-							<li>2. Operable
-								User interface components and navigation must be operable.</li>
-							<li>3. Understandable
-								Information and the operation of user interface must be understandable.</li>
-							<li>4. Robust
-								Content must be robust enough that it can be interpreted by by a wide variety of user agents, including assistive technologies.</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Accesibilidad</h2>
-						<h3>WCAG 2.1</h3>
-						<img src="images/wcag-levels.png" />
+						<img src="images/mongodb-logo.png" width="50%"/>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Herramientas</h2>
-						<ul>
-							<li>Static site generators</li>
-							<!-- <li>Depuración en el navegador</li> -->
-							<!-- -->
-							<li>Markup Validation Service</li>
-							<li>Taw (Test de accesibilidad web)</li>
-							<li>Google Page Speed</li>
-						</ul>
+						<h2>SQL</h2>
+						<p>
+							SQL is a programming language used by nearly all relational databases to query,
+							manipulate, and define data, and to provide access control.
+						</p>
+						<img src="images/database.jpg" width="25%"/>
 					</section>
 					<section>
-						<h2>Herramientas</h2>
-						<h3>Markup Validation Service</h3>
+						<h2>SQL</h2>
 						<p>
-							https://validator.w3.org/
+							SELECT:
 						</p>
+						<pre><code data-trim>
+SELECT column1, column2, ...
+FROM table_name;
+						</code></pre>
 					</section>
 					<section>
-						<h2>Herramientas</h2>
-						<h3>Taw (Test de accesibilidad web)</h3>
-						<img src="images/taw.png" />
+						<h2>SQL</h2>
 						<p>
-							https://www.tawdis.net/index
+							INSERT:
 						</p>
+						<pre><code data-trim>
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+						</code></pre>
 					</section>
 					<section>
-						<h2>Herramientas</h2>
-						<h3>Page Speed Insights</h3>
-						<img src="images/pagespeed-insights.png" width="50%" />
+						<h2>SQL</h2>
 						<p>
-							https://developers.google.com/speed/pagespeed/insights
+							UPDATE:
 						</p>
+						<pre><code data-trim>
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+						</code></pre>
+					</section>
+					<section>
+						<h2>SQL</h2>
+						<p>
+							DELETE:
+						</p>
+						<pre><code data-trim>
+DELETE FROM table_name WHERE condition;
+						</code></pre>
 					</section>
 				</section>
 				<section>
-					<h2>Referencias</h2>
-					<ul>
-						<li>https://www.w3.org/WAI/</li>
-						<li>https://www.w3.org/blog/2019/12/free-online-course-introduction-to-web-accessibility/</li>
-					</ul>
+					<section>
+						<h2>Referencias</h2>
+						<ul>
+							<li>https://www.iso.org/standard/63555.html</li>
+							<li>https://en.wikipedia.org/wiki/SQL</li>
+							<li>https://www.oracle.com/database/what-is-database/</li>
+							<li>https://es.wikipedia.org/wiki/Modelo_entidad-relaci%C3%B3n</li>
+							<li>https://db-engines.com/en/ranking</li>
+							<li>https://es.wikipedia.org/wiki/Base_de_datos_documental</li>
+						</ul>
+					</section>
+					<section>
+						<img src="images/book-database-internals.jpg" width="50%"/>
+					</section>
+					<section>
+						<img src="images/book-learning-sql.jpg" width="50%"/>
+					</section>
 				</section>
+
 			</div>
 		</div>
 
