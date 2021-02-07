@@ -558,19 +558,222 @@
 						</ul>
 					</section>
 					<section>
-						<h2>The Window Object</h2>
+						<h2>The Window Object (BOM & DOM)</h2>
+						<ul>
+							<li>Modelo de objetos que nos permite interactuar con el navegador y sus elementos</li>
+							<li>Soportado por todos los navegadores</li>
+							<li>Tenemos acceso a todos sus elementos y funciones</li>
+						</ul>
+					</section>
+					<section>
+						<h3>BOM (Browser Object Model)</h3>
+						<ul>
+							<li>Redimensionar ventanas del navegador</li>
+							<li>Obtener información del navegador (ventana actual):  propiedades, dimensión, histórico, URL actual...</li>
+							<li>Gestión de cookies</li>
+							<li>Acceder al DOM</li>
+							<li>Funciones con temporizador: <code style="font-size:0.7em">setTimeout(function(){}, timeoutMillis)</code> y  <code style="font-size:0.7em">setInterval(function(){}, intervalMillis)</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ejemplos</h3>
+						<img src="images/bom.png" width="100%"/>
+					</section>
+					<section>
+						<h3>DOM (Document Object Model)</h3>
+						<ul>
+							<li>API para documentos HTML y XML</li>
+							<li>Estándar del W3C</li>
+							<li>Reprentación estructurada de los elementos del documento Web: elements HTML y nodes</li>
+							<li>Permite la comunicación de JavaScript con el document Web</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Acceso a elementos específicos</h3>
+						<ul>
+							<li><code>getElementById()</code></li>
+							<li><code>getElementsByName()</code></li>
+							<li><code>getElementsByTagName()</code></li>
+							<li><code>getElementsByClassName()</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Acceso a elementos específicos</h3>
+						<img src="images/dom1.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Creación de elementos y nodos</h3>
+						<ul>
+							<li><code>createElement(tag, options)</code></li>
+							<li><code>createComment(comment)</code></li>
+							<li><code>createText(text)</code></li>
+							<li><code>cloneDeep()</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Creación de elementos y nodos</h3>
+						<img src="images/dom2.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Insertar elementos</h3>
+						<ul>
+							<li><code>innerHTML, outerHTML</code></li>
+							<li><code>innerText, outerText</code></li>
+							<li><code>appendChild(element)</code></li>
+							<li><code style="font-size:0.8em">insertAdjacentElement(position,element)</code>,<code style="font-size:0.8em">insertAdjacentHTML(), insertAdjacentText()</code></li>
+							<li><code style="font-size:0.8em">remove()</code>,<code style="font-size:0.8em">removeChild(node), replaceChild(new, old)</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Insertar elementos</h3>
+						<img src="images/dom3.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Manipular clases CSS</h3>
+						<ul>
+							<li><code>className, getAttribute("class"), setAttribute("class", class)</code></li>
+							<li><code>classList</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Insertar elementos</h3>
+						<img src="images/dom4.png" width="100%"/>
 					</section>
 					<section>
 						<h2>Handling Events</h2>
+						<ul>
+							<li>Programación JavaScript reactiva basada en eventos</li>
+							<li>Se capturan los diferentes tipos de eventos en la página a través de <code>Event Listeners/Handlers</code></li>
+							<li>Estos listeners reciben el evento y realizan una acción</li>
+							<li>Un Handler/Listener por cada tipo de evento</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Tipos de eventos</h4>
+						<p style="font-size:0.5em">Referencia a <a href="https://developer.mozilla.org/en-US/docs/Web/Events#standard_events">todos los eventos</a></p>
+						<img src="images/js-events-common.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Registro de Handlers</h3>
+						<p>Varias formas de registrar un Handler para un evento:</p>
+						<ul>
+							<li>A través de propiedad HTML: p.e. <code style="font-size:0.7em">&lt;button onclick="doSomething()"&gt;</code></li>
+							<li>A través del DOM estableciendo el atributo HTML: <code style="font-size:0.7em">document.getElementById("btn").onclick=doSomething</code></li>
+							<li>A través del DOM haciendo uso de <code style="font-size:0.7em">addEventListener(enventType,function(){})</code> y <code style="font-size:0.7em">removeEventListener(enventType,function(){})</code></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Objeto Event</h3>
+						<p>Cuando se desencadena un evento, en el Handler recibimos el objeto Evento asociado. A través de la propiedad <code>target</code> podemos acceder al elemento del DOM donde se produjo el evento</p>
+						<img src="images/event-object.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Evitar el comportamiento por defecto</h3>
+						<p>Por ejemplo, cuando hacemos un submit de un formulario, podemos romper el flujo y evitar el envío del mismo</p>
+						<p>Para ello utilizamos la función <code>preventDefault()</code> y en algunos casos, <code>return false</code></p>
+						<img src="images/prevent-default.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Ejemplo búsqueda de películas con eventos</h3>
+						<img src="images/events-search.png" width="100%"/>
 					</section>
 					<section>
 						<h2>Scripted HTTP</h2>
+						<p>Consiste en la realización de peticiones HTTP a través de JavaScript</p>
+						<ul>
+							<li>A través del atributo <code>location</code> del <code>Window Object</code></li>
+							<li>A través de la función <code>submit()</code> para enviar formularios</li>
+							<li>A través de AJAX</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Ejemplos Scripted HTTP</h3>
+						<img src="images/scripted-http.png" width="100%"/>
 					</section>
 					<section>
 						<h2>Client-Side Storage</h2>
+						<p>Consiste en almacenar datos simples o complejos en la memoria del navegador para:</p>
+						<ul>
+							<li>Mejorar la experiencia de usuario, p.e. guardar preferencias, colores, gustos...</li>
+							<li>Almacenar datos de la sesión anterior, p.e. cesta de compra</li>
+							<li>Almacenar recursos/datos para que la carga de la página sea mucho más eficiente</li>
+							<li>Almacenar recursos/datos para poder utilizar el modo sin conexión</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Client-Side Storage</h2>
+						<ul>
+							<li>Cookies</li>
+							<li>Web Storage: local & session</li>
+							<li>IndexedDB</li>
+							<li>Cache</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Cookies</h3>
+						<ul>
+							<li>Es la forma clásica de almacenar datos sobre sesión de usuario, preferencias, etc.</li>
+							<li>Se almacenan en formato clave=valor</li>
+							<li>Se crean en servidor con la cabecera <code>Set-Cookie: &lt;nombre-cookie&gt;=&lt;valor-cookie&gt;</code></li>
+							<li>Se pueden crear con JavaScript a través del atributo <code>cookie</code> del <code>DOM</code></li>
+							<li>Asociadas a un dominio y un path, y se envían en todas las request contra ese dominio/path en la cabecera Cookie</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Cookies: atributos</h3>
+						<ul>
+							<li>Expires y Max-Age: sirven para establecer la caducidad de la cookie. Si no se establece, será una cookie de sesión</li>
+							<li>HttpOnly y Secure: sirven para evitar el acceso a la misma a través de JavaScript, y para solo enviarla en caso de ser una conexión HTTPS respectivamente</li>
+							<img src="images/cookies-chrome.png" width="100%"/>
+						</ul>
+					</section>
+					<section>
+						<h3>Cookies: ejemplos</h3>
+						<img src="images/cookie-set-header.png" width="100%"/>
+						<img src="images/cookie-header.png" width="100%"/>
+						<img src="images/cookies-js.png" width="100%"/>
+					</section>
+					<section>
+						<h3>Web Storage</h3>
+						<ul>
+							<li>Cada Web Site tiene su propio Web Storage aislado, no podiendo acceder al de otros dominios</li>
+							<li>Almacenamiento de datos simplres: texto, númerico (objetos también pero con <code>JSON.stringify()</code>)</li>
+							<li>LocalStorage: almacenamiento persiste tras cerrar el navegador</li>
+							<li>SessionStorage: almacenamiento no persiste tras cerrar el navegador (sesión finaliza)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Web Storage: ejemplo</h3>
+						<img src="images/web-storage.png" width="100%"/>
+					</section>
+					<section>
+						<h3>IndexedDB</h3>
+						<ul>
+							<li>Sistema de base de datos completo embebido en el navegador</li>
+							<li>Se utiliza para almacenar datos complejos y pesados como imágenes, vídeos...</li>
+							<li>Su uso no es trivial</li>
+						</ul>
+						<p>Ver ejemplo de clase y <a href="https://developer.mozilla.org/es/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage">referencia</a></p>
+					</section>
+					<section>
+						<h3>IndexedDB</h3>
+						<ul>
+							<li>Interfaz disponible para almacenar los pares de objetos Request Response</li>
+							<li>Tantas cachés como queramos, por nombre</li>
+							<li>Tenemos que implementar la lógica a través de un <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache">ServiceWorker del navegador</a></li>
+						</ul>
+						<p>Ver ejemplo de clase y <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache">referencia</a></p>
 					</section>
 					<section>
 						<h2>HTML5 APIs</h2>
+						<p>En la especificación HTML5 se introducen <a href="https://developer.mozilla.org/es/docs/Web/API">numerosas APIs</a> de las cuales destacamos las más interesantes:</p>
+						<ul>
+							<li><a href="https://web.dev/drag-and-drop/">Drag and Drop</a></li>
+							<li>Geolocalización</li>
+							<li>Web Storage: Indexed DB & Local Storage</li>
+							<li>Web Workers: scripts en segundo plano</li>
+							<li><a href="https://github.com/dissimulate/Tearable-Cloth">Canvas</a></li>
+						</ul>
 					</section>
 				</section>
 				<!--
@@ -697,6 +900,43 @@
 						</ul>
 					</section>
 					<section>
+						<h3>AJAX readyState</h3>
+						<table style="font-size:0.8em">
+						 <tbody>
+						  <tr>
+						   <td class="header">Value</td>
+						   <td class="header">State</td>
+						   <td class="header">Description</td>
+						  </tr>
+						  <tr>
+						   <td><code>0</code></td>
+						   <td><code>UNSENT</code></td>
+						   <td>Client has been created. <code>open()</code> not called yet.</td>
+						  </tr>
+						  <tr>
+						   <td><code>1</code></td>
+						   <td><code>OPENED</code></td>
+						   <td><code>open()</code> has been called.</td>
+						  </tr>
+						  <tr>
+						   <td><code>2</code></td>
+						   <td><code>HEADERS_RECEIVED</code></td>
+						   <td><code>send()</code> has been called, and headers and status are available.</td>
+						  </tr>
+						  <tr>
+						   <td><code>3</code></td>
+						   <td><code>LOADING</code></td>
+						   <td>Downloading; <code>responseText</code> holds partial data.</td>
+						  </tr>
+						  <tr>
+						   <td><code>4</code></td>
+						   <td><code>DONE</code></td>
+						   <td>The operation is complete.</td>
+						  </tr>
+						 </tbody>
+						</table>
+					</section>
+					<section>
 						<h3>Ejemplo AJAX (Vanilla)</h3>
 						<img src="images/plain-ajax.png" width="100%" />
 					</section>
@@ -742,9 +982,14 @@
 					<section>
 						<h2>Referencias</h2>
 						<h3>Sesión 2:</h3>
-						<ul>
+						<ul style="font-size: 0.8em">
 							<li>https://jsfiddle.net/</li>
+							<li>https://developer.mozilla.org/es/docs/DOM</li>
+							<li>https://lenguajejs.com/javascript/dom/que-es/</li>
+							<li>https://developer.mozilla.org/es/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage</li>
+							<li>https://developer.mozilla.org/en-US/docs/Web/Events#standard_events</li>
 							<li>https://developer.mozilla.org/es/docs/Learn/HTML</li>
+							<li>https://www.digitallearning.es/blog/javascript-api-html5/</li>
 							<li>https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started</li>
 							<li>https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch</li>
 						</ul>
