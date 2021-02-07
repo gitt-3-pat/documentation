@@ -267,6 +267,7 @@
 							<li>AsyncFunction</li>
 						</ul>
 					</section>
+					<!--
 					<section>
 						<h2>Objetos, Tipos y Variables</h2>
 						<h3>Tipos (Reflexion)</h3>
@@ -275,6 +276,7 @@
 							<li>Proxy</li>
 						</ul>
 					</section>
+					-->
 					<!--
 					https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables#The_difference_between_var_and_let
 					-->
@@ -649,11 +651,13 @@
 						</ul>
 					</section>
 					<section>
-						<h4>Tipos de eventos</h4>
-						<p style="font-size:0.5em">Referencia a <a href="https://developer.mozilla.org/en-US/docs/Web/Events#standard_events">todos los eventos</a></p>
-						<img src="images/js-events-common.png" width="100%"/>
+						<h2>Handling Events</h2>
+						<h3>Tipos de eventos</h3>
+						<img src="images/js-events-common.png" width="60%"/>
+						<p>Referencia a <a href="https://developer.mozilla.org/en-US/docs/Web/Events#standard_events">todos los eventos</a></p>
 					</section>
 					<section>
+						<h2>Handling Events</h2>
 						<h3>Registro de Handlers</h3>
 						<p>Varias formas de registrar un Handler para un evento:</p>
 						<ul>
@@ -663,15 +667,17 @@
 						</ul>
 					</section>
 					<section>
+						<h2>Handling Events</h2>
 						<h3>Objeto Event</h3>
 						<p>Cuando se desencadena un evento, en el Handler recibimos el objeto Evento asociado. A través de la propiedad <code>target</code> podemos acceder al elemento del DOM donde se produjo el evento</p>
 						<img src="images/event-object.png" width="100%"/>
 					</section>
 					<section>
+						<h2>Handling Events</h2>
 						<h3>Evitar el comportamiento por defecto</h3>
-						<p>Por ejemplo, cuando hacemos un submit de un formulario, podemos romper el flujo y evitar el envío del mismo</p>
-						<p>Para ello utilizamos la función <code>preventDefault()</code> y en algunos casos, <code>return false</code></p>
-						<img src="images/prevent-default.png" width="100%"/>
+						<p>Cuando hacemos un submit de un formulario, podemos romper el flujo y evitar el envío del mismo
+						Para ello utilizamos la función <code>preventDefault()</code> y en algunos casos, <code>return false</code></p>
+						<img src="images/prevent-default.png" width="80%"/>
 					</section>
 					<section>
 						<h3>Ejemplo búsqueda de películas con eventos</h3>
@@ -773,6 +779,8 @@
 							<li>Web Storage: Indexed DB & Local Storage</li>
 							<li>Web Workers: scripts en segundo plano</li>
 							<li><a href="https://github.com/dissimulate/Tearable-Cloth">Canvas</a></li>
+							<li>Bluetooth</li>
+							<li>Camera</li>
 						</ul>
 					</section>
 				</section>
