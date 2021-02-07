@@ -39,6 +39,7 @@
 - Práctica 9 (Tema 13): Patrón Pub/Sub con Kafka
 - Práctica 10 (Tema 14): Mejorando la estructura de un Microservicio con ArchUnit
 
+
 ## ¿Como probar en local?
 
 ````
