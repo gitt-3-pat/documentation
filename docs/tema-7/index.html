@@ -860,10 +860,12 @@ public class ScheduledTasks {
 							threaddump
 						</p>
 					</section>
+					<!--
 					<section>
 						<h2>Actuator</h2>
 						<img src="images/spring-boot-actuator-k8s.png" />
 					</section>
+					-->
 				</section>
 				<section>
 					<section>
@@ -880,6 +882,7 @@ public class ScheduledTasks {
 							<li>HTTP</li>
 						</ul>
 					</section>
+					<!--
 					<section>
 						<h2>Spring Security</h2>
 						<h3>Authentication</h3>
@@ -922,31 +925,39 @@ public class ScheduledTasks {
 							Proxy Server Configuration
 						</p>
 					</section>
+					-->
 				</section>
 
 				<section>
-					<h2>Referencias:</h2>
-					<ul>
-						<li>https://en.wikipedia.org/wiki/Java_logging_framework</li>
-						<li>https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-logging</li>
-						<li>https://spring.io/guides/gs/scheduling-tasks/</li>
-						<li>https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#scheduling</li>
-						<li>https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#scheduling-annotation-support-scheduled</li>
-						<li>https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html</li>
-						<li>https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-security</li>
-						<li>https://docs.spring.io/spring-security/site/docs/current/reference/html5/</li>
-						<li>https://oauth.net/2/</li>
-					</ul>
+					<section>
+						<h2>Referencias:</h2>
+						<ul>
+							<li>https://en.wikipedia.org/wiki/Java_logging_framework</li>
+							<li>https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-logging</li>
+							<li>https://spring.io/guides/gs/scheduling-tasks/</li>
+							<li>https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#scheduling</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Referencias:</h2>
+						<ul>
+							<li>https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#scheduling-annotation-support-scheduled</li>
+							<li>https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html</li>
+							<li>https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-security</li>
+							<!--
+                            <li>https://docs.spring.io/spring-security/site/docs/current/reference/html5/</li>
+                            <li>https://oauth.net/2/</li>
+                            -->
+						</ul>
+					</section>
 				</section>
+
 				<section>
 					<h2>Sessión 5</h2>
 				</section>
 				<section>
 					<h2>Ecosistema de Microservicios</h2>
                     <img src="images/microservice-concerns.png" />
-					<p>
-						https://12factor.net
-					</p>
 				</section>
 				<section>
 					<section>
@@ -960,7 +971,7 @@ public class ScheduledTasks {
 							<li>Gateway: Zuul</li>
 							<li>Service Discovery: Eureka</li>
 							<li>External Configuration: Spring Cloud Config</li>
-							<li>Circuit Breaker: Hystrix</li>
+							<!-- <li>Circuit Breaker: Hystrix</li> -->
 							<li>Load Balancing: Ribbon</li>
 						</ul>
 					</section>
@@ -977,7 +988,7 @@ public class ScheduledTasks {
 							<li>Gateway: Spring Cloud Gateway / Ingress</li>
 							<li>Service Discovery: K8S</li>
 							<li>External Configuration: Config Maps</li>
-							<li>Circuit Breaker: Resilience4j / Istio</li>
+							<!-- <li>Circuit Breaker: Resilience4j / Istio</li> -->
 							<li>Load Balancing: K8S</li>
 						</ul>
 					</section>
@@ -993,10 +1004,13 @@ public class ScheduledTasks {
 					</section>
 					<section>
 						<h2>Servicios Auxiliares</h2>
-						<h3>Central Logging</h3>
-						<p>EFK</p>
-						<img src="images/efk.jpg" width="70%" />
+						<h3>Central Logging (EFK)</h3>
+						<p>
+							Se necesita una solucion para centralizar el Logging de todos los microservicios.
+						</p>
+						<img src="images/efk.jpg" width="60%" />
 					</section>
+					<!--
 					<section>
 						<h2>Servicios Auxiliares</h2>
 						<h3>Central Logging</h3>
@@ -1007,16 +1021,25 @@ public class ScheduledTasks {
 							<li>Kibana</li>
 						</ul>
 					</section>
+					-->
 					<section>
 						<h2>Servicios Auxiliares</h2>
 						<h3>Monitoring & Alerting</h3>
-						<img src="images/spring-monitoring.png" width="100%" />
+						<p>
+							Se necesita una solucion para centralizar la monitorizacion de la salud de los
+							microservicios.
+						</p>
+						<p>
+							Es necesario monitorizar: CPU, Memoria consumida, Threads, GC, otros...
+						</p>
+						<img src="images/spring-monitoring.png" width="50%" />
 					</section>
 					<section>
 						<h2>Servicios Auxiliares</h2>
 						<h3>Monitoring & Alerting</h3>
 						<img src="images/spring-monitoring-grafana.png" width="70%" />
 					</section>
+					<!--
 					<section>
 						<h2>Servicios Auxiliares</h2>
 						<h3>Monitoring & Alerting</h3>
@@ -1026,16 +1049,23 @@ public class ScheduledTasks {
 							<li>Grafana</li>
 						</ul>
 					</section>
+
 					<section>
 						<h2>Servicios Auxiliares</h2>
 						<h3>Distributed Tracing</h3>
 						<img src="images/microservice-network.png" width="70%" />
 					</section>
+					-->
 					<section>
 						<h2>Servicios Auxiliares</h2>
 						<h3>Distributed Tracing</h3>
-						<img src="images/distributed-tracing-jaeger.png" width="70%" />
+						<p>
+							Soluciona la necesidad de centralizar la trazabilidad de peticiones a los
+							microservicios
+						</p>
+						<img src="images/distributed-tracing-jaeger.png" width="50%" />
 					</section>
+					<!--
 					<section>
 						<h2>Servicios Auxiliares</h2>
 						<h3>Distributed Tracing</h3>
@@ -1044,6 +1074,7 @@ public class ScheduledTasks {
 							<li>Jaeger</li>
 						</ul>
 					</section>
+					-->
 				</section>
 
 				<section>
