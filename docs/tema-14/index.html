@@ -30,20 +30,333 @@
 				<section>
 					<section>
 						<h2>Agenda</h2>
-						<h3>Sessión 1</h3>
 						<ul>
 							<li>Introduccion</li>
 							<li>Conceptos</li>
 							<li>Patrones de diseño</li>
 							<li>CQRS</li>
-							<li>Source, Processor & Sink</li>
 							<li>Implementing EDA with Spring Cloud Stream</li>
 							<li>Testing</li>
 						</ul>
 					</section>
 				</section>
 				<section>
-					<h2>Sessión 1</h2>
+					<section>
+						<h2>Sessión 1</h2>
+						<ul>
+							<li>Introduccion</li>
+							<li>Conceptos</li>
+							<li>Patrones de diseño</li>
+							<li>CQRS</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Introducción</h2>
+						<p align=left>
+							La Arquitectura dirigida por eventos, Event-driven architecture o EDA, 
+							es un patrón de arquitectura software que promueve la producción, detección, consumo y reacción a eventos.
+						</p>
+					</section>
+					<section>
+						<h2>Introducción</h2>
+						<p align=left>
+							Este patrón arquitectónico puede ser aplicado por el diseño e implementación de aplicaciones y sistemas que transmitan eventos entre componentes software que estén emparejados libremente y servicios. 
+						</p>
+					</section>
+					<section>
+						<h2>Conceptos</h2>
+						<ul>
+							<li>Evento</li>
+							<li>Agente</li>
+							<li>Consumidor (Sink)</li>
+							<li>Canal</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Conceptos</h2>
+						<h3>Evento</h3>
+						<p align=left>
+							Un evento puede ser definido como "un cambio significativo en un estado"<br>
+							Un evento puede estar hecho de dos partes, el encabezado evento y el cuerpo evento. <br>
+							El encabezado de evento puede incluir información como el nombre, fecha y hora y el tipo de evento.<br>
+							El texto del evento es la parte que describe lo que ha ocurrido en realidad, no debe ser confundido con el patrón o la lógica que se puede aplicar en reacción al evento en sí.
+						</p>
+					</section>
+					<section>
+						<h2>Conceptos</h2>
+						<h3>Agente (Productor)</h3>
+						<p align=left>
+							Entidad que crea y publica el evento<br>
+							Desconoce todo lo relacionado con el consumo del evento: entidad consumidora, implicaciones y/o consecuencias<br>
+							En muchos casos genera los datos del evento o bien transforma la información que tiene en un formato adecuado
+						</p>
+					</section>
+					<section>
+						<h2>Conceptos</h2>
+						<h3>Consumidor</h3>
+						<p align=left>
+							Entidad que consume el evento desde un lugar y que por tanto ejecuta/interpreta la lógica de negocio<br>
+							Se subscribe al canal de eventos y no tienen en consideración al productor<br>
+							Conoce como distinguir entre eventos<br>
+							Enfoque asíncrono<br>
+						</p>
+					</section>
+					<section>
+						<h2>Conceptos</h2>
+						<h3>Canal</h3>
+						<p align=left>
+							Medio donde se publican, localizan, viven y/o son consumidos los eventos<br>
+							Se suele trabajar con el concepto de motor de eventos<br>
+							Pueden tener cierta lógica de aplicación sobre los eventos: almacenamiento, expiración, entrega, backup, etc
+						</p>
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<ul>
+							<li>Observador</li>
+							<li>Publicador y Subcriptor (EventBus)</li>
+							<li>Stream (WebSocket)</li>
+							<li>Clave y Valor (In Memory KV)</li>
+							<li>Eventos en Transacciones</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Observador</h3>
+						<p align=left>
+							Un objeto, llamado sujeto, tiene otros objetos del cual dependen, que son los observadores. Es decir define una dependencia del tipo uno a muchos entre objetos, de manera que cuando uno de los objetos cambia su estado(sujeto), notifica este cambio a todos los dependientes, normalmente a través de uno de su métodos.
+						</p>
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Observador</h3>
+						<img src="images/EDA-1.png" width="20%" />
+					</section>
+					<!-- https://medium.com/@Aida_Pro_/observer-vs-eventbus-patrones-de-dise%C3%B1o-cd8178f48c7d -->
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Observador (Ejemplo 1)</h3>
+						<img src="images/EDA-4.png" width="100%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Observador (Ejemplo 1)</h3>
+						<img src="images/EDA-6.png" width="100%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Observador (Ejemplo 1)</h3>
+						<img src="images/EDA-5.png" width="100%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Observador (Ejemplo 1)</h3>
+						<img src="images/EDA-7.png" width="100%" />
+					</section>
+
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Observador (Ejemplo 2)</h3>
+						<img src="images/EDA-8.png" width="70%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Observador (Ejemplo 2)</h3>
+						<img src="images/EDA-9.png" width="100%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Observador (Ejemplo 2)</h3>
+						<img src="images/EDA-10.png" width="100%" />
+					</section>
+
+
+
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Publicador y Subcriptor</h3>
+						<p align=left>
+							Alguien que envía notificaciones (publisher) y hay otros objetos que las reciben (subscribers), pero con una diferencia: el publisher no es el que programa las notificaciones, como en el patrón del Observador. El que lo hace es el event bus o broker o message broker.
+						</p>
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Publicador y Subcriptor</h3>
+						<img src="images/EDA-2.png" width="20%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Publicador y Subscriptor (Ejemplo 3)</h3>
+						<img src="images/EDA-11.png" width="65%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Publicador y Subscriptor (Ejemplo 3)</h3>
+						<img src="images/EDA-12.png" width="100%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Publicador y Subscriptor (Ejemplo 3)</h3>
+						<img src="images/EDA-13.png" width="100%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Publicador y Subscriptor (Ejemplo 3)</h3>
+						<img src="images/EDA-14.png" width="100%" />
+					</section>
+
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Stream (WebSocket)</h3>
+						<p align=left>
+							El modelo petición-respuesta es especialmente común en las interacciones navegador-servidor. <br/>
+							Usando Kafka junto con websockets podemos tener todo el flujo dirigido por eventos, incluyendo las interacciones navegador-servidor.
+						</p>
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Stream (Ejemplo 4)</h3>
+						<img src="images/EDA-15.png" width="100%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Stream (Ejemplo 4)</h3>
+						<img src="images/EDA-16.png" width="100%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Stream (Ejemplo 4)</h3>
+						<img src="images/EDA-17.png" width="100%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Stream (Ejemplo 4)</h3>
+						<img src="images/EDA-18.png" width="100%" />
+					</section>
+
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Clave y Valor</h3>
+						<p align=left>
+							Este patrón esta orientando en aquellos escenarios que necesitamos baja latencia y la información sea persistente en el tiempo sin utilizar una Base de Datos.<br/>
+							La solución tradicional puede pasar por utilizar una Base de Datos Clave-Valor (KV) como REDIS.<br/>
+							Kafka ofrece una solución para "compactar" los eventos y no borrar la última versión del estado de las claves.
+						</p>
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Clave y Valor (Ejemplo 5)</h3>
+						<img src="images/EDA-19.png" width="80%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Clave y Valor (Ejemplo 5)</h3>
+						<img src="images/EDA-20.png" width="80%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Clave y Valor (Ejemplo 5)</h3>
+						<img src="images/EDA-21.png" width="80%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Eventos en Transacciones</h3>
+						<p align=left>
+							Este patrón esta orientando en aquellos escenarios que requiere coordinar diferentes sistemas/plataformas como si fuera una transacción en una Base de Datos.<br/>
+							Un ejemplo muy común que utiliza esté patrón podría ser un e-commerce.<br/>
+						</p>
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Transacciones (Ejemplo 6)</h3>
+						<img src="images/EDA-22.png" width="80%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Transacciones (Ejemplo 6)</h3>
+						<img src="images/EDA-23.png" width="80%" />
+					</section>
+					<section>
+						<h2>Patrones de Diseño</h2>
+						<h3>Transacciones (Ejemplo 6)</h3>
+						<img src="images/EDA-24.png" width="80%" />
+					</section>
+					<section>
+						<h2>CQRS</h2>
+						<h3>Definición</h3>
+						<p align="left">
+							Command Query Responsability Segregation (CQRS), es un patrón de arquitectura en el que tenemos dos subsistemas diferenciados, uno responsable de los comandos, y otro responsable de las consultas.<br/>
+							Es muy utilizado en el diseño de arquitecturas basadas en Dominios Funcionales (DDD).
+						</p>
+					</section>
+					<section>
+						<h2>CQRS</h2>
+						<h3>Objetivo</h3>
+						<ul>
+							<li>Un modelo interno donde se guarda la información de actualización (Command)</li>
+							<li>Uno o varios modelos de lectura de los que las aplicaciones leen la información (Query)</li>
+							<li>No se puede dejar que otros sistemas tengan acceso al modelo de escritura (Responsability)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>CQRS</h2>
+						<h3>Escalabilidad</h3>
+						<p align="left">
+							CQRS nos permite escalar nuestro sistema de forma independiente: a menudo tenemos que gestionar muchas más lecturas que escrituras, de ahí que la escalabilidad sea diferente.
+						</p>
+					</section>
+					<section>
+						<h2>CQRS</h2>
+						<h3>Negocio</h3>
+						<p align="left">
+							Separar el modelo de escritura de los modelos de lectura nos ayuda a separar los aspectos complejos de nuestro dominio (quién necesita qué, quién es responsable de qué) y a aumentar la flexibilidad de nuestra solución.
+						</p>
+					</section>
+					<section>
+						<h2>CQRS</h2>
+						<h3>Concurrencia</h3>
+						<p align="left">
+							Técnicamente, CQRS también puede simplificar la gestión de la concurrencia y el bloqueo (bases de datos transaccionales).
+						</p>
+					</section>
+					<section>
+						<h2>CQRS</h2>
+						<h3>Conclusiones</h3>
+						<ul>
+							<li>Los requisitos del negocio cambian mucho</li>
+							<li>La empresa no sabe exactamente hacia dónde se dirige</li>
+							<li>Tenemos problemas de escalabilidad</li>
+						</ul>
+					</section>
+					<section>
+						<h2>CQRS</h2>
+						<h3>Conclusiones</h3>
+						<ul>
+							<li>Colaboramos con otros equipos (Externos)</li>
+							<li>Múltiples servicios compiten para alterar los mismos recursos</li>
+							<li>Estamos orquestando otros servicios a nuestro alrededor</li>
+						</ul>
+					</section>
+					<section>
+						<h2>CQRS</h2>
+						<h3>Conclusiones</h3>
+						<ul>
+							<li>Lo que ocurra en nuestro dominio les afectará a ellos o viceversa</li>
+							<li>Nuestro dominio está orientado a la escritura, no leemos nuestros propios datos, otras aplicaciones sí</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Sessión 2</h2>
+						<ul>
+							<li>Implementing EDA with Spring Cloud Stream</li>
+							<li>Testing</li>
+						</ul>
+					</section>
+					<section>
+						test2
+					</section>
 				</section>
 			</div>
 		</div>
