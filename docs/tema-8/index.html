@@ -39,8 +39,11 @@
 							<li>Tests unitarios</li>
 							<li>Test Doubles</li>
 							<li>Consideracion de diseño de Tests</li>
+							<li>Librerias</li>
+							<!--
 							<li>JUnit</li>
 							<li>Mockito</li>
+							-->
 							<li>TDD</li>
 						</ul>
 					</section>
@@ -53,6 +56,7 @@
 							<li>TestContainers</li>
 						</ul>
 					</section>
+					<!--
 					<section>
 						<h2>Agenda</h2>
 						<h3>Sessión 3</h3>
@@ -61,6 +65,7 @@
 							<li>JMeter</li>
 						</ul>
 					</section>
+					-->
 				</section>
 				<section>
 					<h2>Sessión 1</h2>
@@ -72,11 +77,7 @@
 						<p>
 							Es necesario verificar que el software cumple con las expectativas / requerimientos.
 						</p>
-					</section>
-					<section>
-						<h2>Introdución</h2>
-						<h3>¿Por que necesitas tests?</h3>
-						<img src="images/software-development-cycle.jpg" width="50%"/>
+						<img src="images/software-development-cycle.jpg" width="30%"/>
 					</section>
 				</section>
 				<section>
@@ -95,8 +96,8 @@
 							<li>Unit Tests</li>
 							<li>Integration Tests</li>
 							<li>Code Coverage</li>
-							<li>Mutation Tests Coverage</li>
-							<li>Reglas de Arquitectura</li>
+							<!-- <li>Mutation Tests Coverage</li>
+							<li>Reglas de Arquitectura</li> -->
 							<li>Documentación</li>
 						</ul>
 					</section>
@@ -166,6 +167,11 @@
 							<li>Mocks are what we are talking about here: objects pre-programmed with expectations which form a specification of the calls they are expected to receive.</li>
 							<li>Stubs provide canned answers to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.</li>
 							<li>Spies are stubs that also record some information based on how they were called.</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Test Doubles</h2>
+						<ul>
 							<li>Fake objects actually have working implementations, but usually take some shortcut.
 								(an in memory database is a good example).</li>
 							<li>Dummy objects are passed around but never actually used. </li>
@@ -205,6 +211,13 @@
 							<li>Conformance – Does the value conform to an expected format?</li>
 							<li>Ordering – is the set of values ordered or unordered as appropriate?</li>
 							<li>Range – is the value within reasonable minimum and maximum values?</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Consideracion de diseño de Tests</h2>
+						<h3>The Right BICEP</h3>
+						<h4>Tests for boundary conditions</h4>
+						<ul>
 							<li>Reference – does the code reference anything external that isn’t under direct control of the code itself?Existence – Does the value exist?</li>
 							<li>Cardinality – are there exactly enough values?</li>
 							<li>Time – is everything happening in order? At the right time? In time?</li>
@@ -360,9 +373,22 @@ public void shouldFetchWeatherForecastFromGlobalServiceIfNotAvailableLocally() {
 						<li>https://xp123.com/articles/3a-arrange-act-assert/</li>
 						<li>https://martinfowler.com/bliki/GivenWhenThen.html</li>
 						<li>https://martinfowler.com/bliki/TestDouble.html</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Referencias</h2>
+					<ul>
+						<li>https://junit.org/junit5/</li>
 						<li>https://site.mockito.org/</li>
 					</ul>
 				</section>
+				<section>
+					<h2>Referencias</h2>
+					<ul>
+						<li>https://spring.io/guides/gs/testing-web/</li>
+					</ul>
+				</section>
+
 				<section>
 					<h2>Sessión 2</h2>
 				</section>
@@ -420,6 +446,7 @@ public void exampleTest() {
 						</code></pre>
 					</section>
 				</section>
+				<!--
 				<section>
 					<section>
 						<h2>Testcontainers</h2>
@@ -450,7 +477,7 @@ class MixedLifecycleTests {
 						</code></pre>
 					</section>
 				</section>
-
+-->
 				<section>
 					<h2>Referencias</h2>
 					<ul>
