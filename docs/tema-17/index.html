@@ -32,13 +32,238 @@
 						<h2>Agenda</h2>
 						<h3>Sessión 1</h3>
 						<ul>
+							<li>Introduccion</li>
+							<li>Mecanismos de Seguridad</li>
+							<li>Autenticación y Autorización</li>
+							<li>Cabeceras HTTP orientadas a la seguridad</li>
+							<li>Spring Framework</li>
+							<li>Enterprise Security</li>
 						</ul>
 					</section>
 				</section>
 				<section>
 					<h2>Sessión 1</h2>
 				</section>
+				<section>
+					<section>
+						<h2>Introduccion</h2>
+					</section>
+					<section>
+						<p align="left">
+							La Seguridad Web son las medidas aplicadas para proteger una página web y garantizar que los datos no están expuestos.
+							<br/>
+							Es un proceso continuo y esencial en el desarrollo de aplicaciones.
+						</p>
+					</section>
+					<section>
+						<p align="left">Los principales ataques que puede sufrir una aplicación Web son:</p>
+						<ul>
+							<li>Robo de Información</li>
+							<li>Suplantación de identidad</li>
+							<li>Recibir ataques DDoS</li>
+							<li>Mostrar información no deseada</li>
+						</ul>
+					</section>
+					<section>
+						<p align="left">
+							La seguridad en el desarrollo de aplicaciones se puede gestionar utilizando las siguientes opciones:
+						</p>
+						<ul>
+							<li>Framework de desarrollo (Spring Security)</li>
+							<li>Securización de APIs (API Management)</li>
+							<li>Firewall (Software y Hardware)</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Mecanismos de Seguridad</h2>
+					</section>
+					<section>
+						<p align="left">
+							Los mecanismos de seguridad más utilizados en el desarrollo de aplicaciones Web son:
+						</p>
+						<ul>
+							<li>WWW-Authenticate</li>
+							<li>OAuth 2.0</li>
+							<li>OpenID</li>
+							<li>JSON Web Token (JWT)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>WWW-Authenticate</h2>
+						<p align="left">
+							El marco de autenticación HTTP que puede ser usado por un servidor para revisar la solicitud de un cliente y por un cliente para proveer información de autenticación. <br>
+							El servidor responde al cliente con un estado de respuesta 401 (Unauthorized) y devuelve al cliente información sobre cómo autorizarse con un encabezado de respuesta WWW-Authenticate que contiene al menos una revisión. <br>
+						</p>
+					</section>
+					<section>
+						<img src="images/tema17-1.png" width="100%" />
+					</section>
+					<section>
+						<h2>OAuth 2.0</h2>
+						<p align="left">
+							Es un estándar abierto para la autorización de APIs, que nos permite compartir información entre sitios sin tener que compartir la identidad. <br>
+							Proporciona diferentes flujos de autenticación:
+						</p>
+						<ul>
+							<li>Client Credentials</li>
+							<li>Password</li>
+							<li>Authorization Code</li>
+							<li>Implicit flow</li>
+						</ul>
+					</section>
+					<section>
+						<img src="images/tema17-2.png" width="100%" />
+					</section>
+					<section>
+						<h2>OpenID</h2>
+						<p align="left">
+							Estándar de identificación digital descentralizado, con el que un usuario puede identificarse en una página web a través de una URL y puede ser verificado por cualquier servidor que soporte el protocolo. <br>
+ 							Los usuarios no tienen que crearse una nueva cuenta de usuario para obtener acceso. En su lugar, solo necesitan disponer de un identificador creado en un servidor que verifique OpenID, llamado proveedor de identidad o IdP.
+						</p>
+					</section>
+					<section>
+						<img src="images/tema17-3.png" width="100%" />
+					</section>
+					<section>
+						<h2>JSON Web Token (JWT)</h2>
+						<p align="left">
+							Es un estándar qué está dentro del documento RFC 7519. <br>
+							En el mismo se define un mecanismo para poder propagar entre dos partes, y de forma segura, la identidad de un determinado usuario, además con una serie de claims o privilegios. <br>
+							Estos privilegios están codificados en objetos de tipo JSON, que se incrustan dentro de del payload o cuerpo de un mensaje que va firmado digitalmente.
+						</p>
+					</section>
+					<section>
+						<img src="images/tema17-4.png" width="100%" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Autorización y Autenticación</h2>
+					</section>
+					<section>
+						<p align="left">
+							<b>Autorización: </b>Define a qué recursos de sistema el usuario autenticado podrá acceder. Que haya logrado pasar la instancia de la autenticación, no significa que podrá utilizar el sistema por completo como super administrador.
+						</p>
+					</section>
+					<section>
+						<p align="left">
+							<b>Autenticación:</b> Verifica la identidad del usuario, por diferentes métodos (algo que sabemos, algo que tenemos, algo que somos)
+						</p>
+					</section>
+					<section>
+						<img src="images/tema17-5.png" width="100%" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Cabeceras HTTP orientadas a la seguridad</h2>
+					</section>
+					<section>
+						<h4>Las cabeceras HTTP más utilizadas en la seguridad Web son:</h4>
+						<ul>
+							<li><b>Authorization:</b> Token de acceso al recurso gestionado por una API</li>
+							<li><b>Strict Transport Security:</b> La pagina sólo se cargará mediante HTTPS</li>
+							<li><b>X-Frame-Options:</b> Evitamos que nuestra web sea cargada como un iframe en otra Web</li>
+							<li><b>X-XSS-Protection:</b> Ayuda en la defensa frente a ataques de tipo Cross-Site Scripting (XSS)</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li><b>X-Content-Type-Options:</b> Evitar ataques basados en la confusión del tipo de MIME</li>
+							<li><b>Content-Security-Policy:</b> Indicar al navegador qué contenidos dinámicos de terceros se permiten cargar</li>
+							<li><b>Referrer Policy:</b> Controlar que información se envía en la cabecera Referer que es utilizada por el navegador para indicarle al servidor desde que enlace se ha llegado a la página</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Spring Framework</h2>
+					</section>
+					<section>
+						<p align="left">
+							La solución que proporciona Spring Framework para seguridad es <b>Spring Security.</b><br/><br/>
+							Los módulos que analizaremos en el curso serán:
+						</p>
+						<ul>
+							<li>Configuración</li>
+							<li>Filtros</li>
+							<li>DSL de Seguridad (Lambda DSL)</li>
+						</ul>
+					</section>
+					<!-- https://www.arquitecturajava.com/spring-security-annotation-y-su-configuracion/ -->
+					<section>
+						<h4>Configuración</h4>
+						<ul>
+							<li>Incluir dependencias Maven (pom.xml)</li>
+							<li>Crear WebInitializer para registrar Servlets y Filtros</li>
+							<li>Crear Controladores (Web Controllers)</li>
+							<li>Crear un fichero de configuración de Spring que registre un ViewResolver</li>
+							<li>Crear ficheros JSP con la información de las vistas</li>
+							<li>Definir las url protegidas de acceso y el cual tenemos referenciado desde el fichero de configuración principal con @import. (@EnableWebSecurity)</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Filtros</h4>
+						<img src="images/tema17-6.png" width="100%" />
+					</section>
+					<section>
+						<h4>Lambda DSL</h4>
+						<img src="images/tema17-7.png" width="100%" />
+					</section>
+					<section>
+						<h4>Lambda DSL</h4>
+						<ul>
+							<li>No es necesario utilizar el metodo .and()</li>
+							<li>withDefaults() habilita la funcionalidad de seguridad por defecto. Un acceso directo mediante lambda sería it -> {}</li>
+							<li>La configuración es más facil de comprender por otro miembro del equipo</li>
+							<li>Spring Security DSL es similar a otros compomentes de Spring DSLs (Ej. Spring Integration)</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Enterprise Security</h2>
+					</section>
+					<section>
+						<h4>API Manager</h4>
+						<p align="left">
+							Pieza de software cuyo objetivo es crear, publicar y gestionar todos los aspectos relativos a APIs (interfaces de acceso a nuestros recursos o servicios) y su ciclo de vida.
+							<br>
+							Los API Manager más conocidos del mercado son:
+						</p>
+						<ul>
+							<li>Apigee</li>
+							<li>WSO2</li>
+							<li>Azure API Manager</li>
+							<li>Mulesoft</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Balanceadores (F5)</h4>
+						<p align="left">
+							Herramienta que permite que el sitio web/aplicación web que administremos esté siempre disponible, y sea capaz de servir todas las peticiones a la máxima velocidad posible. <br>
+							Los Balanceadores pueden ser Hardware o Software. <br>
 
+							Las soluciones más conocidas del mercado son:
+						</p>
+						<ul>
+							<li>F5 (Hardware)</li>
+							<li>HA Proxy (Software)</li>
+							<li>AWS Load Balancer (SaaS)</li>
+							<li>Azure Load Balancer (SaaS)</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Gestión de Acceso e Identidades (IAM vs IDP)</h4>
+						<p align="left">
+							La gestión de identidad y acceso <b>(IAM)</b> es un modo de saber quién es un usuario y qué tiene permiso para hacer. IAM es como el portero de una discoteca con una lista de quién puede entrar, quién no y quién puede acceder a la zona VIP.<br>
+							Proveedor de identidad <b>(IdP)</b> es un producto o servicio que ayuda a gestionar la identidad. Un IdP gestiona el proceso de inicio de sesión (Ej Single Sign On).
+						</p>
+					</section>
+
+				</section>
 			</div>
 		</div>
 
