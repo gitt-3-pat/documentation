@@ -113,8 +113,30 @@
 							<li>Implicit flow</li>
 						</ul>
 					</section>
+					
+					<section>
+						<p align="left">
+							<b>Client Credentials:</b> este proceso de autorización es especialmente sencillo y se utiliza cuando un cliente quiere acceder a datos que no tienen propietario o que no requieren autorización.
+						</p>
+					</section>
+					<section>
+						<p align="left">
+							<b>Password:</b> el usuario proporciona sus credenciales de servicio (nombre de usuario y contraseña) directamente a la aplicación, la cual utiliza dichas credenciales para obtener del servicio un token de acceso. Este tipo de autorización solo debe habilitarse en el servidor de autorización, si otros flujos no son viables.
+						</p>
+					</section>
+					<section>
+						<p align="left">
+							<b>Authorization Code:</b> Flujo de autenticación más usado, ya que ha sido optimizado para aplicaciones del lado del servidor, en donde el código fuente no está expuesto públicamente y se puede mantener la confidencialidad del secreto de cliente. Este es un flujo basado en la redirection, que significa que la aplicación debe ser capaz de interactuar con el cliente del usuario (i.e. el navegador web) y recibir códigos de autorización API.
+						</p>
+					</section>
 					<section>
 						<img src="images/tema17-2.png" width="100%" />
+					</section>
+					<section>
+						<p align="left">
+							<b>Implicit Flow:</b> se utiliza para aplicaciones móviles y aplicaciones web (i.e. aplicaciones que se ejecutan en un navegador web), donde no se garantiza la confidencialidad del secreto de cliente.<br>
+							Este flujo de autenticación no admite tokens de actualización.
+						</p>
 					</section>
 					<section>
 						<h2>OpenID</h2>
@@ -125,6 +147,12 @@
 					</section>
 					<section>
 						<img src="images/tema17-3.png" width="100%" />
+					</section>
+					<section>
+						<h2>OAuth2 vs OpenID</h2>
+						<p align="left">
+							<b>OpenID Connect</b> se basa en el protocolo <b>OAuth 2.0</b> y utiliza un token web JSON (JWT) adicional, llamado token de identificación, para estandarizar áreas que OAuth 2.0 deja a elección, como los "scopes" y "endpoints". Se centra específicamente en la autenticación de usuarios y se utiliza ampliamente para permitir el inicio de sesión de los usuarios en los sitios web de los consumidores y las aplicaciones móviles.
+						</p>
 					</section>
 					<section>
 						<h2>JSON Web Token (JWT)</h2>
@@ -262,7 +290,10 @@
 							Proveedor de identidad <b>(IdP)</b> es un producto o servicio que ayuda a gestionar la identidad. Un IdP gestiona el proceso de inicio de sesión (Ej Single Sign On).
 						</p>
 					</section>
-
+					<section>
+						<h4>Enterprise Architecture</h4>
+						<img src="images/enterprise-architecture.png" width="60%" />
+					</section>
 				</section>
 			</div>
 		</div>
