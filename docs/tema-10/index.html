@@ -34,12 +34,12 @@
 						<ul>
 							<li>Introducción</li>
 							<li>Estandares</li>
+							<li>Spring Data</li>
 							<li>Conceptos</li>
-							<li>Mapping Objects</li>
 							<li>Repositorios</li>
-							<li>Queries</li>
-							<li>JdbcTemplate</li>
-							<li>Transactionality</li>
+							<li>Relaciones</li>
+							<li>Transacciones</li>
+							<li>Schema de base de datos</li>
 							<li>Testing</li>
 						</ul>
 					</section>
@@ -48,10 +48,314 @@
 					<h2>Sessión 1</h2>
 				</section>
 				<section>
+					<section>
+						<h2>Introducción: JDBC</h2>
+						<p>Java Database Connectivity</p>
+						<ul>
+							<li>Proporciona una API completa para poder conectarnos y trabajar con cualquier SGBD relacional</li>
+							<li>Utiliza un driver específico para cada SGBD, este sí es diferente para cada motor. PostgreSQL, MariaDB, MySQL, DB2…</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Utilidad de JDBC</h2>
+						<ul>
+							<li>Abrir y cerrar conexiones contra la BD.</li>
+							<li>Operaciones de gestión (crear y borrar tablas…)</li>
+							<li>Operaciones CRUD (insertar, actualizar, borrar y leer)</li>
+							<li>Transacciones</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ejemplo JDBC legacy PostgreSQL</h2>
+						<img src="images/example.png" width="50%" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Estándares: ORM</h2>
+						<p style="text-align:justify">Object-Relational mapping es una técnica de programación para convertir datos entre el sistema de tipos utilizado en un lenguaje de programación orientado a objetos y la utilización de una base de datos relacional como motor de persistencia</p>
+						<p style="text-align:justify">En la práctica esto crea una base de datos orientada a objetos virtual, sobre la base de datos relacional</p>
+						<p style="text-align:justify">Ejemplos: Hibernate, JPA, JDO, iBatis…</p>
+					</section>
+					<section>
+						<h2>Estándares: DDD (Domain-Driven Design)</h2>
+						<ul>
+							<li>Diseño de la aplicación en base al dominio</li>
+							<li>El dominio es la parte de la realidad que expresamos mediante programación orientada a objetos</li>
+							<li>Su representación en objetos se identifica como el Modelo de la aplicación</li>
+						</ul>
+					</section>
+					<section>
+						<h2>DDD: Core principles</h2>
+						<ul>
+							<li>Focus on the core domain and domain logic</li>
+							<li>Base complex designs on models of the domain</li>
+							<li>Constantly collaborate with domain experts, in order to improve the application model and resolve any emerging domain-related issues</li>
+						</ul>
+					</section>
+					<section>
+						<h2>DDD: Core principles</h2>
+						<ul>
+								<li><strong>Entity</strong>: Son objetos que tienen identidad propia en el sistema y donde sus atributos o propiedades no identifican quién es. Por ejemplo, un User identificado por un user_id único</li>
+								<li><strong>Value Object</strong>:no tienen identidad ninguna, solo nos interesan sus atributos, ya que complementan la descripción del dominio, pero no se identifican por sí mismos</li>
+						</ul>
+					</section>
+					<section>
+						<h2>DDD: Core principles</h2>
+						<ul>
+								<li><strong>Aggregate</strong>:grupos de entidades que se relacionan entre sí donde se define la dependencia entre ellas. En dichos agregados hay que definir cuál es la Entidad padre (root) y cuál es la frontera</li>
+								<li><strong>Reference</strong>:Se utilizan en los agregados. En vez de referenciar la entidad completa, se referencia el id de la entidad</li>
+						</ul>
+					</section>
+					<section>
+						<h2>DDD: Core principles</h2>
+						<ul>
+								<img src="images/image-1.png" width="50%" />
+						</ul>
+					</section>
+					<section>
+						<h2>DDD: Core principles</h2>
+						<ul>
+								<li><strong>Service</strong>:servicios de dominio. todos aquellos comportamientos que debemos tener en nuestra aplicación y que no pertenezcan a ninguna entidad. No tienen estado, y modifican una o varias entidades de dominio, pero que no son propias de la entidad (cargar dinero en la cuenta de un Usuario)</li>
+								<li><strong>Repository</strong>:clases que se encargan de persistir y recuperar los objetos de dominio que necesitamos que pervivan en el tiempo. Normalmente, se crea un repositorio por Entidad raíz de una Agregación</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Spring Data</h2>
+						<ul>
+							<li style="font-size: 0.8em;">Spring Data’s mission is to provide a familiar and consistent, Spring-based programming model for data access while still retaining the special traits of the underlying data store</li>
+							<li style="font-size: 0.8em;">It makes it easy to use data access technologies, relational and non-relational databases, map-reduce frameworks, and cloud-based data services. This is an umbrella project which contains many subprojects that are specific to a given database. The projects are developed by working together with many of the companies and developers that are behind these exciting technologies</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Spring Data: technologies</h2>
+						<img src="images/image-2.png" />
+					</section>
+					<section>
+						<h2>Spring Data JDBC</h2>
+						<ul>
+							<li>ORM simple y limitado</li>
+							<li>Permite implementar repositorios basados en JDBC</li>
+							<li>Inspirado en DDD</li>
+							<li>Integración con Spring</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Spring Data JDBC</h2>
+						<img src="images/image-3.png" />
+					</section>
+					<section>
+						<h2>Spring Data JDBC: maven dependencies</h2>
+						<img src="images/image-4.png" />
+					</section>
+					<section>
+						<h2>Spring Data JDBC: DataSource</h2>
+						<ul>
+							<li>Lo primero que se debe configurar para poder hacer uso se Spring Data JDBC es un objeto DataSource</li>
+							<li>Este objeto representa la conexión con la fuente de datos (DB)</li>
+							<li>Se debe configurar la URL, el driver de la JDBC, usuario y contraseña</li>
+							<li>Se puede configurar mediante application.properties o programaticamente</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Spring Data JDBC: DataSource</h2>
+						<img src="images/image-5.png" />
+						<img src="images/image-6.png" />
+					</section>
+					<section>
+						<h2>Spring Data JDBC: Templates</h2>
+						<ul><li>Gracias a la AutoConfiguration de Spring Boot, al usar Spring Data JDBC, se autoconfiguran dos Beans en base al DataSource definido que podemos usar para realizar operaciones contra la base de datos:  JdbcTemplate y NamedParameterJdbcTemplate</li></ul>
+						<img src="images/image-7.png" />
+					</section>
+					<section>
+						<h2>Spring Data JDBC: Templates</h2>
+						<ul><li>Su uso es similar al que usamos con JDBC puro</li></ul>
+						<img src="images/image-8.png" />
+					</section>
+					<section>
+						<h2>Spring Data JDBC: Templates</h2>
+						<img src="images/image-9.png" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Conceptos: Entity</h2>
+						<ul>
+							<li style="font-size: 0.8em;">Clases del modelo que tienen que tener un @Id en la BD</li>
+							<li style="font-size: 0.8em;">Cada Entity tiene asociada una tabla de base de datos</li>
+							<img src="images/image-10.png" width="70%"/>
+							<img src="images/image-11.png" width="30%"/>
+						</ul>
+					</section>
+					<section>
+						<h2>Conceptos: Value Object (DTO)</h2>
+						<ul>
+							<li style="font-size: 0.8em;">Uso de @Embedded. No se crea una tabla aparte</li>
+							<img src="images/image-12.png" width="60%"/>
+							<img src="images/image-13.png" width="40%"/>
+						</ul>
+					</section>
+					<section>
+						<h2>Conceptos: Aggregates</h2>
+						<ul>
+							<li>Entidades que agrupan otras entidades de la base de datos</li>
+							<li>La entidad padre o Aggregate Root, es la única entidad que puede ser cargada desde un repository (esquema DDD), y también es la encargada de manejar las entidades hijas</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Conceptos: Aggregates</h2>
+						<img src="images/image-14.png" width="60%"/>
+						<img src="images/image-15.png" width="40%"/>
+					</section>
+					<section>
+						<h2>Conceptos: References</h2>
+						<ul>
+							<li>Son entidades “intermedias” en una relación entre entidades</li>
+							<li>Se utilizan para relacionar entidades de base de datos que están al mismo nivel, es decir, no existe entidad padre ni entidad hija</li>
+							<li>Hacen referencia a otra entidad a través de un identificador</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Conceptos: References</h2>
+						<img src="images/image-16.png" width="60%"/>
+						<img src="images/image-17.png" width="60%"/>
+						<img src="images/image-18.png" width="60%"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Repositorios</h2>
+						<ul>
+							<li style="font-size: 0.8em;">Interfaz de acceso a base de datos. Desde estos beans se realizan todas las operaciones del CRUD</li>
+							<li style="font-size: 0.8em;">Son interfaces que extienden de CrudRepository</li>
+							<li style="font-size: 0.8em;">CrudRepository trae ya todos los métodos básicos CRUD: findAll(), delete(), findById(), save()…</li>
+							<li style="font-size: 0.8em;">Se puede crear más métodos con el uso de la anotación @Query</li>
+							<li style="font-size: 0.8em;">Siguiendo el paradigma DDD, un repositorio por Agreggate Root</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Repositorios</h2>
+						<img src="images/image-19.png" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Relaciones</h2>
+						<ul style="float:left">
+							<li style="font-size: 0.8em">One to One: 1-1</li>
+							<li style="font-size: 0.8em;">One to Many: 1-n</li>
+							<li style="font-size: 0.8em;">Many to Many: m-n</li>
+						</ul>
+						<img src="images/image-20.png" width="50%" />
+					</section>
+					<section>
+						<h2>One To One</h2>
+						<img src="images/image-21.png" width="50%" />
+						<img src="images/image-22.png" width="50%" />
+					</section>
+					<section>
+						<h2>One To Many</h2>
+						<img src="images/image-23.png" width="50%" />
+						<img src="images/image-24.png" width="50%" />
+					</section>
+					<section>
+						<h2>Many To Many</h2>
+						<img src="images/image-16.png" width="60%"/>
+						<img src="images/image-17.png" width="60%"/>
+						<img src="images/image-18.png" width="60%"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Transacciones</h2>
+						<ul>
+							<li style="font-size: 0.8em;">Cuando se realizan operaciones de escritura es necesario manejar transacciones para evitar inconsistencias en la base de dato</li>
+							<li style="font-size: 0.8em;">En Spring podemos hacer uso de la anotación @Transactional a nivel de método, en repositorios y servicios</li>
+							<li style="font-size: 0.8em;">Si se produce alguna excepción dentro de dicho método, Spring hará un rollback de dicha transacción, dejando la BD en el estado original</li>
+							<li style="font-size: 0.8em;">Las operaciones de escritura por defecto de los repositorios que extienden de CrudRepository son por defecto, transaccionales</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Transacciones: @Transactional</h2>
+						<img src="images/image-25.png" />
+					</section>
+					<section>
+						<h2>Transacciones: @Modifying</h2>
+						<ul><li>Las queries que sean del tipo UPDATE y DELETE, además de ser transaccionales deberán llevar la anotación @Modifying para poder ser ejecutadas</li></ul>
+						<img src="images/image-26.png" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Schema de base de datos</h2>
+						<ul>
+							<li>Cuando levantamos nuestra aplicación, ésta necesita que la base de datos esté activa y que exista el schema</li>
+							<li>Para esta tarea, Spring nos proporciona unas properties donde podemos indicarle rutas a scripts SQL que ejecutará al levantar la aplicación</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Schema de base de datos</h2>
+						<img src="images/image-27.png" width="70%" />
+					</section>
+					<section>
+						<h2>Schema de base de datos</h2>
+						<img src="images/image-28.png" />
+						<img src="images/image-29.png" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Testing: Datos de inicialización</h2>
+						<ul>
+							<li>En el caso del testing, podemos cargar los datos en la base de datos bien por código o bien mediante un script SQL</li>
+							<li>De manera similar al script del Schema, podemos dejarlo en src/main/resources , y hacer uso de una anotación que nos proporciona Spring para cargarlo en la ejecución del test</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Testing: Datos de inicialización</h2>
+						<img src="images/image-30.png" />
+						<img src="images/image-31.png" width="70%" />
+					</section>
+					<section>
+						<h2>Testing: Datos de inicialización</h2>
+						<img src="images/image-32.png" />
+					</section>
+					<section>
+						<h2>Test Containers</h2>
+						<ul>
+							<li>Utilizados en el contexto de Testing</li>
+							<li>Nos permiten crear de manera sencilla contenedores a modo de sandbox para ejecutar los tests</li>
+							<li>Reemplazan a los servicios reales con los que trabajaría nuestra aplicación </li>
+							<li>P.e. Una base de datos</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Test Containers: PostgreSQL</h2>
+						<img src="images/image-33.png" />
+					</section>
+					<section>
+						<h2>Test Containers: PostgreSQL</h2>
+						<img src="images/image-34.png" />
+					</section>
+					<section>
+						<h2>Test Containers: PostgreSQL</h2>
+						<img src="images/image-35.png" />
+					</section>
+				</section>
+				<section>
 					<h2>Referencias</h2>
 					<ul>
-						<li>https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/</li>
-						<li>https://www.testcontainers.org/modules/databases/postgres/</li>
+						<li style="font-size: 0.8em;">https://spring.io/projects/spring-data</li>
+						<li style="font-size: 0.8em;">https://spring.io/projects/spring-data-jdbc</li>
+						<li style="font-size: 0.8em;">https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#spring.datasource.url</li>
+						<li style="font-size: 0.8em;">https://javabydeveloper.com/</li>
+						<li style="font-size: 0.8em;">https://medium.com/ingenier%C3%ADa-en-tiendanube/domain-driven-design-y-el-modelo-de-actores-deae7675a921</li>
+						<li style="font-size: 0.8em;">https://airbrake.io/blog/software-design/domain-driven-design</li>
+						<li style="font-size: 0.8em;">https://www.paradigmadigital.com/dev/ddd-dominio-implica-crecer-fuerte/</li>
+						<li style="font-size: 0.8em;">https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/</li>
+						<li style="font-size: 0.8em;">https://www.testcontainers.org/modules/databases/postgres/</li>
 					</ul>
 				</section>
 			</div>
