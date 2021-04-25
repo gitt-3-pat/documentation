@@ -32,11 +32,159 @@
 						<h2>Agenda</h2>
 						<h3>Sessión 1</h3>
 						<ul>
+							<li>¿Qué es React?</li>
+							<li>Declarativo y virtualizado</li>
+							<li>Libreria React</li>
+							<li>Creando un entorno de Desarrollo</li>
 						</ul>
 					</section>
 				</section>
 				<section>
 					<h2>Sessión 1</h2>
+				</section>
+				<section>
+					<section>
+						<h2>¿Qué es React?</h2>
+					</section>
+					<section>
+						<h3>¿Qué es React?</h3>
+						<ul>
+							<li><b>React es una libreria de JavaScript</b> que se centra en la sintaxis declarativa y la virtualización del DOM</li>
+							<li><b>Permite a los desarrolladores escribir un JavaScript altamente eficiente</b> con el fin de renderizar una interfaz de usuario en un navegador web</li>
+							<li>Mientras que el JavaScript tradicional vuelve a renderizar todo el DOM durante un cambio de estado, <b>React sólo renderiza las partes del DOM que han cambiado</b></li>
+						</ul>
+					</section>
+					<section>
+						<h3>¿Qué es React?</h3>
+						<ul>
+							<li>React no es un framework</li>
+							<li>Es una librería JavaScript centrada sólo en la composición de la interfaz de usuario</li>
+							<li>La usarás en conjunto con otras librerías JavaScript como Node.js</li>
+							<li>Esto te permite construir las otras partes de tu aplicación como quieras, sin tener que comprometerte con un framework completo</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Declarativo y virtualizado</h2>
+					</section>
+					<section>
+						<h3>Declarativo y virtualizado</h3>
+						<ul>
+							<li>Son realmente estas dos palabras clave las que diferencian a React del desarrollo tradicional de interfaces de usuario en JavaScript</li>
+							<li>React no dibuja iterativamente los componentes de la UI en la pantalla</li>
+							<li>El desarrollador define el aspecto final de la UI, y React se asegura de que el DOM se renderice en consecuencia</li>
+							<li>Esta es una diferencia muy significativa con respecto a la representación típica de HTML en JavaScript, que normalmente se centra en la inyección de HTML utilizando la directiva innerHTML</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Declarativo y virtualizado</h3>
+						<ul>
+							<li>React también virtualiza todo el DOM y utiliza JavaScript para renderizar el HTML real en forma de React Components</li>
+							<li>React genera elementos HTML usando el método React.createElement()</li>
+							<li>Cada elemento de la interfaz de usuario renderizado en el navegador será creado por una llamada de JavaScript a este método</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Declarativo y virtualizado</h3>
+						<p align="left">
+							¿Por qué hacer eso cuando es lo suficientemente simple como para escribir HTML con JavaScript en línea?<br>
+							<b>React virtualiza todo el DOM</b> - esto significa que mantiene un modelo dinámico de la interfaz de usuario en la memoria, y puede manipularlo sobre la marcha
+						</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Libreria React</h2>
+					</section>
+					<section>
+						<h3>Indice</h3>
+						<ul>
+							<li>Elements</li>
+							<li>Renderizado React</li>
+							<li>Components</li>
+							<li>Classes</li>
+							<li>Properties</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Elements</h3>
+						<ul>
+							<li>React contiene un método para dibujar elementos HTML dentro del DOM</li>
+							<li>Es posible que no necesites invocarlo</li>
+							<li>TypeScript te da la posibilidad de escribir tus elementos en una sintaxis pseudo-HTML</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Renderizado React</h3>
+						<ul>
+							<li>React ensamblará estas múltiples llamadas a React.createElement() en un árbol de componentes</li>
+							<li>En cada cambio de estado, React realiza una "tree reconciliation" donde examina el estado de cada componente y ve si algo ha cambiado</li>
+							<li>React actualiza esa parte del DOM virtual y vuelve a renderizar el elemento</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Components</h3>
+						<ul>
+							 <li> Los componentes son elementos atómicos de la interfaz de usuario que combinan el diseño con un estado y un conjunto de propiedades que React mantendrá</li>
+							<li>Estos componentes se crearán como clases o funciones de JavaScript, y React los utilizará para representar los elementos de la interfaz de usuario</li>
+							<li>Estos componentes son autónomos, y mantienen su propio estado y propiedades privadas</li>
+							<li>Pueden organizarse en jerarquías padre/hijo</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Classes</h3>
+						<ul>
+							<li>Utilizado para componentes más complejos</li>
+							<li>Desarrolladores cómodos con la POO que con la programación funcional pueden preferir crear clases</li>
+							<li>Es una disciplina cada vez más importante a medida que avanzamos hacia arquitecturas de aplicaciones distribuidas y concurrentes</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Properties</h3>
+						<ul>
+							<li>Los componentes contienen un objeto de propiedades con el que se puede interactuar y modificar</li>
+							<li>Estas propiedades se pasan por defecto como parámetros de función en un componente de función</li>
+							<li>Las propiedades son inmutables, pero pueden establecerse con valores iniciales cuando se renderiza un componente</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Creando un entorno de Desarrollo</h2>
+					</section>
+					<section>
+						<h3>Software Necesario</h3>
+						<ul>
+							<li>Instalar Node.js</li>
+							<li>Crear directorio Root</li>
+							<li>Inicializar repositorio "npm init"</li>
+							<li>Instalar "express" con npm</li>
+							<li>Instalar "react" y "react-dom" con npm</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Software Necesario</h3>
+						<ul>
+							<li>Instalar "webpack" con npm</li>
+							<li>Instalar "BabelJS" con npm</li>
+							<li>Instalar nodemon</li>
+							<li>Instalar eslint</li>
+							<li>Crear estructura App</li>
+						</ul>
+					</section>
+					<section>
+						<h2>¿Existe una forma rápida?</h2>
+					</section>
+					<section>
+						<h3>Software Necesario</h3>
+						<ul>
+							<li>Instalar NodeJS 12 LTS <b>"Brew"</b></li>
+							<li>Instalar expo-cli <b>"npm install -g expo-cli"</b></li>
+							<li>Crear Proyecto <b>"expo init Name"</b></li>
+							<li>Arrancar el proyecto <b>"npm run web"</b></li>
+						</ul>
+					</section>
 				</section>
 			</div>
 		</div>
